@@ -44,6 +44,47 @@
             margin-bottom: 30px;
             text-align: center;
         }
+        .interactive-box {
+            display: block; 
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        .interactive-box summary {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2 em;
+            padding: 12px;
+            cursor: pointer;
+            background-color: #f9f9f9;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        .interactive-box summary:hover{
+            color: rgb(145, 19, 19);
+            background-color: #f2f2f2;
+        }
+
+        .interactive-box[open] summary {
+            background-color: #f2f2f2;
+        }
+
+        .interactive-box .content {
+            padding: 15px;
+            font-family: 'Oxanium', sans-serif;
+            font-size: 1.1em;
+            text-align: left;
+            display: none;
+        }
+        .interactive-box[open] .content {
+            display: block;
+        }
 
         details {
 
@@ -64,7 +105,7 @@
             color: rgb(145, 19, 19);
         }
 
-        details[open] summary {}
+        
 
         .content {
             padding: 8px;
@@ -180,6 +221,31 @@
       pointer-events: auto;
     }
 
+     footer {
+        text-align: center;
+    padding: 25px;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    color: #777;
+    font-size: 14px;
+    margin-top: 50px;
+    }
+
+   footer a {
+    text-decoration: none;
+    color: #b22222;
+    margin: 0 10px;
+    font-weight: 500;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-links {
+    margin-bottom: 10px;
+  }
+
     
     .search-container {
       background-color: #a36b6b;
@@ -222,6 +288,9 @@
       gap: 15px;
       font-size: 22px;
       cursor: pointer;
+    }
+    .interactive-box.js-enabled[open] .content {
+    display: block;
     }
 
 
@@ -266,6 +335,7 @@
             <a href="#" title="Profile">👤</a>
         </div>
 
+
     </header>
 
 
@@ -277,15 +347,15 @@
     <h2 class="subtitle">Need Help?</h2>
 
     <div class="help-section">
-        <details>
-            <summary>1. Getting Started</summary>
+        <details class="interactive-box">
+            <summary>Getting Started</summary>
             <div class="content">
-                <p>Don't know how to start?</p>
+                <h2 class="how">Don't know how to start?</h2>
                 <p>Step 1: Sign up or Sign in your account. Just click the “Sign Up” button on the home page or the User
                     button on the top right of the home page.</p>
                 <p>Step 2: Set up your Gcash Account or PayMaya. Make sure that you put in exact information and number
                     to avoid payment and account errors.</p>
-                <p>Sign Up</p>
+                <h2 class="how">Sign Up</h2>
                 <p>Step 3: In this stage, you can purchase any items that you want or need either for academics,
                     professional, or personal use.</p>
             </div>
@@ -293,66 +363,66 @@
     </div>
 
     <div class="help-section">
-        <details>
-            <summary>2. Account Setting</summary>
+        <details class="interactive-box">
+            <summary>Account Setting</summary>
             <div class="content1">
                 <h2 class="how">To Update Your Profile</h2>
                 <ul class="content">
-                    <li>Click your profile icon on the top right.</li>
-                    <li>Select Account Settings.</li>
-                    <li>Edit your name, email, or password.</li>
-                    <li>Click Save Changes.</li>
+                    <p>1. Click your profile icon on the top right.</p>
+                    <p>2. Select Account Settings.</p>
+                    <p>3. Edit your name, email, or password.</p>
+                    <p>4. Click Save Changes.</p>
                 </ul>
                 <h2 class="how">To Change Password</h2>
                 <ul class="content">
-                    <li>Go to Account Settings → Security.</li>
-                    <li>Click Change Password.</li>
-                    <li>Enter your old password and new one.</li>
-                    <li>Click Save.</li>
+                    <p>1. Go to Account Settings → Security.</p>
+                    <p>2. Click Change Password.</p>
+                    <p>3. Enter your old password and new one.</p>
+                    <p>4. Click Save.</p>
                 </ul>
                 <h2 class="how">To Log Out</h2>
                 <ul class="content">
-                    <li>Click your profile icon.</li>
-                    <li>Select Logout.</li>
-                    <li>You'll be signed out of your account.</li>
+                    <p>1. Click your profile icon.</p>
+                    <p>2. Select Logout.</p>
+                    <p>3. You'll be signed out of your account.</p>
                 </ul>
             </div>
         </details>
     </div>
 
     <div class="help-section">
-        <details>
-            <summary>3. Guide</summary>
+        <details class="interactive-box">
+            <summary>Guide</summary>
             <div class="content1">
                 <h2 class="how">How to Order</h2>
                 <ul class="content">
-                    <li>Browse items from the Shop page.</li>
-                    <li>Click “Add to Cart” on the items you want.</li>
-                    <li>Go to your Cart and click “Checkout.”</li>
-                    <li>Enter your delivery details and payment method.</li>
-                    <li>Click “Place Order” to confirm.</li>
+                    <p>1. Browse items from the Shop page.</p>
+                    <p>2. Click “Add to Cart” on the items you want.</p>
+                    <p>3. Go to your Cart and click “Checkout.”</p>
+                    <p>4. Enter your delivery details and payment method.</p>
+                    <p>5. Click “Place Order” to confirm.</p>
                 </ul>
                 <h2 class="how">How to Track Orders</h2>
                 <ul class="content">
-                    <li>Go to My Orders under your account.</li>
-                    <li>Click the order you want to track.</li>
-                    <li>View the delivery status and tracking details.</li>
+                    <p>1. Go to My Orders under your account.</p>
+                    <p>2. Click the order you want to track.</p>
+                    <p>3. View the delivery status and tracking details.</p>
                 </ul>
                 <h2 class="how">How to Contact Support</h2>
                 <ul class="content">
-                    <li>Go to the Help section or scroll to the page bottom.</li>
-                    <li>Click “Contact Us.”</li>
-                    <li>Choose Email or Chat Support to reach our team.</li>
+                    <p>1. Go to the Help section or scroll to the page bottom.</p>
+                    <p>2. Click “Contact Us.”</p>
+                    <p>3. Choose Email or Chat Support to reach our team.</p>
                 </ul>
             </div>
         </details>
     </div>
 
     <div class="help-section">
-        <details>
-            <summary>4. Purchasing and Payments</summary>
+        <details class="interactive-box">
+            <summary>Purchasing and Payments</summary>
             <div class="content">
-                <p>Don’t know how to buy and order?</p>
+                <h2 class="how">Don’t know how to buy and order?</h2>
                 <p>Step 1: To order online, you have to set up your Gcash account or PayMaya or both of them for
                     convenience.</p>
                 <p>Step 2: Make sure to fill out the exact information needed when setting up your account.</p>
@@ -362,5 +432,19 @@
         </details>
     </div>
 </body>
+  
 
+
+
+<footer>
+  <div class="footer-links">
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="help.html">Help</a> |
+     <a href="Location">Location</a> |
+      <a href="Email">Email</a> |
+       <a href="Phone">Phone</a> |
+  </div>
+  © 2025 Vemenzon. All rights reserved.
+</footer>
 </html>
