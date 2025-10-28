@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Favorites | Vemenzon</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background-color: white;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.1);
+  }
+
+  header img {
+    height: 45px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-weight: 500;
+  }
+
+  nav a:hover {
+    color: #d10000;
+  }
+
+  h1 {
+    color: #222;
+    font-size: 32px;
+    text-align: center;
+    margin: 50px 0 30px;
+  }
+
+  .favorites-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+
+  .favorite-item {
+    display: flex;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 80%;
+    max-width: 900px;
+    transition: transform 0.2s ease;
+  }
+
+  .favorite-item:hover {
+    transform: translateY(-3px);
+  }
+
+  .favorite-item img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .details {
+    padding: 30px;
+    flex: 1;
+  }
+
+  .details h2 {
+    margin: 0 0 10px;
+    font-size: 22px;
+  }
+
+  .price {
+    color: #d10000;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .stock {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 15px;
+  }
+
+  button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .addcart-btn {
+    background-color: #333;
+    color: white;
+  }
+
+  .addcart-btn:hover {
+    background-color: #000;
+  }
+
+  .remove-btn {
+    background-color: #d10000;
+    color: white;
+  }
+
+  .remove-btn:hover {
+    background-color: #a00000;
+  }
+
+  .empty {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+    margin-top: 80px;
+  }
+
+  footer {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    border-top: 1px solid #eee;
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <img src="New folder/Screenshot 2025-10-16 134017.png" alt="Vemenzon Logo">
+  <nav>
+    <a href="http://127.0.0.1:5500/websites.html">Home</a>
+    <a href="http://127.0.0.1:5500/ALL.html">Shop</a>
+    <a href="http://127.0.0.1:5500/ADD%20TO%20CART.html">Cart</a>
+    <a href="favorites.html" style="color:#d10000;">Favorites</a>
+  </nav>
+</header>
+
+<h1>❤️ Your Wishlist</h1>
+
+<div id="favoritesList" class="favorites-container"></div>
+
+<footer>
+  © 2025 Vemenzon. All rights reserved.
+</footer>
+
+<script>
+  const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  const list = document.getElementById('favoritesList');
+
+  if (favorites.length === 0) {
+    list.innerHTML = "<p class='empty'>You haven't added any favorites yet.</p>";
+  } else {
+    favorites.forEach((item, index) => {
+      const div = document.createElement('div');
+      div.classList.add('favorite-item');
+      div.innerHTML = `
+        <img src="${item.img}" alt="${item.name}">
+        <div class="details">
+          <h2>${item.name}</h2>
+          <p class="price">₱${item.price}.00</p>
+          <p class="stock">14 stocks available</p>
+          <div class="btn-group">
+            <button class="remove-btn">Remove</button>
+            <button class="addcart-btn">Add to Cart</button>
+          </div>
+        </div>
+      `;
+
+      div.querySelector('.remove-btn').addEventListener('click', () => {
+        favorites.splice(index, 1);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        div.remove();
+      });
+
+      div.querySelector('.addcart-btn').addEventListener('click', () => {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(item);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${item.name} added to your cart.`);
+      });
+
+      list.appendChild(div);
+    });
+  }
+</script>
+</body>
+</html>

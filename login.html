@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Vemenzon</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #000;
+    }
+
+    
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .icons {
+      display: flex;
+      gap: 15px;
+      font-size: 18px;
+    }
+
+    
+    .login-container {
+      max-width: 400px;
+      margin: 60px auto;
+      text-align: center;
+    }
+
+    .login-container h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .google-btn {
+      background-color: #333;
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .google-btn:hover {
+      background-color: #555;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #777;
+      margin: 15px 0;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .divider:not(:empty)::before {
+      margin-right: .5em;
+    }
+
+    .divider:not(:empty)::after {
+      margin-left: .5em;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      border: none;
+      border-bottom: 1px solid #aaa;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .checkbox {
+      text-align: left;
+      font-size: 13px;
+      margin: 10px 0;
+    }
+
+    .forgot {
+      text-align: right;
+      font-size: 13px;
+      margin: 10px 0;
+    }
+
+    .forgot a {
+      color: #b22222;
+      text-decoration: none;
+    }
+
+    .forgot a:hover {
+      text-decoration: underline;
+    }
+
+    .login-btn {
+      width: 100%;
+      background-color: #b22222;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 15px;
+      cursor: pointer;
+      margin: 10px 0;
+    }
+
+    .login-btn:hover {
+      background-color: #8b1a1a;
+    }
+
+    .create {
+      font-size: 13px;
+    }
+
+    .create a {
+      color: #b22222;
+      text-decoration: none;
+    }
+
+    .create a:hover {
+      text-decoration: underline;
+    }
+
+  
+    
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="New folder/Screenshot 2025-10-16 134017.png" alt="Vemenzon Logo" />
+    <nav>
+      <a href="#">Shop By Category</a>
+      <a href="#">About us</a>
+      <a href="#">Contact us</a>
+      <a href="#">Help</a>
+    </nav>
+    <div class="icons">
+      🛒 ❤️ 👤
+    </div>
+  </header>
+
+  <main class="login-container">
+    <h1>Welcome Back</h1>
+    <p>Log in with your Google account</p>
+    <button class="google-btn">
+      <span>🔘</span> Login with Google
+    </button>
+
+    <div class="divider">Or continue with</div>
+
+    <input type="text" placeholder="Username or Email">
+    <input type="password" placeholder="Password">
+
+    <div class="checkbox">
+      <input type="checkbox" id="keep"> <label for="keep">Keep me logged in</label>
+    </div>
+
+    <div class="forgot">
+      <a href="#">Forgot Username or Password?</a>
+    </div>
+
+    <button class="login-btn">Log In</button>
+
+    <div class="create">
+      No account? <a href="#">Create an account</a>
+    </div>
+  </main>
+
+  
+</body>
+
+<script>
+  document.querySelector(".login-btn").addEventListener("click", function() {
+    window.location.href = "http://127.0.0.1:5500/websites.html";
+  });
+</script>
+
+
+<footer>
+   <div class="footer-links">
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="help.html">Help</a> |
+     <a href="Location">Location</a> |
+      <a href="Email">Email</a> |
+       <a href="Phone">Phone</a> |
+  </div>
+  © 2025 Vemenzon. All rights reserved.
+  </footer>
+
+  <style> footer {
+  text-align: center;
+  padding: 25px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  color: #777;
+  font-size: 14px;
+  margin-top: 50px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #b22222;
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+</style>
+
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop | Vemenzon</title>
+<style>
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    background-color: #fff;
+    color: #333;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background-color: #fff;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.1);
+  }
+
+  header img { height: 45px; }
+
+  nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-weight: 500;
+  }
+
+  nav a:hover { color: #d10000; }
+
+  
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .search-bar input {
+    width: 50%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px 0 0 8px;
+    font-size: 15px;
+    outline: none;
+  }
+
+  .search-bar button {
+    background-color: #b22222;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 80px;
+  }
+
+  
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .sidebar ul li {
+    padding: 8px 0;
+    cursor: pointer;
+    color: #444;
+    transition: color 0.2s;
+  }
+
+  .sidebar ul li:hover {
+    color: #b22222;
+  }
+
+  
+  .tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .tabs button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  .tabs button.active {
+    background-color: #b22222;
+    color: white;
+  }
+
+  
+  .products {
+    flex: 1;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+  }
+
+  .product-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    transition: transform 0.2s;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .product-card h3 {
+    font-size: 16px;
+    margin: 12px 0 6px;
+  }
+
+  .price {
+    color: #b22222;
+    font-weight: bold;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .buy-btn, .heart-btn {
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.2s;
+  }
+
+  .buy-btn {
+    background-color: #b22222;
+    color: white;
+  }
+
+  .buy-btn:hover { background-color: #8b1a1a; }
+
+  .heart-btn {
+    background-color: #fff;
+    border: 1px solid #b22222;
+    color: #b22222;
+  }
+
+  .heart-btn.active {
+    background-color: #b22222;
+    color: white;
+  }
+
+  
+  footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    color: #777;
+    font-size: 14px;
+    margin-top: 50px;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: #b22222;
+    margin: 0 10px;
+    font-weight: 500;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-links {
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="New folder/Screenshot 2025-10-16 134017.png" alt="Vemenzon Logo">
+  <nav>
+    <a href="http://127.0.0.1:5500/websites.html">Home</a>
+    <a href="shop.html" style="color:#d10000;">Shop</a>
+    <a href="http://127.0.0.1:5500/HEARTS.html">❤️</a>
+    <a href="http://127.0.0.1:5500/ADD%20TO%20CART.html">🛒</a>
+  </nav>
+</header>
+
+<div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Search for products...">
+  <button onclick="searchProducts()">🔍</button>
+</div>
+
+<div class="container">
+  <div class="sidebar">
+    <h2>Categories</h2>
+    <ul>
+
+       <style>
+
+         a {
+          text-decoration: underline;
+          color: #b22222;
+          }
+          </style>
+          
+    <a href="http://127.0.0.1:5500/ALL.html "> All </a> 
+          <br>
+       <br>
+        <a href="http://127.0.0.1:5500/WRITING.html "> Writing & Correction </a> 
+       <br>
+       <br>
+        <a href="http://127.0.0.1:5500/PAPERS.html "> Papers & Notebooks </a>
+        <br>
+        <br>
+      <a href=" http://127.0.0.1:5500/FILING.html "> Filing & Organizers </a>  
+      <br>
+       <br>
+       <a href=" http://127.0.0.1:5500/MATH.html">Math & Measuring Tools </a>  
+    
+    <br>
+       <br>
+    
+       <a href=" http://127.0.0.1:5500/ARTS.html ">Arts & Crafts</a> 
+        <br>
+       <br>
+       <a href=" http://127.0.0.1:5500/CASES.html ">Bags & Cases</a> 
+       <br>
+       <br>
+       <a href="http://127.0.0.1:5500/CLASS.html ">Classroom Essentials</a> 
+  </div>
+
+  <div class="products">
+    <div class="tabs">
+      <button class="active">Popular</button>
+      <button>Latest</button>
+      <button>Top Sales</button>
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="help.html">Help</a> |
+     <a href="Location">Location</a> |
+      <a href="Email">Email</a> |
+       <a href="Phone">Phone</a> |
+  </div>
+  © 2025 Vemenzon. All rights reserved.
+</footer>
+
+<script>
+  const products = [
+    { name: "HBV Poster Color (250ml)", price: 50, img: "https://down-ph.img.susercontent.com/file/781cc098b7e6d929b2929292870a6c46" },
+    { name: "Poster Color", price: 50, img: "https://www.htconline.in/images/thumbs/0011462_camlin-poster-colour-sr2-500ml-pink-341.jpeg" },
+    { name: "Set Poster Color", price: 50, img: "https://down-ph.img.susercontent.com/file/d4835ee9acd8d3d38431da0d4761321d" },
+    { name: "Watercolor Brush", price: 50, img: "https://tse3.mm.bing.net/th/id/OIP.GLWsYpqLAYritUNAuUZ1NQHaE2?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" },
+    { name: "Bar Clay", price: 50, img: "https://shopcentral.com.ph/img/p/1/7/3/9/3/17393-large_default.jpg" },
+    { name: "Palette", price: 50, img: "https://img.freepik.com/premium-vector/art-clean-palette-paints-isolated-white-background-vector-illustration_595345-15.jpg?w=2000" },
+    { name: "Crayons Faber-Castell", price: 50, img: "https://th.bing.com/th/id/R.44c22dd43ab4b041bf0f96a65249c657?rik=0EV9sKmssrI9vQ&riu=http%3a%2f%2fstarlight-kw.com%2fcdn%2fshop%2ffiles%2fFaber-Castell-12-Plastic-Crayons-Drawing-And-Coloring-Faber-Castell-Starlight-Kuwait.webp%3fv%3d1713270762&ehk=Wf1kGfLOZavfxWuZIncDedB15b1r2JNZ7vtbr%2b25Eio%3d&risl=&pid=ImgRaw&r=0" },
+    { name: "Chalk", price: 50, img: "https://cdn.ecommercedns.uk/files/4/214034/1/32022701/pack-of-12-coloured-chalk.png" },
+    { name: "Crayons HBV", price: 50, img: "https://lzd-img-global.slatic.net/g/p/f5a3b69c594565943b3291aabe357a2c.jpg_720x720q80.jpg_.webp" },
+    { name: "Color Pencil", price: 50, img: "https://i5.walmartimages.com/asr/d27adb09-853b-4191-b87d-5a30b851e8bb_1.e9d9a551a4321b7a4e92ff15bf283399.jpeg" },
+    { name: "Oil Pastel HBV", price: 50, img: "https://hbw.ph/wp-content/uploads/2019/12/jumbo-oil-pastel-12.jpg" },
+    { name: "Poster Color 6pcs", price: 50, img: "https://img.lazcdn.com/g/p/5864bd6ca8d8ab10bec08c4d396eddf8.png_720x720q80.png" },
+    { name: "Solid Poster Paint", price: 50, img: "https://images.ctfassets.net/f1fikihmjtrp/6nMCkGP5tB1Iy0W7PyyQUC/256220670ac4081788d72cb54b31dfcd/00082-1124-M-4ww.jpg?q=80&w=400" },
+    { name: "All Purpose Glue", price: 50, img: "https://hbw.ph/wp-content/uploads/2019/05/All-Purpose-Glue-500gms.jpg" },
+    { name: "Slime kit", price: 50, img: "https://img.ltwebstatic.com/images3_spmp/2024/10/02/e0/17278810901ab5b67ad6f2f8aae083b74bfd688865_thumbnail_900x.png" },
+    { name: "Diana Beads", price: 50, img: "https://www.nationalbookstore.com/129504-thickbox_default/arco-diana-beads-f4487-silver-arts-crafts-supplies-scrapbooking.jpg" },
+    { name: "Fuzzy Wire", price: 50, img: "https://img.lazcdn.com/g/ff/kf/S03e24bc11acb4ae1accbf424a1b18ab6A.jpg_720x720q80.jpg" },
+    { name: "Embroidery Butterfly", price: 50, img: "https://i5.walmartimages.com/asr/c8afa1ff-66ac-45ec-aa7b-0cc268b28358.9088b9eb00526cbd9e3898ce4679b746.jpeg?odnWidth=1000&odnHeight=1000&odnBg=ffffff" },
+  ];
+
+  const grid = document.getElementById('productGrid');
+
+  function loadProducts() {
+    grid.innerHTML = '';
+    products.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      card.innerHTML = `
+        <img src="${p.img}" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p class="price">₱${p.price}.00</p>
+        <div class="buttons">
+          <button class="buy-btn" onclick="addToCart('${p.name}','${p.img}',${p.price})">Buy</button>
+          <button class="heart-btn" onclick="addToFavorites('${p.name}','${p.img}',${p.price}, this)">♡</button>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  function addToCart(name, img, price) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ name, img, price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${name} added to cart!`);
+  }
+
+  function addToFavorites(name, img, price, btn) {
+    const favs = JSON.parse(localStorage.getItem('favorites')) || [];
+    favs.push({ name, img, price });
+    localStorage.setItem('favorites', JSON.stringify(favs));
+    btn.classList.add('active');
+  }
+
+  function searchProducts() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const filtered = products.filter(p => p.name.toLowerCase().includes(query));
+    grid.innerHTML = '';
+    filtered.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      card.innerHTML = `
+        <img src="${p.img}" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p class="price">₱${p.price}.00</p>
+        <div class="buttons">
+          <button class="buy-btn" onclick="addToCart('${p.name}','${p.img}',${p.price})">Buy</button>
+          <button class="heart-btn" onclick="addToFavorites('${p.name}','${p.img}',${p.price}, this)">♡</button>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  loadProducts();
+</script>
+
+</body>
+</html>

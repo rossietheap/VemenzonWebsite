@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Vemenzon</title>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Oxanium:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Oxanium', sans-serif;
+      background-color: #fff;
+      color: #000;
+      min-height: 100vh;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+      max-width: 1000px;
+      width: 100%;
+      padding: 60px 20px;
+      margin: auto;
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .contact-info h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 40px;
+      margin-bottom: 40px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+      font-size: 16px;
+    }
+
+    .info-item i {
+      font-size: 24px;
+      color: #a02621;
+      margin-right: 15px;
+      width: 30px;
+      text-align: center;
+    }
+
+    .info-item span {
+      font-family: 'Oxanium', sans-serif;
+    }
+
+    /* Right side: form box */
+    .contact-box {
+      flex: 1;
+      min-width: 320px;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 40px;
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 30px;
+      font-size: 22px;
+    }
+
+    .contact-box input,
+    .contact-box textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-bottom: 1px solid #888;
+      background: none;
+      font-family: 'Oxanium', sans-serif;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .contact-box textarea {
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .contact-box button {
+      background-color: #a02621;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 100%;
+    }
+    .loc{
+        text-decoration: none;
+        color: inherit;
+    }
+    .loc:hover{
+     text-decoration: underline;
+    }
+
+    .contact-box button:hover {
+      background-color: #7b1d19;
+    }
+
+    .contact-box p {
+      font-size: 14px;
+      color: #666;
+      margin-top: 15px;
+    }
+
+ header {
+      display: flex;
+      justify-content: space-between;
+      align-items:top;
+      padding: 15px 60px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: relative;
+     
+      background-color: #fff;
+      
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    nav ul {            
+      
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      position: relative;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+      padding: 10px;
+    }
+
+    nav ul li a:hover {
+      color: #b22222;
+    }
+
+   
+    .dropdown {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      background-color: #eedcdc;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      min-width: 230px;
+      z-index: 1000;
+
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: opacity 160ms ease, transform 160ms ease, visibility 160ms;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dropdown a {
+      padding: 10px 20px;
+      color: #111;
+      text-decoration: none;
+      font-weight: 500;
+      display: block;
+    }
+
+    .dropdown a:hover {
+      background-color: #fff0f0;
+      color: #b22222;
+    }
+
+    nav ul li:hover .dropdown,
+    nav ul li:focus-within .dropdown {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    
+    .search-container {
+      background-color: #a36b6b;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      height: 40px;
+    }
+
+    .search-container input {
+      border: none;
+      background: none;
+      outline: none;
+      padding: 5px 10px;
+      color: white;
+      font-size: 15px;
+      width: 180px;
+    }
+
+    .search-container input::placeholder {
+      color: #f5dada;
+    }
+
+    .search-container button {
+      background-color: #e7caca;
+      border: none;
+      border-radius: 12px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .search-container button:hover {
+      background-color: #f7e0e0;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+
+    </style>
+</head>
+  </style>
+
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="New folder/Screenshot 2025-10-16 134017.png" alt="Vemenzon Logo">
+        </div>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Shop By Category ▼</a>
+                    <div class="dropdown">
+                        <a href="http://127.0.0.1:5500/WRITING.html">Writing & Correction</a>
+                        <a href="http://127.0.0.1:5500/PAPERS.html">Paper & Notebooks</a>
+                        <a href="http://127.0.0.1:5500/FILING.html">Filing & Organizers</a>
+                        <a href="http://127.0.0.1:5500/MATH.html">Math & Measuring</a>
+                        <a href="http://127.0.0.1:5500/ARTS.html">Arts & Crafts</a>
+                        <a href="http://127.0.0.1:5500/CASES.html">Bags & Cases</a>
+                        <a href="http://127.0.0.1:5500/CLASS.html">Classroom Essentials</a>
+                    </div>
+                </li>
+                <li><a href="AboutUS.html">About us</a></li>
+        <li><a href="contactus.html">Contact us</a></li>
+        <li><a href="help.html">Help</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-container">
+            <input type="text" placeholder="Search for school supplies..." />
+            <button>🔍</button>
+        </div>
+
+        <div class="icons">
+            <a href="http://127.0.0.1:5500/ADD%20TO%20CART.html" title="View Cart">🛒</a>
+            <a href="http://127.0.0.1:5500/HEARTS.html" title="View Favorites">❤️</a>
+            <a href="#" title="Profile">👤</a>
+        </div>
+
+    </header>
+
+
+
+
+  <div class="contact-container">
+    <div class="contact-info">
+      <h1>CONTACT US</h1>
+
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <span>vmzbuscentre@gmail.com</span>
+      </div>
+
+      <div class="info-item">
+        <i class="fas fa-phone"></i>
+        <span>09391434776<br>09991639849</span>
+      </div>
+
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span><a class="loc" href="https://www.google.com/maps/search/Main+Floor,+GCC+Bldg.,+Guadalupe,+Makati+City/@14.5573885,121.0156474,16.25z?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D"> Main Floor, GCC Bldg., Guadalupe, Makati City </a></span>
+      </div>
+    </div>
+
+    <div class="contact-box">
+      <h2>Send us a message</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p>We’ll get back to you as soon as possible.</p>
+    </div>
+  </div>
+
+</body>
+</html>

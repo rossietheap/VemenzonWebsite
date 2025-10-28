@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop | Vemenzon</title>
+<style>
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    background-color: #fff;
+    color: #333;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background-color: #fff;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.1);
+  }
+
+  header img { height: 45px; }
+
+  nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-weight: 500;
+  }
+
+  nav a:hover { color: #d10000; }
+
+  
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .search-bar input {
+    width: 50%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px 0 0 8px;
+    font-size: 15px;
+    outline: none;
+  }
+
+  .search-bar button {
+    background-color: #b22222;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 80px;
+  }
+
+  
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .sidebar ul li {
+    padding: 8px 0;
+    cursor: pointer;
+    color: #444;
+    transition: color 0.2s;
+  }
+
+  .sidebar ul li:hover {
+    color: #b22222;
+  }
+
+  
+  .tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .tabs button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  .tabs button.active {
+    background-color: #b22222;
+    color: white;
+  }
+
+  
+  .products {
+    flex: 1;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+  }
+
+  .product-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    transition: transform 0.2s;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .product-card h3 {
+    font-size: 16px;
+    margin: 12px 0 6px;
+  }
+
+  .price {
+    color: #b22222;
+    font-weight: bold;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .buy-btn, .heart-btn {
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.2s;
+  }
+
+  .buy-btn {
+    background-color: #b22222;
+    color: white;
+  }
+
+  .buy-btn:hover { background-color: #8b1a1a; }
+
+  .heart-btn {
+    background-color: #fff;
+    border: 1px solid #b22222;
+    color: #b22222;
+  }
+
+  .heart-btn.active {
+    background-color: #b22222;
+    color: white;
+  }
+
+  
+  footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    color: #777;
+    font-size: 14px;
+    margin-top: 50px;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: #b22222;
+    margin: 0 10px;
+    font-weight: 500;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-links {
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="New folder/Screenshot 2025-10-16 134017.png" alt="Vemenzon Logo">
+  <nav>
+    <a href="http://127.0.0.1:5500/websites.html">Home</a>
+    <a href="shop.html" style="color:#d10000;">Shop</a>
+    <a href="http://127.0.0.1:5500/HEARTS.html">❤️</a>
+    <a href="http://127.0.0.1:5500/ADD%20TO%20CART.html">🛒</a>
+  </nav>
+</header>
+
+<div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Search for products...">
+  <button onclick="searchProducts()">🔍</button>
+</div>
+
+<div class="container">
+  <div class="sidebar">
+    <h2>Categories</h2>
+    <ul>
+
+       <style>
+
+         a {
+          text-decoration: underline;
+          color: #b22222;
+          }
+          </style>
+          
+        <a href="http://127.0.0.1:5500/ALL.html "> All </a> 
+          <br>
+       <br>
+        <a href="http://127.0.0.1:5500/WRITING.html "> Writing & Correction </a> 
+       <br>
+       <br>
+        <a href="http://127.0.0.1:5500/PAPERS.html "> Papers & Notebooks </a>
+        <br>
+        <br>
+      <a href=" http://127.0.0.1:5500/FILING.html "> Filing & Organizers </a>  
+      <br>
+       <br>
+       <a href=" http://127.0.0.1:5500/MATH.html">Math & Measuring Tools </a>  
+    
+      <br>
+       <br>
+    
+       <a href=" http://127.0.0.1:5500/ARTS.html ">Arts & Crafts</a> 
+        <br>
+       <br>
+       <a href=" http://127.0.0.1:5500/CASES.html ">Bags & Cases</a> 
+       <br>
+       <br>
+       <a href="http://127.0.0.1:5500/CLASS.html ">Classroom Essentials</a> 
+    </ul>
+  </div>
+
+  <div class="products">
+    <div class="tabs">
+      <button class="active">Popular</button>
+      <button>Latest</button>
+      <button>Top Sales</button>
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="help.html">Help</a> |
+     <a href="Location">Location</a> |
+      <a href="Email">Email</a> |
+       <a href="Phone">Phone</a> |
+  </div>
+  © 2025 Vemenzon. All rights reserved.
+</footer>
+
+<script>
+  const products = [
+    { name: "Scissors", price: 50, img: "https://m.media-amazon.com/images/I/71hKMPbrLbL._AC_SL1500_.jpg" },
+    { name: "Tailor Scissors", price: 50, img: "https://5.imimg.com/data5/WE/XG/XP/SELLER-20691471/golden-cloth-right-handed-tailor-scissors-1000x1000.jpg" },
+    { name: "Cutting Mat", price: 50, img: "https://tse4.mm.bing.net/th/id/OIP.EexoclvFLc9CB298I0mcfQHaFl?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" },
+    { name: "Circular Ruler", price: 50, img: "https://i5.walmartimages.com/seo/25cm-Circle-Protractor-360-Degree-Measuring-Tool-Round-Protractor-Rule-Math-Protractor-Circle-Stencil-for-Student_ce7bf504-aa15-4c1c-8f3f-3f1e59f478f2.dd2a0d7ecb6a32f94e7e023059358018.jpeg" },
+    { name: "Direction Compass", price: 50, img: "https://play-lh.googleusercontent.com/o4xa6tWy-QxTMglmMA8RZRivBknbyiPjnX0KTt9bHamW1_9ltJSf1zaLG6uJoYV2Gbh6" },
+    { name: "Protactor", price: 50, img: "https://down-ph.img.susercontent.com/file/ea03d15b697543ff0e178c9416c7374e.webp" },
+    { name: "Clear Ruler", price: 50, img: "https://m.media-amazon.com/images/I/71h1H90KVkL.jpg" },
+    { name: "Ruler Set", price: 50, img: "https://hbw.ph/wp-content/uploads/2017/10/hbw-ruler-set-12-inch.jpg" },
+    { name: "Craft Scissor", price: 50, img: "https://i5.walmartimages.com/asr/1e069a70-3ff2-4425-ae59-4e9e46a45e2b_1.1e3fc4c551007bd42cb3e50afb30f31d.jpeg" },
+    { name: "Mathematics Set", price: 50, img: "https://m.media-amazon.com/images/I/81zaNKgIjpL.SS700.jpg" },
+    { name: "Ruler Metal", price: 50, img: "https://tse3.mm.bing.net/th/id/OIP.mLVJplvyG7v3Uy2EB7YGNgHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" },
+    { name: "Utility Knife", price: 50, img: "https://lh7-us.googleusercontent.com/jbBOYMTYSRGDCGXqEsmd7vsFcu-l_BqZMHmZFzI6WP8DlHyuSyEZc9rOF7rUAsY99MRmcHdns8Rc76FM48ZkBAw_7TLAN0kG2buKhC4X4sbzWk7aVTQU0p1D6vvBdfBiBjxyEs7iLEaNF_cRSka0jB8" },
+    { name: "Beaker Glass", price: 50, img: "https://tse2.mm.bing.net/th/id/OIP.3zmVl2GtjXPa2qNL2YknQAHaHa?cb=12&w=887&h=887&rs=1&pid=ImgDetMain&o=7&rm=3" },
+    { name: "Digital Angle Ruler", price: 50, img: "https://i5.walmartimages.com/seo/Digital-Angle-Ruler-Digital-Angle-Finder-Digital-Protractor-Angle-Gauge-200mm-No-Battery_0b526113-68aa-4504-aeee-3f690cedfb64.4661d90bead26c2334da6bc9e8d58281.jpeg" },
+    { name: "Cutter Knife", price: 50, img: "https://m.media-amazon.com/images/I/71S2JYSASSL._SL1500_.jpg" },
+    { name: "T-square Ruler", price: 50, img: "https://m.media-amazon.com/images/I/619xugJVi1S.jpg" },
+    { name: "Technical Compass", price: 50, img: "https://tse2.mm.bing.net/th/id/OIP.fK3qULacNJZLJskuYACAXQHaLF?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" },
+    { name: "Folding Ruler", price: 50, img: "https://tse3.mm.bing.net/th/id/OIP.W9jThaakfRjMWEZ17xl-TAHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" },
+  ];
+
+  const grid = document.getElementById('productGrid');
+
+  function loadProducts() {
+    grid.innerHTML = '';
+    products.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      card.innerHTML = `
+        <img src="${p.img}" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p class="price">₱${p.price}.00</p>
+        <div class="buttons">
+          <button class="buy-btn" onclick="addToCart('${p.name}','${p.img}',${p.price})">Buy</button>
+          <button class="heart-btn" onclick="addToFavorites('${p.name}','${p.img}',${p.price}, this)">♡</button>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  function addToCart(name, img, price) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ name, img, price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${name} added to cart!`);
+  }
+
+  function addToFavorites(name, img, price, btn) {
+    const favs = JSON.parse(localStorage.getItem('favorites')) || [];
+    favs.push({ name, img, price });
+    localStorage.setItem('favorites', JSON.stringify(favs));
+    btn.classList.add('active');
+  }
+
+  function searchProducts() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const filtered = products.filter(p => p.name.toLowerCase().includes(query));
+    grid.innerHTML = '';
+    filtered.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      card.innerHTML = `
+        <img src="${p.img}" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p class="price">₱${p.price}.00</p>
+        <div class="buttons">
+          <button class="buy-btn" onclick="addToCart('${p.name}','${p.img}',${p.price})">Buy</button>
+          <button class="heart-btn" onclick="addToFavorites('${p.name}','${p.img}',${p.price}, this)">♡</button>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  loadProducts();
+</script>
+
+</body>
+</html>

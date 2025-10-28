@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Oxanium:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Oxanium', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .how {
+            color: rgb(163, 27, 27);
+        }
+
+        li {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: rgb(163, 27, 27);
+            font-size:40px;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .subtitle{
+            color: rgb(13, 13, 13);
+            font-size: 33px;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            margin-bottom: 70px;
+            margin-top: 40px;
+        }
+
+        .help-section {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        details {
+
+            display: inline-block;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        summary {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2em;
+            padding: 8px;
+            cursor: pointer;
+
+        }
+
+        summary:hover {
+            color: rgb(145, 19, 19);
+        }
+
+        details[open] summary {}
+
+        .content {
+            padding: 8px;
+            font-family: 'Oxanium', sans-serif;
+            font-size: 1.1em;
+            text-align: left;
+        }
+
+        .content h2 {
+            text-align: left;
+            font-family: 'Orbitron', sans-serif;
+            margin-top: 0;
+            font-size: 1.1em;
+        }
+
+        .content ul {
+            text-align: left;
+            padding-left: 20px;
+            list-style-type: none;
+        }
+
+
+        .content li {
+            text-align: left;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+        
+       header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: relative;
+      flex-wrap: wrap;
+      background-color: #fff;
+      
+      
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    nav ul {            
+      
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      position: relative;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+      padding: 10px;
+    }
+
+    nav ul li a:hover {
+      color: #b22222;
+    }
+
+   
+    .dropdown {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      background-color: #eedcdc;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      min-width: 230px;
+      z-index: 1000;
+
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: opacity 160ms ease, transform 160ms ease, visibility 160ms;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dropdown a {
+      padding: 10px 20px;
+      color: #111;
+      text-decoration: none;
+      font-weight: 500;
+      display: block;
+    }
+
+    .dropdown a:hover {
+      background-color: #fff0f0;
+      color: #b22222;
+    }
+
+    nav ul li:hover .dropdown,
+    nav ul li:focus-within .dropdown {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    
+    .search-container {
+      background-color: #a36b6b;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      height: 40px;
+    }
+
+    .search-container input {
+      border: none;
+      background: none;
+      outline: none;
+      padding: 5px 10px;
+      color: white;
+      font-size: 15px;
+      width: 180px;
+    }
+
+    .search-container input::placeholder {
+      color: #f5dada;
+    }
+
+    .search-container button {
+      background-color: #e7caca;
+      border: none;
+      border-radius: 12px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .search-container button:hover {
+      background-color: #f7e0e0;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="New folder/Screenshot 2025-10-16 134017.png" alt="Vemenzon Logo">
+        </div>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Shop By Category ▼</a>
+                    <div class="dropdown">
+                        <a href="http://127.0.0.1:5500/WRITING.html">Writing & Correction</a>
+                        <a href="http://127.0.0.1:5500/PAPERS.html">Paper & Notebooks</a>
+                        <a href="http://127.0.0.1:5500/FILING.html">Filing & Organizers</a>
+                        <a href="http://127.0.0.1:5500/MATH.html">Math & Measuring</a>
+                        <a href="http://127.0.0.1:5500/ARTS.html">Arts & Crafts</a>
+                        <a href="http://127.0.0.1:5500/CASES.html">Bags & Cases</a>
+                        <a href="http://127.0.0.1:5500/CLASS.html">Classroom Essentials</a>
+                    </div>
+                </li>
+                <li><a href="AboutUS.html">About us</a></li>
+        <li><a href="contactus.html">Contact us</a></li>
+        <li><a href="help.html">Help</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-container">
+            <input type="text" placeholder="Search for school supplies..." />
+            <button>🔍</button>
+        </div>
+
+        <div class="icons">
+            <a href="http://127.0.0.1:5500/ADD%20TO%20CART.html" title="View Cart">🛒</a>
+            <a href="http://127.0.0.1:5500/HEARTS.html" title="View Favorites">❤️</a>
+            <a href="#" title="Profile">👤</a>
+        </div>
+
+    </header>
+
+
+
+
+
+
+    <h1>Help Page</h1>
+    <h2 class="subtitle">Need Help?</h2>
+
+    <div class="help-section">
+        <details>
+            <summary>1. Getting Started</summary>
+            <div class="content">
+                <p>Don't know how to start?</p>
+                <p>Step 1: Sign up or Sign in your account. Just click the “Sign Up” button on the home page or the User
+                    button on the top right of the home page.</p>
+                <p>Step 2: Set up your Gcash Account or PayMaya. Make sure that you put in exact information and number
+                    to avoid payment and account errors.</p>
+                <p>Sign Up</p>
+                <p>Step 3: In this stage, you can purchase any items that you want or need either for academics,
+                    professional, or personal use.</p>
+            </div>
+        </details>
+    </div>
+
+    <div class="help-section">
+        <details>
+            <summary>2. Account Setting</summary>
+            <div class="content1">
+                <h2 class="how">To Update Your Profile</h2>
+                <ul class="content">
+                    <li>Click your profile icon on the top right.</li>
+                    <li>Select Account Settings.</li>
+                    <li>Edit your name, email, or password.</li>
+                    <li>Click Save Changes.</li>
+                </ul>
+                <h2 class="how">To Change Password</h2>
+                <ul class="content">
+                    <li>Go to Account Settings → Security.</li>
+                    <li>Click Change Password.</li>
+                    <li>Enter your old password and new one.</li>
+                    <li>Click Save.</li>
+                </ul>
+                <h2 class="how">To Log Out</h2>
+                <ul class="content">
+                    <li>Click your profile icon.</li>
+                    <li>Select Logout.</li>
+                    <li>You'll be signed out of your account.</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+    <div class="help-section">
+        <details>
+            <summary>3. Guide</summary>
+            <div class="content1">
+                <h2 class="how">How to Order</h2>
+                <ul class="content">
+                    <li>Browse items from the Shop page.</li>
+                    <li>Click “Add to Cart” on the items you want.</li>
+                    <li>Go to your Cart and click “Checkout.”</li>
+                    <li>Enter your delivery details and payment method.</li>
+                    <li>Click “Place Order” to confirm.</li>
+                </ul>
+                <h2 class="how">How to Track Orders</h2>
+                <ul class="content">
+                    <li>Go to My Orders under your account.</li>
+                    <li>Click the order you want to track.</li>
+                    <li>View the delivery status and tracking details.</li>
+                </ul>
+                <h2 class="how">How to Contact Support</h2>
+                <ul class="content">
+                    <li>Go to the Help section or scroll to the page bottom.</li>
+                    <li>Click “Contact Us.”</li>
+                    <li>Choose Email or Chat Support to reach our team.</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+    <div class="help-section">
+        <details>
+            <summary>4. Purchasing and Payments</summary>
+            <div class="content">
+                <p>Don’t know how to buy and order?</p>
+                <p>Step 1: To order online, you have to set up your Gcash account or PayMaya or both of them for
+                    convenience.</p>
+                <p>Step 2: Make sure to fill out the exact information needed when setting up your account.</p>
+                <p>Step 3: Before purchasing a product, make sure your Gcash and PayMaya has more than enough money to
+                    buy the product.</p>
+            </div>
+        </details>
+    </div>
+</body>
+
+</html>

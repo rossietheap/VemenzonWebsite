@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Vemenzon</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Oxanium:wght@300;400;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    body {
+      background: #ffffff;
+      
+      height: 100vh;
+    }
+
+    .about-section {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .about-section h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 50px;
+      margin-bottom: 60px;
+    }
+
+
+
+
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 974px;
+      height: 542px;
+      margin: auto;
+    }
+
+    .shape1 {
+      margin: 0 auto;
+      width: 974px;
+      height: 542px;
+      border: 2px solid;
+      background: #ffffff;
+      border-radius: 300px 300px 300px 300px;
+    }
+
+    .shape2 {
+      width: 911px;
+      height: 502px;
+      background: transparent;
+      border: 2px solid;
+     
+      border-radius: 300px 300px 300px 300px;
+      position: absolute;
+     
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    .shape3 {
+      width: 867px;
+      height: 458px;
+      border: 2px solid;
+      border-radius: 300px 300px 300px 300px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+
+    }
+
+    p {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70%;
+      text-align: center;
+      font-family: 'Oxanium', sans-serif;
+      font-size: 19px;
+      color: #f8f8f8;
+      z-index: 4;
+    }
+
+    
+ header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: relative;
+      flex-wrap: wrap;
+      background-color: #fff;
+      z-index: 999;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    nav ul {            
+      
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      position: relative;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+      padding: 10px;
+    }
+
+    nav ul li a:hover {
+      color: #b22222;
+    }
+
+   
+    .dropdown {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      background-color: #eedcdc;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      min-width: 230px;
+      z-index: 1000;
+
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: opacity 160ms ease, transform 160ms ease, visibility 160ms;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dropdown a {
+      padding: 10px 20px;
+      color: #111;
+      text-decoration: none;
+      font-weight: 500;
+      display: block;
+    }
+
+    .dropdown a:hover {
+      background-color: #fff0f0;
+      color: #b22222;
+    }
+
+    nav ul li:hover .dropdown,
+    nav ul li:focus-within .dropdown {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    
+    .search-container {
+      background-color: #a36b6b;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      height: 40px;
+    }
+
+    .search-container input {
+      border: none;
+      background: none;
+      outline: none;
+      padding: 5px 10px;
+      color: white;
+      font-size: 15px;
+      width: 180px;
+    }
+
+    .search-container input::placeholder {
+      color: #f5dada;
+    }
+
+    .search-container button {
+      background-color: #e7caca;
+      border: none;
+      border-radius: 12px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .search-container button:hover {
+      background-color: #f7e0e0;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+
+<body>
+
+   <header>
+        <div class="logo">
+            <img src="New folder/Screenshot 2025-10-16 134017.png" alt="Vemenzon Logo">
+        </div>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Shop By Category ▼</a>
+                    <div class="dropdown">
+                        <a href="http://127.0.0.1:5500/WRITING.html">Writing & Correction</a>
+                        <a href="http://127.0.0.1:5500/PAPERS.html">Paper & Notebooks</a>
+                        <a href="http://127.0.0.1:5500/FILING.html">Filing & Organizers</a>
+                        <a href="http://127.0.0.1:5500/MATH.html">Math & Measuring</a>
+                        <a href="http://127.0.0.1:5500/ARTS.html">Arts & Crafts</a>
+                        <a href="http://127.0.0.1:5500/CASES.html">Bags & Cases</a>
+                        <a href="http://127.0.0.1:5500/CLASS.html">Classroom Essentials</a>
+                    </div>
+                </li>
+                <li><a href="AboutUS.html">About us</a></li>
+        <li><a href="contactus.html">Contact us</a></li>
+        <li><a href="help.html">Help</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-container">
+            <input type="text" placeholder="Search for school supplies..." />
+            <button>🔍</button>
+        </div>
+
+        <div class="icons">
+            <a href="http://127.0.0.1:5500/ADD%20TO%20CART.html" title="View Cart">🛒</a>
+            <a href="http://127.0.0.1:5500/HEARTS.html" title="View Favorites">❤️</a>
+            <a href="#" title="Profile">👤</a>
+        </div>
+
+    </header>
+
+  <section class="about-section">
+    <h1>ABOUT</h1>
+
+    <div class="container">
+      <div class="shape1"></div>
+      <div class="shape2"></div>
+      <div class="shape3">
+        <img src="Rectangle 16.png" alt="Placeholder Image">
+        <p>At Vemenzon we’re all about supporting students, families, and local schools by making it
+          easy to find the school supplies you need right in your own community.
+          Whether you're a parent preparing for back-to-school, a teacher stocking your classroom, or a student looking
+          for essentials, we've got you covered. We partner with local suppliers and stores to offer affordable,
+          high-quality school supplies that meet the needs of every grade level.</p>
+      </div>
+
+    </div>
+
+
+
+  </section>
+
+</body>
+
+</html>

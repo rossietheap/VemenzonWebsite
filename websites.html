@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vemenzon | School Supplies Store</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #333;
+    }
+
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: relative;
+      flex-wrap: wrap;
+      background-color: #fff;
+      z-index: 999;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    nav ul {            
+      
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      position: relative;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+      padding: 10px;
+    }
+
+    nav ul li a:hover {
+      color: #b22222;
+    }
+
+   
+    .dropdown {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      background-color: #eedcdc;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      min-width: 230px;
+      z-index: 1000;
+
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: opacity 160ms ease, transform 160ms ease, visibility 160ms;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dropdown a {
+      padding: 10px 20px;
+      color: #111;
+      text-decoration: none;
+      font-weight: 500;
+      display: block;
+    }
+
+    .dropdown a:hover {
+      background-color: #fff0f0;
+      color: #b22222;
+    }
+
+    nav ul li:hover .dropdown,
+    nav ul li:focus-within .dropdown {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    
+    .search-container {
+      background-color: #a36b6b;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      height: 40px;
+    }
+
+    .search-container input {
+      border: none;
+      background: none;
+      outline: none;
+      padding: 5px 10px;
+      color: white;
+      font-size: 15px;
+      width: 180px;
+    }
+
+    .search-container input::placeholder {
+      color: #f5dada;
+    }
+
+    .search-container button {
+      background-color: #e7caca;
+      border: none;
+      border-radius: 12px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .search-container button:hover {
+      background-color: #f7e0e0;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+   
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 60px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      max-width: 550px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      line-height: 1.4;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 20px;
+      color: #111;
+    }
+
+    .hero-text p {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .hero-text button {
+      background-color: #b22222;
+      color: #fff;
+      border: none;
+      padding: 12px 35px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .hero-text button:hover {
+      background-color: #8b1a1a;
+    }
+
+    .below-signup {
+      width: 100%;
+      max-width: 700px;
+      margin-top: 30px;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .hero img {
+      width: 480px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    
+    .recommendations {
+      padding: 60px 60px;
+      background-color: #fff;
+    }
+
+    .recommendations h2 {
+      font-size: 1.5rem;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .recommend-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: flex-start;
+    }
+
+    .recommend-item {
+      width: 180px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background-color: #fff;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+      padding: 15px;
+      position: relative;
+    }
+
+    .recommend-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .recommend-item img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .recommend-item h3 {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .recommend-item p {
+      color: #b22222;
+      font-weight: 600;
+      margin: 5px 0;
+    }
+
+    .buy-btn {
+      background-color: #b22222;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 15px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: background-color 0.2s ease;
+    }
+
+    .buy-btn:hover {
+      background-color: #8b1a1a;
+    }
+
+    
+    .heart-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 22px;
+      background: #fff;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .heart-btn.active {
+      background-color: #ffc0cb;
+      color: red;
+    }
+
+
+    .products {
+      padding: 80px 60px;
+      text-align: center;
+    }
+
+    .products h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .product {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .product h3 {
+      font-size: 18px;
+      margin: 10px 0 5px;
+    }
+
+    .product p {
+      color: #b22222;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+      margin-top: 80px;
+    }
+  </style>
+</head>
+
+<body>
+  
+  <header>
+    <div class="logo">
+      <img src="New folder/Screenshot 2025-10-16 134017.png" alt="Vemenzon Logo">
+    </div>
+    
+    <nav>
+      <ul>
+        <li>
+          <a href="#">Shop By Category ▼</a>
+          <div class="dropdown">
+            <a href="http://127.0.0.1:5500/WRITING.html">Writing & Correction</a>
+            <a href="http://127.0.0.1:5500/PAPERS.html">Paper & Notebooks</a>
+            <a href="http://127.0.0.1:5500/FILING.html">Filing & Organizers</a>
+            <a href="http://127.0.0.1:5500/MATH.html">Math & Measuring</a>
+            <a href="http://127.0.0.1:5500/ARTS.html">Arts & Crafts</a>
+            <a href="http://127.0.0.1:5500/CASES.html">Bags & Cases</a>
+            <a href="http://127.0.0.1:5500/CLASS.html">Classroom Essentials</a>
+          </div>
+        </li>
+        <li><a href="AboutUS.html">About us</a></li>
+        <li><a href="contactus.html">Contact us</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+    </nav>
+
+    <div class="search-container">
+      <input type="text" placeholder="Search for school supplies..." />
+      <button>🔍</button>
+    </div>
+
+   <div class="icons">
+  <a href="http://127.0.0.1:5500/ADD%20TO%20CART.html" title="View Cart">🛒</a>
+  <a href="http://127.0.0.1:5500/HEARTS.html" title="View Favorites">❤️</a>
+  <a href="#" title="Profile">👤</a>
+</div>
+
+  </header>
+
+  
+  <section class="hero">
+    <div class="hero-text">
+      <h1>YOUR ONE STOP SHOP FOR ALL THINGS SCHOOL</h1>
+      <p>Our school supplies shop is here to make learning brighter and easier.
+      We bring you a wide selection of quality essentials from writing tools and notebooks to backpacks, art sets, and classroom must-haves.</p>
+      <button><a href="http://127.0.0.1:5500/login.html" class="Sign up " > Sign up </a>
+      
+      </button> 
+
+      <style> .signup-link {
+  color: #d10000; /* 🔴 Red color */
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+  color: #a00000; /* Darker red when hovered */
+}
+</style>
+        
+      
+      <img src="https://st4.depositphotos.com/12902820/27934/i/600/depositphotos_279349104-stock-photo-school-supplies-double-border-banner.jpg" alt="School Supplies Banner" class="below-signup">
+    </div>
+    <img src="New folder/Screenshot 2025-10-16 134326.png" alt="School Supplies">
+  </section>
+
+  
+  <section class="recommendations">
+    <h2>RECOMMENDATIONS</h2>
+    <div class="recommend-grid">
+      <div class="recommend-item" data-name="Erasers (Jar)" data-price="50" data-img="New folder/552029781_1467898444288220_7978218870818094693_n.jpg">
+        <div class="heart-btn">🤍</div>
+        <img src="New folder/552029781_1467898444288220_7978218870818094693_n.jpg" alt="Erasers (Jar)">
+        <h3>Erasers (Jar)</h3>
+        <p>₱50.00</p>
+        <button class="buy-btn">🛒 Buy ₱50.00</button>
+      </div>
+
+      <div class="recommend-item" data-name="Protractor" data-price="50" data-img="New folder/Screenshot 2025-10-16 145718.png">
+        <div class="heart-btn">🤍</div>
+        <img src="New folder/Screenshot 2025-10-16 145718.png" alt="Protractor">
+        <h3>Protractor</h3>
+        <p>₱50.00</p>
+        <button class="buy-btn">🛒 Buy ₱50.00</button>
+      </div>
+
+
+       <div class="recommend-item" data-name=" Utility knives" data-price="50" data-img="New folder/Screenshot 2025-10-16 145718.png">
+        <div class="heart-btn">🤍</div>
+        <img src="https://lh7-us.googleusercontent.com/jbBOYMTYSRGDCGXqEsmd7vsFcu-l_BqZMHmZFzI6WP8DlHyuSyEZc9rOF7rUAsY99MRmcHdns8Rc76FM48ZkBAw_7TLAN0kG2buKhC4X4sbzWk7aVTQU0p1D6vvBdfBiBjxyEs7iLEaNF_cRSka0jB8" alt="Protractor">
+        <h3>Utility knives</h3>
+        <p>₱50.00</p>
+        <button class="buy-btn">🛒 Buy ₱50.00</button>
+      </div>
+
+      
+
+      <div class="recommend-item" data-name="Compass (Metal)" data-price="50" data-img="New folder/OIP (4).webp">
+        <div class="heart-btn">🤍</div>
+        <img src="New folder/OIP (4).webp" alt="Compass (Metal)">
+        <h3>Compass (Metal)</h3>
+        <p>₱50.00</p>
+        <button class="buy-btn">🛒 Buy ₱50.00</button>
+      </div>
+
+      <div class="recommend-item" data-name="Craft Scissors" data-price="50" data-img="New folder/551811633_776393051775319_4800362029149779129_n.jpg">
+        <div class="heart-btn">🤍</div>
+        <img src="New folder/551811633_776393051775319_4800362029149779129_n.jpg" alt="Craft Scissors">
+        <h3>Craft Scissors</h3>
+        <p>₱50.00</p>
+        <button class="buy-btn">🛒 Buy ₱50.00</button>
+      </div>
+
+      <div class="recommend-item" data-name="Gel Pen HBW" data-price="50" data-img="https://www.liveabout.com/thmb/-CfmOizoQ5U9Hv2quWCMio5Lun4=/2121x1414/filters:fill(auto,1)/GettyImages-678848080-5a81d0d63de42300373e1c0b.jpg">
+        <div class="heart-btn">🤍</div>
+        <img src="https://www.liveabout.com/thmb/-CfmOizoQ5U9Hv2quWCMio5Lun4=/2121x1414/filters:fill(auto,1)/GettyImages-678848080-5a81d0d63de42300373e1c0b.jpg" alt="Gel Pen HBW">
+        <h3>Gel Pen HBW</h3>
+        <p>₱50.00</p>
+        <button class="buy-btn">🛒 Buy ₱50.00</button>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="products">
+    <h2>SHOP BY CATEGORIES</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="New folder/Screenshot 2025-10-16 152729.png" alt="Writing and Correction">
+        <h3>Writing and Correction</h3>
+         <a href="http://127.0.0.1:5500/WRITING.html"> SHOP NOW! </a>
+      </div>
+      <div class="product">
+        <img src="New folder/Screenshot 2025-10-16 153056.png" alt="Papers and Notebooks">
+        <h3>Papers and Notebooks</h3>
+         <a href="http://127.0.0.1:5500/WRITING.html "> SHOP NOW! </a>
+      </div>
+      <div class="product">
+        <img src="New folder/Screenshot 2025-10-16 153343.png" alt="Filing and Organizer">
+        <h3>Filing and Organizer</h3>
+         <a href="http://127.0.0.1:5500/WRITING.html "> SHOP NOW! </a>
+      </div>
+      <div class="product">
+        <img src="New folder/Screenshot 2025-10-16 153535.png" alt="Math and Measuring tools">
+        <h3>Math and Measuring tools</h3>
+        <a href="http://127.0.0.1:5500/WRITING.html"> SHOP NOW! </a>
+      </div>
+      <div class="product">
+        <img src="New folder/Screenshot 2025-10-16 155341.png" alt="Arts and Crafts"> 
+        <h3>Arts and Crafts</h3>
+         <a href="http://127.0.0.1:5500/WRITING.html "> SHOP NOW! </a>
+      </div>
+      <div class="product">
+        <img src="New folder/Screenshot 2025-10-16 161115.png" alt="Bags and Cases">
+        <h3>Bags and Cases </h3>
+         <a href="http://127.0.0.1:5500/WRITING.html"> SHOP NOW! </a>
+      </div>
+      <div class="product">
+        <img src="New folder/Screenshot 2025-10-16 161226.png" alt="Classroom Essentials">
+        <h3>Classroom Essentials</h3>
+         <a href="http://127.0.0.1:5500/WRITING.html"> SHOP NOW! </a>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer>
+   <div class="footer-links">
+    <a href="http://127.0.0.1:5500/AboutUS.html">About</a> |
+    <a href="http://127.0.0.1:5500/contactus.html">Contact</a> |
+    <a href="http://127.0.0.1:5500/help.html">Help</a> |
+     <a href="Location">Location</a> |
+      <a href="Email">Email</a> |
+       <a href="Phone">Phone</a> |
+  </div>
+  © 2025 Vemenzon. All rights reserved.
+  </footer>
+
+  <style> footer {
+  text-align: center;
+  padding: 25px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  color: #777;
+  font-size: 14px;
+  margin-top: 50px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #b22222;
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+</style>
+
+  <script>
+    
+    document.querySelectorAll('.heart-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.recommend-item');
+        const product = {
+          name: item.dataset.name,
+          price: item.dataset.price,
+          img: item.dataset.img
+        };
+
+        btn.classList.toggle('active');
+        btn.textContent =         btn.textContent = btn.classList.contains('active') ? '❤️' : '🤍';
+
+        
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+        if (btn.classList.contains('active')) {
+          favorites.push(product);
+          alert(product.name + " added to your cart!");
+        } else {
+          favorites = favorites.filter(f => f.name !== product.name);
+          alert(product.name + " removed from your cart!");
+        }
+
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+      });
+    });
+
+    window.addEventListener('load', () => {
+      const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+      document.querySelectorAll('.recommend-item').forEach(item => {
+        const heart = item.querySelector('.heart-btn');
+        if (favorites.some(f => f.name === item.dataset.name)) {
+          heart.classList.add('active');
+          heart.textContent = '❤️';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop | Vemenzon</title>
+<style>
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    background-color: #fff;
+    color: #333;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background-color: #fff;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.1);
+  }
+
+  header img { height: 45px; }
+
+  nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-weight: 500;
+  }
+
+  nav a:hover { color: #d10000; }
+
+  
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .search-bar input {
+    width: 50%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px 0 0 8px;
+    font-size: 15px;
+    outline: none;
+  }
+
+  .search-bar button {
+    background-color: #b22222;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 80px;
+  }
+
+  
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .sidebar ul li {
+    padding: 8px 0;
+    cursor: pointer;
+    color: #444;
+    transition: color 0.2s;
+  }
+
+  .sidebar ul li:hover {
+    color: #b22222;
+  }
+
+  
+  .tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .tabs button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  .tabs button.active {
+    background-color: #b22222;
+    color: white;
+  }
+
+  
+  .products {
+    flex: 1;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+  }
+
+  .product-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    transition: transform 0.2s;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .product-card h3 {
+    font-size: 16px;
+    margin: 12px 0 6px;
+  }
+
+  .price {
+    color: #b22222;
+    font-weight: bold;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .buy-btn, .heart-btn {
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.2s;
+  }
+
+  .buy-btn {
+    background-color: #b22222;
+    color: white;
+  }
+
+  .buy-btn:hover { background-color: #8b1a1a; }
+
+  .heart-btn {
+    background-color: #fff;
+    border: 1px solid #b22222;
+    color: #b22222;
+  }
+
+  .heart-btn.active {
+    background-color: #b22222;
+    color: white;
+  }
+
+  
+  footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    color: #777;
+    font-size: 14px;
+    margin-top: 50px;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: #b22222;
+    margin: 0 10px;
+    font-weight: 500;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-links {
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="New folder/Screenshot 2025-10-16 134017.png" alt="Vemenzon Logo">
+  <nav>
+    <a href="http://127.0.0.1:5500/websites.html">Home</a>
+    <a href="shop.html" style="color:#d10000;">Shop</a>
+    <a href="http://127.0.0.1:5500/HEARTS.html">❤️</a>
+    <a href="http://127.0.0.1:5500/ADD%20TO%20CART.html">🛒</a>
+  </nav>
+</header>
+
+<div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Search for products...">
+  <button onclick="searchProducts()">🔍</button>
+</div>
+
+<div class="container">
+  <div class="sidebar">
+    <h2>Categories</h2>
+    <ul>
+       <style>
+
+         a {
+          text-decoration: underline;
+          color: #b22222;
+          }
+          </style>
+
+
+      <a href="http://127.0.0.1:5500/ALL.html "> All </a> 
+          <br>
+       <br>
+        <a href="http://127.0.0.1:5500/WRITING.html "> Writing & Correction </a> 
+       <br>
+       <br>
+        <a href="http://127.0.0.1:5500/PAPERS.html "> Papers & Notebooks </a>
+        <br>
+        <br>
+      <a href=" http://127.0.0.1:5500/FILING.html "> Filing & Organizers </a>  
+      <br>
+       <br>
+       <a href=" http://127.0.0.1:5500/MATH.html">Math & Measuring Tools </a>  
+    
+    <br>
+       <br>
+    
+       <a href=" http://127.0.0.1:5500/ARTS.html ">Arts & Crafts</a> 
+        <br>
+       <br>
+       <a href=" http://127.0.0.1:5500/CASES.html ">Bags & Cases</a> 
+       <br>
+       <br>
+       <a href="http://127.0.0.1:5500/CLASS.html ">Classroom Essentials</a> 
+    </ul>
+  </div>
+
+  <div class="products">
+    <div class="tabs">
+      <button class="active">Popular</button>
+      <button>Latest</button>
+      <button>Top Sales</button>
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="help.html">Help</a> |
+     <a href="Location">Location</a> |
+      <a href="Email">Email</a> |
+       <a href="Phone">Phone</a> |
+  </div>
+  © 2025 Vemenzon. All rights reserved.
+</footer>
+
+<script>
+  const products = [
+    { name: "Pencil Case (Cars)", price: 50, img: "https://n1.sdlcdn.com/imgs/i/s/8/Red-Car-Pencil-Box-SDL373084876-1-f589b.jpg" },
+    { name: "Pencil Case (Mickey Mouse)", price: 50, img: "https://joyful.co.in/wp-content/uploads/2023/06/Mickey.png" },
+    { name: "Pencil Case (Frozen)", price: 50, img: "https://i5.walmartimages.com/seo/Disney-Frozen-Pencil-Box-Powerful-Beauty-Princess-Elsa-Tin-Pencil-Box_a271b07d-0aee-4258-bbea-9c46c81f522b.01146a09aa51eaae589f5016c28bb59c.jpeg" },
+    { name: "Pencil Case (Toy Story)", price: 50, img: "https://down-sg.img.susercontent.com/file/sg-11134207-7rbk0-lkqg7wcfphg569" },
+    { name: "Pencil Case (LightningMcQueen)", price: 50, img: "https://tse2.mm.bing.net/th/id/OIP.0e6w2uhXnpR9UzDxlf36dgHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" },
+    { name: "Pencil Case (MCKY)", price: 50, img: "https://www.schooldepot.co.nz/cdn/shop/products/Tin-Pencil-Box-Mickey-Mouse.jpg?v=1505527768&width=1946" },
+    { name: "Bag Fullprint", price: 50, img: "https://www.nationalbookstore.com/148881-home_default/backpack-full-print-14-inches-light-space-and-rocket-school-bags.jpg" },
+    { name: "Bag Geometric", price: 50, img: "https://www.nationalbookstore.com/148897-home_default/backpack-full-print-16-inches-geometric-school-bags.jpg" },
+    { name: "Giftbag Christmas", price: 50, img: "https://tse3.mm.bing.net/th/id/OIP.tmGvH4-z-_EE-4tntSwqZgHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" },
+    { name: "Giftbag Snowflakes", price: 50, img: "https://tse1.mm.bing.net/th/id/OIP.NlKylmn2s_t4fCYLNqCFtgHaHa?cb=12&w=1470&h=1470&rs=1&pid=ImgDetMain&o=7&rm=3" },
+    { name: "Shoulder Pouch", price: 50, img: "https://th.bing.com/th/id/R.83a4769c3e798054db704cc0b47c5db6?rik=i6AaXMPUrnC1CA&riu=http%3a%2f%2fwww.allfashionbags.com%2fwp-content%2fuploads%2f2017%2f04%2fGirls-School-Shoulder-Bags.jpg&ehk=8P4VCunfGYSmzAwD%2fT3OFtG2SVS2nGBCc8pS6uMB4DQ%3d&risl=&pid=ImgRaw&r=0" },
+    { name: "Pencil Case (Lightblue Frozen)", price: 50, img: "https://i5.walmartimages.com/asr/a271b07d-0aee-4258-bbea-9c46c81f522b.01146a09aa51eaae589f5016c28bb59c.jpeg" },
+    { name: "Pencil Case (Sofia the first)", price: 50, img: "https://tse3.mm.bing.net/th/id/OIP.pdbPH2Dzbc_kJwlihtabowHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" },
+    { name: "Comic Giftbag", price: 50, img: "https://tse3.mm.bing.net/th/id/OIP.j9ViqBfy48RPjXzXBDjVOAHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" },
+    { name: "Pencil Case (Toy Story)", price: 50, img: "https://i5.walmartimages.com/seo/Toy-Story-Big-Capacity-Pencil-Case-Large-Pencil-Pouch-Pen-Box-Bag-Pencil-Cases-Holder-Organizer-Back-School-Supplies-Kids-Girls-Boys-Student-Gifts_f39d4f09-f9a0-47e4-a397-060df741b883.f96872131317ce2b709640852d8d992b.jpeg" },
+    { name: "HBV Pouch", price: 50, img: "https://i5.walmartimages.com/seo/3-Ring-Binder-Pencil-Pouchs-Zippered-Pouch-Double-Pocket-Clear-Window-Classroom-bulk-Box-Case-Storing-School-Students-Teacher-Supplies_e3bc7199-b262-4834-863b-59391713774b.ab11ac048884b24023364b20e2ddccd2.jpeg" },
+    { name: "Pouch Bird", price: 50, img: "https://www.nationalbookstore.com/68102-large_default/moku-pouch-pc-holo-b-1701-blue-monster.jpg" },
+    { name: "Pouch Diamond", price: 50, img: "https://www.nationalbookstore.com/68123-home_default/moku-pencil-case-pc-monster-hp-1701-pink-monster.jpg" },
+  ];
+
+  const grid = document.getElementById('productGrid');
+
+  function loadProducts() {
+    grid.innerHTML = '';
+    products.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      card.innerHTML = `
+        <img src="${p.img}" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p class="price">₱${p.price}.00</p>
+        <div class="buttons">
+          <button class="buy-btn" onclick="addToCart('${p.name}','${p.img}',${p.price})">Buy</button>
+          <button class="heart-btn" onclick="addToFavorites('${p.name}','${p.img}',${p.price}, this)">♡</button>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  function addToCart(name, img, price) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ name, img, price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${name} added to cart!`);
+  }
+
+  function addToFavorites(name, img, price, btn) {
+    const favs = JSON.parse(localStorage.getItem('favorites')) || [];
+    favs.push({ name, img, price });
+    localStorage.setItem('favorites', JSON.stringify(favs));
+    btn.classList.add('active');
+  }
+
+  function searchProducts() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const filtered = products.filter(p => p.name.toLowerCase().includes(query));
+    grid.innerHTML = '';
+    filtered.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      card.innerHTML = `
+        <img src="${p.img}" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p class="price">₱${p.price}.00</p>
+        <div class="buttons">
+          <button class="buy-btn" onclick="addToCart('${p.name}','${p.img}',${p.price})">Buy</button>
+          <button class="heart-btn" onclick="addToFavorites('${p.name}','${p.img}',${p.price}, this)">♡</button>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  loadProducts();
+</script>
+
+</body>
+</html>

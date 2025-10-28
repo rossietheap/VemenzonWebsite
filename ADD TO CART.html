@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart | Vemenzon</title>
+<style>
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background-color: white;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.1);
+  }
+
+  header img { height: 45px; }
+
+  nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-weight: 500;
+  }
+
+  nav a:hover { color: #d10000; }
+
+  h1 {
+    text-align: center;
+    font-size: 32px;
+    margin: 50px 0 30px;
+  }
+
+  .cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .cart-item {
+    display: flex;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 80%;
+    max-width: 900px;
+    transition: transform 0.2s ease;
+  }
+
+  .cart-item:hover { transform: translateY(-3px); }
+
+  .cart-item img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .details {
+    padding: 30px;
+    flex: 1;
+  }
+
+  .details h2 { margin: 0 0 10px; font-size: 22px; }
+
+  .price {
+    color: #d10000;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .remove-btn {
+    border: none;
+    padding: 10px 20px;
+    background-color: #d10000;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+
+  .remove-btn:hover {
+    background-color: #a00000;
+  }
+
+  .empty {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+    margin-top: 80px;
+  }
+
+  /* --- BUY SECTION --- */
+  .buy-section {
+    text-align: center;
+    margin: 40px 0 60px;
+  }
+
+  .total {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  .buy-btn {
+    background-color: #b22222;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 35px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .buy-btn:hover {
+    background-color: #8b1a1a;
+  }
+
+  footer {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    border-top: 1px solid #eee;
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <img src="New folder/Screenshot 2025-10-16 134017.png" alt="Vemenzon Logo">
+  <nav>
+    <a href="http://127.0.0.1:5500/websites.html">Home</a>
+    <a href="http://127.0.0.1:5500/HEARTS.html">Shop</a>
+    <a href="http://127.0.0.1:5500/HEARTS.html">Favorites</a>
+    <a href="http://127.0.0.1:5500/ADD%20TO%20CART.html" style="color:#d10000;">Cart</a>
+  </nav>
+</header>
+
+<h1>🛒 Your Cart</h1>
+
+<div id="cartList" class="cart-container"></div>
+
+<!-- ✅ BUY SECTION -->
+<div class="buy-section" id="buySection" style="display:none;">
+  <p class="total" id="totalPrice">Total: ₱0.00</p>
+  <button class="buy-btn" onclick="buyNow()">Buy</button>
+</div>
+
+<footer>
+  © 2025 Vemenzon. All rights reserved.
+</footer>
+
+<script>
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const list = document.getElementById('cartList');
+  const buySection = document.getElementById('buySection');
+  const totalPriceDisplay = document.getElementById('totalPrice');
+
+  if (cart.length === 0) {
+    list.innerHTML = "<p class='empty'>Your cart is empty.</p>";
+  } else {
+    let total = 0;
+
+    cart.forEach((item, index) => {
+      const div = document.createElement('div');
+      div.classList.add('cart-item');
+      div.innerHTML = `
+        <img src="${item.img}" alt="${item.name}">
+        <div class="details">
+          <h2>${item.name}</h2>
+          <p class="price">₱${item.price}.00</p>
+          <p>Quantity: 1</p>
+          <p>14 stocks available</p>
+          <button class="remove-btn">Remove</button>
+        </div>
+      `;
+
+      total += Number(item.price);
+
+      div.querySelector('.remove-btn').addEventListener('click', () => {
+        cart.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        div.remove();
+        location.reload(); // Refresh to update total and Buy button
+      });
+
+      list.appendChild(div);
+    });
+
+    // Show total and buy button
+    totalPriceDisplay.textContent = `Total: ₱${total}.00`;
+    buySection.style.display = "block";
+  }
+
+  function buyNow() {
+    alert("🎉 Thank you for your purchase!");
+    localStorage.removeItem('cart');
+    window.location.href = "index.html"; // Go back to home
+  }
+</script>
+
+</body>
+</html>
