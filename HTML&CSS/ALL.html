@@ -4,8 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shop | Vemenzon</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Oxanium:wght@300;400;600&display=swap" rel="stylesheet">
+  
+ 
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 <style>
-  * { box-sizing: border-box; }
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Oxanium', sans-serif;
+    }
 
   body {
     font-family: "Poppins", sans-serif;
@@ -15,26 +25,167 @@
   }
 
   header {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px 80px;
-    background-color: #fff;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.1);
+    justify-content: space-between;
+    padding: 30px 60px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
   }
 
-  header img { height: 45px; }
+  .logo {
+    display: flex;
+    justify-content: baseline;
+  }
 
-  nav a {
+  h1 {
+    margin-left: 15px;
+    margin-top: 16px;
+    font-size: 25px;
+  }
+
+  h1 a {
     text-decoration: none;
-    color: #333;
-    margin: 0 15px;
-    font-weight: 500;
+    color: black;
   }
 
-  nav a:hover { color: #d10000; }
+  .logo img {
+    margin-left: 5px;
+    height: 60px;
+  }
 
-  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  nav ul li {
+    position: relative;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.2s ease;
+  }
+
+  nav ul li a:hover {
+    color: #b22222;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    min-width: 220px;
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+  }
+
+  .dropdown a {
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    transition: background 0.2s;
+  }
+
+  .dropdown a:hover {
+    background-color: #f9f9f9;
+    color: #b22222;
+  }
+
+  nav ul li:hover > .dropdown,
+  nav ul li .dropdown:hover {
+    display: flex;
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    background-color: #b22222;
+    border-radius: 50px;
+    padding: 5px 10px;
+    height: 40px;
+  }
+
+  .search-container input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    padding: 5px 10px;
+    width: 180px;
+    font-size: 15px;
+  }
+
+  .search-container input::placeholder {
+    color: #f8dcdc;
+  }
+
+  .search-container button {
+    background: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .search-container button:hover {
+    background-color: #f2f2f2;
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 26px;
+  }
+
+  .icons a {
+    color: #222;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .icons a:hover {
+    color: #b22222;
+  }
+
+  @media (max-width: 900px) {
+    header {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .search-container {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+
   .search-bar {
     display: flex;
     justify-content: center;
@@ -65,7 +216,6 @@
     padding: 40px 80px;
   }
 
-  
   .sidebar {
     width: 200px;
   }
@@ -91,7 +241,6 @@
     color: #b22222;
   }
 
-  
   .tabs {
     display: flex;
     gap: 10px;
@@ -111,7 +260,6 @@
     color: white;
   }
 
-  
   .products {
     flex: 1;
   }
@@ -187,7 +335,6 @@
     color: white;
   }
 
-  
   footer {
     text-align: center;
     padding: 25px;
@@ -217,13 +364,41 @@
 <body>
 
 <header>
-  <img src="New folder/Screenshot 2025-10-16 134017.png" alt="Vemenzon Logo">
+  <div class="logo">
+    <a href="LandingPage.html"><img src="Group 1.png" alt="Vemenzon Logo"></a>
+    <h1><a href="LandingPage.html"><b>Vemenzon</b></a></h1>
+  </div>
+
   <nav>
-    <a href="http://127.0.0.1:5500/websites.html">Home</a>
-    <a href="shop.html" style="color:#d10000;">Shop</a>
-    <a href="http://127.0.0.1:5500/HEARTS.html">❤️</a>
-    <a href="http://127.0.0.1:5500/ADD%20TO%20CART.html">🛒</a>
+    <ul>
+      <li>
+        <a href="ALL.html">Shop By Category <span class="iconify" data-icon="mdi:chevron-down"></span></a>
+        <div class="dropdown">
+          <a href="WRITING.html">Writing & Correction</a>
+          <a href="PAPERS.html">Paper & Notebooks</a>
+          <a href="FILING.html">Filing & Organizers</a>
+          <a href="MATH.html">Math & Measuring</a>
+          <a href="ARTS.html">Arts & Crafts</a>
+          <a href="CASES.html">Bags & Cases</a>
+          <a href="CLASS.html">Classroom Essentials</a>
+        </div>
+      </li>
+      <li><a href="AboutUS.html">About Us</a></li>
+      <li><a href="contactus.html">Contact Us</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
   </nav>
+
+  <div class="search-container">
+    <input type="text" placeholder="Search for school supplies...">
+    <button><span class="iconify" data-icon="mdi:magnify"></span></button>
+  </div>
+
+  <div class="icons">
+    <a href="addtocart.html" title="Cart"><span class="iconify" data-icon="mdi:cart-outline"></span></a>
+    <a href="HEARTS.html" title="Favorites"><span class="iconify" data-icon="mdi:heart-outline"></span></a>
+    <a href="login.html" title="Profile"><span class="iconify" data-icon="mdi:account-circle-outline"></span></a>
+  </div>
 </header>
 
 <div class="search-bar">
@@ -235,41 +410,38 @@
   <div class="sidebar">
     <h2>Categories</h2>
     <ul>
-          <a href="http://127.0.0.1:5500/ALL.html "> All </a> 
+      <a href="http://127.0.0.1:5500/ALL.html "> All </a> 
           
-        <style>
-
-         a {
+      <style>
+        a {
           text-decoration: underline;
           color: #b22222;
-          }
+        }
+      </style>
 
-          
-        </style>
-
-        <br>
-       <br>
-        <a href="http://127.0.0.1:5500/WRITING.html "> Writing & Correction </a> 
-       <br>
-       <br>
-        <a href="http://127.0.0.1:5500/PAPERS.html "> Papers & Notebooks </a>
-        <br>
-        <br>
+      <br>
+      <br>
+      <a href="http://127.0.0.1:5500/WRITING.html "> Writing & Correction </a> 
+      <br>
+      <br>
+      <a href="http://127.0.0.1:5500/PAPERS.html "> Papers & Notebooks </a>
+      <br>
+      <br>
       <a href=" http://127.0.0.1:5500/FILING.html "> Filing & Organizers </a>  
       <br>
-       <br>
-       <a href=" http://127.0.0.1:5500/MATH.html">Math & Measuring Tools </a>  
+      <br>
+      <a href=" http://127.0.0.1:5500/MATH.html">Math & Measuring Tools </a>  
     
-    <br>
-       <br>
+      <br>
+      <br>
     
-       <a href=" http://127.0.0.1:5500/ARTS.html ">Arts & Crafts</a> 
-        <br>
-       <br>
-       <a href=" http://127.0.0.1:5500/CASES.html ">Bags & Cases</a> 
-       <br>
-       <br>
-       <a href="http://127.0.0.1:5500/CLASS.html ">Classroom Essentials</a> 
+      <a href=" http://127.0.0.1:5500/ARTS.html ">Arts & Crafts</a> 
+      <br>
+      <br>
+      <a href=" http://127.0.0.1:5500/CASES.html ">Bags & Cases</a> 
+      <br>
+      <br>
+      <a href="http://127.0.0.1:5500/CLASS.html ">Classroom Essentials</a> 
     </ul>
   </div>
 

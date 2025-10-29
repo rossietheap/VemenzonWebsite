@@ -4,10 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Vemenzon</title>
-
-  <!-- ✅ Fonts & Iconify -->
+  <title>Vemenzon | About Us</title>
+  
+  
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Oxanium:wght@300;400;600&display=swap" rel="stylesheet">
+  
+ 
   <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 
   <style>
@@ -18,7 +20,6 @@
       font-family: 'Oxanium', sans-serif;
     }
 
-    /* ✅ HEADER */
     header {
       width: 100%;
       background-color: #ffffff;
@@ -32,24 +33,24 @@
       z-index: 999;
     }
 
-    .logo {
-      display: flex;
-      justify-content: baseline;
-      align-items: center;
+    .logo{
+        display: flex;
+        justify-content: baseline;
     }
 
-    h1 {
-      margin-left: 15px;
-      font-size: 25px;
+    h1{
+        margin-left: 15px;
+        margin-top: 16px;
+        font-size: 25px;
     }
 
-    h1 a {
-      text-decoration: none;
-      color: black;
+    h1 a{
+        text-decoration: none;
+        color: black;
     }
 
     .logo img {
-      margin-left: 5px;
+        margin-left: 5px;
       height: 60px;
     }
 
@@ -76,40 +77,42 @@
       color: #b22222;
     }
 
-    /* ✅ Dropdown menu */
-    .dropdown {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      padding: 10px 0;
-      min-width: 220px;
-      display: none;
-      flex-direction: column;
-      z-index: 1000;
-    }
+    
 
-    .dropdown a {
-      padding: 10px 20px;
-      color: #333;
-      text-decoration: none;
-      font-size: 15px;
-      transition: background 0.2s;
-    }
+.dropdown {
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  min-width: 220px;
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+}
 
-    .dropdown a:hover {
-      background-color: #f9f9f9;
-      color: #b22222;
-    }
+.dropdown a {
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 15px;
+  transition: background 0.2s;
+}
 
-    nav ul li:hover > .dropdown,
-    nav ul li .dropdown:hover {
-      display: flex;
-    }
+.dropdown a:hover {
+  background-color: #f9f9f9;
+  color: #b22222;
+}
 
-    /* ✅ Search bar */
+
+nav ul li:hover > .dropdown,
+nav ul li .dropdown:hover {
+  display: flex;
+}
+
+  
     .search-container {
       display: flex;
       align-items: center;
@@ -148,7 +151,7 @@
       background-color: #f2f2f2;
     }
 
-    /* ✅ Icons */
+    
     .icons {
       display: flex;
       align-items: center;
@@ -166,7 +169,7 @@
       color: #b22222;
     }
 
-    /* ✅ Responsive */
+
     @media (max-width: 900px) {
       header {
         flex-wrap: wrap;
@@ -184,96 +187,13 @@
         max-width: 300px;
       }
     }
-
-    /* ✅ ABOUT US PAGE DESIGN */
-    body {
-      background: #ffffff;
-      height: 100vh;
-    }
-
-    .about-section {
-      text-align: center;
-      padding: 100px 20px;
-    }
-
-    .about-section h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 50px;
-      margin-bottom: 60px;
-    }
-
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      width: 974px;
-      height: 542px;
-      margin: auto;
-    }
-
-    .shape1 {
-      margin: 0 auto;
-      width: 974px;
-      height: 542px;
-      border: 2px solid;
-      background: #ffffff;
-      border-radius: 300px;
-    }
-
-    .shape2 {
-      width: 911px;
-      height: 502px;
-      background: transparent;
-      border: 2px solid;
-      border-radius: 300px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-    }
-
-    .shape3 {
-      width: 867px;
-      height: 458px;
-      border: 2px solid;
-      border-radius: 300px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-    }
-
-    .shape3 img {
-      width: 100%;
-      height: 100%;
-      border-radius: 300px;
-      object-fit: cover;
-    }
-
-    p {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 70%;
-      text-align: center;
-      font-family: 'Oxanium', sans-serif;
-      font-size: 19px;
-      color: #f8f8f8;
-      z-index: 4;
-    }
   </style>
 </head>
 
 <body>
-
-  <!-- ✅ HEADER SECTION -->
   <header>
     <div class="logo">
-      <a href="LandingPage.html"><img src="Group 1.png" alt="Vemenzon Logo"></a>
+     <a href="LandingPage.html"><img src="Group 1.png" alt="Vemenzon Logo"></a>
       <h1><a href="LandingPage.html"><b>Vemenzon</b></a></h1>
     </div>
 
@@ -308,27 +228,6 @@
       <a href="login.html" title="Profile"><span class="iconify" data-icon="mdi:account-circle-outline"></span></a>
     </div>
   </header>
-
-  <!-- ✅ ABOUT SECTION -->
-  <section class="about-section">
-    <h1>ABOUT</h1>
-
-    <div class="container">
-      <div class="shape1"></div>
-      <div class="shape2"></div>
-      <div class="shape3">
-        <img src="Rectangle 16.png" alt="About Vemenzon Image">
-        <p>
-          At Vemenzon, we’re all about supporting students, families, and local schools by making it easy to find
-          the school supplies you need right in your own community.
-          Whether you're a parent preparing for back-to-school, a teacher stocking your classroom, or a student
-          looking for essentials, we've got you covered. We partner with local suppliers and stores to offer affordable,
-          high-quality school supplies that meet the needs of every grade level.
-        </p>
-      </div>
-    </div>
-  </section>
-
 </body>
 
 </html>

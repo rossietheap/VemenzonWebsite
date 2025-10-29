@@ -1,222 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Cart | Vemenzon</title>
-<style>
-  * { box-sizing: border-box; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart | Vemenzon</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Oxanium:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Oxanium', sans-serif
+    }
 
-  body {
-    font-family: "Poppins", sans-serif;
-    background-color: #f8f8f8;
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
+    body {
+      background-color: #f8f8f8;
+      color: #333
+    }
 
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 80px;
-    background-color: white;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.1);
-  }
+    header {
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 60px;
+      position: sticky;
+      top: 0;
+      z-index: 999
+    }
 
-  header img { height: 45px; }
+    .logo {
+      display: flex;
+      justify-content: baseline;
+      align-items: center
+    }
 
-  nav a {
-    text-decoration: none;
-    color: #333;
-    margin: 0 15px;
-    font-weight: 500;
-  }
+    h1 {
+      margin-left: 15px;
+     
+      font-size: 25px
+    }
 
-  nav a:hover { color: #d10000; }
+    h1 a {
+      text-decoration: none;
+      color: #000
+    }
 
-  h1 {
-    text-align: center;
-    font-size: 32px;
-    margin: 50px 0 30px;
-  }
+    .logo img {
+      margin-left: 5px;
+      height: 60px
+    }
 
-  .cart-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 40px;
-  }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      align-items: center
+    }
 
-  .cart-item {
-    display: flex;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
-    width: 80%;
-    max-width: 900px;
-    transition: transform 0.2s ease;
-  }
+    nav ul li {
+      position: relative
+    }
 
-  .cart-item:hover { transform: translateY(-3px); }
+    nav ul li a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color .2s ease
+    }
 
-  .cart-item img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-  }
+    nav ul li a:hover {
+      color: #b22222
+    }
 
-  .details {
-    padding: 30px;
-    flex: 1;
-  }
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+      min-width: 220px;
+      display: none;
+      flex-direction: column;
+      z-index: 1000
+    }
 
-  .details h2 { margin: 0 0 10px; font-size: 22px; }
+    .dropdown a {
+      padding: 10px 20px;
+      color: #333;
+      text-decoration: none;
+      font-size: 15px;
+      transition: background .2s
+    }
 
-  .price {
-    color: #d10000;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
+    .dropdown a:hover {
+      background-color: #f9f9f9;
+      color: #b22222
+    }
 
-  .remove-btn {
-    border: none;
-    padding: 10px 20px;
-    background-color: #d10000;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: all 0.2s ease;
-  }
+    nav ul li:hover>.dropdown,
+    nav ul li .dropdown:hover {
+      display: flex
+    }
 
-  .remove-btn:hover {
-    background-color: #a00000;
-  }
+    .search-container {
+      display: flex;
+      align-items: center;
+      background-color: #b22222;
+      border-radius: 50px;
+      padding: 5px 10px;
+      height: 40px
+    }
 
-  .empty {
-    text-align: center;
-    font-size: 18px;
-    color: #777;
-    margin-top: 80px;
-  }
+    .search-container input {
+      border: none;
+      outline: none;
+      background: transparent;
+      color: #fff;
+      padding: 5px 10px;
+      width: 180px;
+      font-size: 15px
+    }
 
-  /* --- BUY SECTION --- */
-  .buy-section {
-    text-align: center;
-    margin: 40px 0 60px;
-  }
+    .search-container input::placeholder {
+      color: #f8dcdc
+    }
 
-  .total {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 15px;
-  }
+    .search-container button {
+      background: #fff;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      padding: 5px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
 
-  .buy-btn {
-    background-color: #b22222;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 12px 35px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
+    .search-container button:hover {
+      background-color: #f2f2f2
+    }
 
-  .buy-btn:hover {
-    background-color: #8b1a1a;
-  }
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 26px
+    }
 
-  footer {
-    background-color: white;
-    padding: 20px;
-    text-align: center;
-    font-size: 14px;
-    color: #777;
-    border-top: 1px solid #eee;
-  }
+    .icons a {
+      color: #222;
+      text-decoration: none;
+      transition: color .2s ease
+    }
 
-</style>
+    .icons a:hover {
+      color: #b22222
+    }
+
+    @media(max-width:900px) {
+      header {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center
+      }
+
+      .search-container {
+        width: 100%;
+        max-width: 300px
+      }
+    }
+
+    h1.page-title {
+      text-align: center;
+      font-size: 32px;
+      margin: 50px 0 30px
+    }
+
+    .cart-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 40px
+    }
+
+    .cart-item {
+      display: flex;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 80%;
+      max-width: 900px;
+      transition: transform .2s ease
+    }
+
+    .cart-item:hover {
+      transform: translateY(-3px)
+    }
+
+    .cart-item img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover
+    }
+
+    .details {
+      padding: 30px;
+      flex: 1
+    }
+
+    .details h2 {
+      margin: 0 0 10px;
+      font-size: 22px
+    }
+
+    .price {
+      color: #d10000;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px
+    }
+
+    .remove-btn {
+      border: none;
+      padding: 10px 20px;
+      background-color: #d10000;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all .2s ease
+    }
+
+    .remove-btn:hover {
+      background-color: #a00000
+    }
+
+    .empty {
+      text-align: center;
+      font-size: 18px;
+      color: #777;
+      margin-top: 80px
+    }
+
+    .buy-section {
+      text-align: center;
+      margin: 40px 0 60px
+    }
+
+    .total {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 15px
+    }
+
+    .buy-btn {
+      background-color: #b22222;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 35px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: .3s
+    }
+
+    .buy-btn:hover {
+      background-color: #8b1a1a
+    }
+
+    footer {
+      background-color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      border-top: 1px solid #eee
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-  <img src="New folder/Screenshot 2025-10-16 134017.png" alt="Vemenzon Logo">
-  <nav>
-    <a href="http://127.0.0.1:5500/websites.html">Home</a>
-    <a href="http://127.0.0.1:5500/HEARTS.html">Shop</a>
-    <a href="http://127.0.0.1:5500/HEARTS.html">Favorites</a>
-    <a href="http://127.0.0.1:5500/ADD%20TO%20CART.html" style="color:#d10000;">Cart</a>
-  </nav>
-</header>
+  <header>
+    <div class="logo">
+      <a href="LandingPage.html"><img src="Group 1.png" alt="Vemenzon Logo"></a>
+      <h1><a href="LandingPage.html"><b>Vemenzon</b></a></h1>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <a href="ALL.html">Shop By Category <span class="iconify" data-icon="mdi:chevron-down"></span></a>
+          <div class="dropdown">
+            <a href="WRITING.html">Writing & Correction</a>
+            <a href="PAPERS.html">Paper & Notebooks</a>
+            <a href="FILING.html">Filing & Organizers</a>
+            <a href="MATH.html">Math & Measuring</a>
+            <a href="ARTS.html">Arts & Crafts</a>
+            <a href="CASES.html">Bags & Cases</a>
+            <a href="CLASS.html">Classroom Essentials</a>
+          </div>
+        </li>
+        <li><a href="AboutUS.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+    </nav>
+    <div class="search-container">
+      <input type="text" placeholder="Search for school supplies...">
+      <button><span class="iconify" data-icon="mdi:magnify"></span></button>
+    </div>
+    <div class="icons">
+      <a href="addtocart.html" title="Cart"><span class="iconify" data-icon="mdi:cart-outline"></span></a>
+      <a href="HEARTS.html" title="Favorites"><span class="iconify" data-icon="mdi:heart-outline"></span></a>
+      <a href="login.html" title="Profile"><span class="iconify" data-icon="mdi:account-circle-outline"></span></a>
+    </div>
+  </header>
 
-<h1>🛒 Your Cart</h1>
+  <h1 class="page-title">🛒 Your Cart</h1>
+  <div id="cartList" class="cart-container"></div>
+  <div class="buy-section" id="buySection" style="display:none;">
+    <p class="total" id="totalPrice">Total: ₱0.00</p>
+    <button class="buy-btn" onclick="buyNow()">Buy</button>
+  </div>
 
-<div id="cartList" class="cart-container"></div>
+  <footer>© 2025 Vemenzon. All rights reserved.</footer>
 
-<!-- ✅ BUY SECTION -->
-<div class="buy-section" id="buySection" style="display:none;">
-  <p class="total" id="totalPrice">Total: ₱0.00</p>
-  <button class="buy-btn" onclick="buyNow()">Buy</button>
-</div>
-
-<footer>
-  © 2025 Vemenzon. All rights reserved.
-</footer>
-
-<script>
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  const list = document.getElementById('cartList');
-  const buySection = document.getElementById('buySection');
-  const totalPriceDisplay = document.getElementById('totalPrice');
-
-  if (cart.length === 0) {
-    list.innerHTML = "<p class='empty'>Your cart is empty.</p>";
-  } else {
-    let total = 0;
-
-    cart.forEach((item, index) => {
-      const div = document.createElement('div');
-      div.classList.add('cart-item');
-      div.innerHTML = `
-        <img src="${item.img}" alt="${item.name}">
-        <div class="details">
-          <h2>${item.name}</h2>
-          <p class="price">₱${item.price}.00</p>
-          <p>Quantity: 1</p>
-          <p>14 stocks available</p>
-          <button class="remove-btn">Remove</button>
-        </div>
-      `;
-
-      total += Number(item.price);
-
-      div.querySelector('.remove-btn').addEventListener('click', () => {
-        cart.splice(index, 1);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        div.remove();
-        location.reload(); // Refresh to update total and Buy button
-      });
-
-      list.appendChild(div);
-    });
-
-    // Show total and buy button
-    totalPriceDisplay.textContent = `Total: ₱${total}.00`;
-    buySection.style.display = "block";
-  }
-
-  function buyNow() {
-    alert("🎉 Thank you for your purchase!");
-    localStorage.removeItem('cart');
-    window.location.href = "index.html"; // Go back to home
-  }
-</script>
+  <script>
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const list = document.getElementById('cartList');
+    const buySection = document.getElementById('buySection');
+    const totalPriceDisplay = document.getElementById('totalPrice');
+    if (cart.length === 0) { list.innerHTML = "<p class='empty'>Your cart is empty.</p>"; }
+    else { let total = 0; cart.forEach((item, index) => { const div = document.createElement('div'); div.classList.add('cart-item'); div.innerHTML = `<img src="${item.img}" alt="${item.name}"><div class="details"><h2>${item.name}</h2><p class="price">₱${item.price}.00</p><p>Quantity: 1</p><p>14 stocks available</p><button class="remove-btn">Remove</button></div>`; total += Number(item.price); div.querySelector('.remove-btn').addEventListener('click', () => { cart.splice(index, 1); localStorage.setItem('cart', JSON.stringify(cart)); div.remove(); location.reload(); }); list.appendChild(div); }); totalPriceDisplay.textContent = `Total: ₱${total}.00`; buySection.style.display = "block"; }
+    function buyNow() { alert("🎉 Thank you for your purchase!"); localStorage.removeItem('cart'); window.location.href = "index.html"; }
+  </script>
 
 </body>
+
 </html>
