@@ -244,30 +244,32 @@
           }
           </style>
           
-        <a href="http://127.0.0.1:5500/ALL.html "> All </a> 
+        <a href="ALL.html "> All </a> 
           <br>
        <br>
-        <a href="http://127.0.0.1:5500/WRITING.html "> Writing & Correction </a> 
+        <a href="WRITING.html"> Writing & Correction </a> 
        <br>
        <br>
-        <a href="http://127.0.0.1:5500/PAPERS.html "> Papers & Notebooks </a>
+        <a href="PAPERS.html "> Papers & Notebooks </a>
         <br>
         <br>
-      <a href=" http://127.0.0.1:5500/FILING.html "> Filing & Organizers </a>  
+      <a href="FILING.html "> Filing & Organizers </a>  
       <br>
        <br>
-       <a href=" http://127.0.0.1:5500/MATH.html">Math & Measuring Tools </a>  
+       <a href="MATH.html">Math & Measuring Tools </a>  
     
       <br>
        <br>
     
-       <a href=" http://127.0.0.1:5500/ARTS.html ">Arts & Crafts</a> 
+       <a href=" ARTS.html ">Arts & Crafts</a> 
         <br>
        <br>
-       <a href=" http://127.0.0.1:5500/CASES.html ">Bags & Cases</a> 
+       <a href="CASES.html ">Bags & Cases</a> 
        <br>
        <br>
-       <a href="http://127.0.0.1:5500/CLASS.html ">Classroom Essentials</a> 
+       <a href="CLASS.html">Classroom Essentials</a> 
+       
+    
     </ul>
   </div>
 
@@ -329,7 +331,9 @@
         <p class="price">₱${p.price}.00</p>
         <div class="buttons">
           <button class="buy-btn" onclick="addToCart('${p.name}','${p.img}',${p.price})">Buy</button>
+          <button class="heart-btn" onclick="addToFavorites('${p.name}','${p.img}',${p.price}, this)">🛒</button>
           <button class="heart-btn" onclick="addToFavorites('${p.name}','${p.img}',${p.price}, this)">♡</button>
+          
         </div>
       `;
       grid.appendChild(card);
