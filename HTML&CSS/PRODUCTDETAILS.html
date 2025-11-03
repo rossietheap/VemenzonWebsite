@@ -557,46 +557,53 @@ footer a:hover {
   
 
   <script>
-    // Example cart and buy functionality
-    function addToCart() {
-      alert("Item added to cart!");
-    }
+  // ✅ Load product details dynamically from localStorage
+  const product = JSON.parse(localStorage.getItem("selectedProduct"));
 
-    function buyNow() {
-      alert("Proceeding to checkout...");
-    }
+  if (product) {
+    document.querySelector(".product-info h2").textContent = product.name;
+    document.querySelector(".price").textContent = `₱${product.price}.00`;
+    document.querySelector(".desc").textContent = product.description;
+    document.querySelector(".details").innerHTML = `
+      <p><strong>Brand:</strong> ${product.brand}</p>
+      <p><strong>Stock:</strong> ${product.stock}</p>
+      <p><strong>Shipping:</strong> ${product.shipping}</p>
+    `;
+    document.querySelector(".product-header img").src = product.img;
+  }
 
-
-  
   // ✅ Add to Cart Function
   function addToCart() {
-    const product = {
-      name: "WhiteBoard Pentel Pen", // product name
-      price: 50,                     // product price
-      img: "https://m.media-amazon.com/images/I/71sQ7MyNYcL.jpg" // product image
-    };
-
-    // Get current cart from localStorage or create new
+    if (!product) return alert("No product selected!");
+    
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // Add the product to the cart
     cart.push(product);
-
-    // Save updated cart back to localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    // Optional: Confirm and redirect
     alert(`${product.name} has been added to your cart!`);
-    window.location.href = "ADD TO CART.html"; // redirect to your cart page
+    window.location.href = "ADD TO CART.html";
   }
 
   // ✅ Buy Now Function
   function buyNow() {
-    alert("Proceeding to checkout...");
-    window.location.href = "addtocart.html";
+    if (!product) return alert("No product selected!");
+    alert(`Proceeding to checkout for ${product.name}...`);
+    window.location.href = "ADD TO CART.html";
   }
+</script>
 
-
-  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
