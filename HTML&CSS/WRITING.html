@@ -213,6 +213,22 @@
     margin-bottom: 10px;
   }
 
+.buy-btn {
+  background-color: #b22222; /* Red background */
+  color: white; /* White text */
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.buy-btn:hover {
+  background-color: #8b1a1a; /* Darker red on hover */
+  transform: scale(1.05); /* Slight hover zoom */
+}
 
 
 
@@ -298,7 +314,9 @@
   © 2025 Vemenzon. All rights reserved.
 </footer>
 
-<script>
+<script>  
+
+
   const products = [
     { name: "Pentel Pen", price: 50, img: "https://www.forsupplies.com/img/p/4/3/8/4/0/43840-large_default.jpg" },
     { name: "OB Gel Pen", price: 50, img: "https://online.carrefour.com.tw/on/demandware.static/-/Sites-carrefour-tw-m-inner/default/dw941b8c0c/images/large/0158826_ob200a053.jpeg" },
@@ -320,6 +338,7 @@
    { name: "Calligraphy Pen", price: 50, img: "https://www.nationalbookstore.com/156649-thickbox_default/zig-calligraphy-pen-square-writing-supplies-arts-supplies-lettering.jpg" },
 ];
 
+
   const grid = document.getElementById('productGrid');
 
   function loadProducts() {
@@ -332,8 +351,8 @@
         <h3>${p.name}</h3>
         <p class="price">₱${p.price}.00</p>
         <div class="buttons">
-          <button class="buy-btn" onclick="addToCart('${p.name}','${p.img}',${p.price})">Buy</button>
-          <button class="heart-btn" onclick="addToFavorites('${p.name}','${p.img}',${p.price}, this)">🛒</button>
+          <button class="buy-btn" onclick="window.location.href='PRODUCTDETAILS.html'">Buy</button>
+           <button class="buy-btn" onclick="addToCart('${p.name}','${p.img}',${p.price})">🛒</button>
           <button class="heart-btn" onclick="addToFavorites('${p.name}','${p.img}',${p.price}, this)">♡</button>
          
       `;
@@ -367,7 +386,8 @@
         <h3>${p.name}</h3>
         <p class="price">₱${p.price}.00</p>
         <div class="buttons">
-          <button class="buy-btn" onclick="addToCart('${p.name}','${p.img}',${p.price})">Buy</button>
+          <button class="buy-btn" onclick="viewProduct('${p.name}', '${p.img}', ${p.price})">Buy</button>
+           <button class="buy-btn" onclick="addToCart('${p.name}','${p.img}',${p.price})">🛒</button>
           <button class="heart-btn" onclick="addToFavorites('${p.name}','${p.img}',${p.price}, this)">♡</button>
         </div>
       `;
