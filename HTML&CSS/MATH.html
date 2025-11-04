@@ -1,122 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Oxanium:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
   <script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
-<title>Math and Measurung tools</title>
+  <title>Math and Measurung tools</title>
 
 
 </head>
+
 <body>
 
-<header>
-  <img src="Screenshot_2025-10-16_133612-removebg-preview.png" alt="Vemenzon Logo">
-  <nav>
-    <a href="websites.html">Home</a>
-    <a href="ALL.html" style="color:#d10000;">Shop</a>
-    <a href="HEARTS.html">❤️</a>
-    <a href="addtocart.html">🛒</a>
-  </nav>
-</header>
+  <header>
+    <div class="logo"> <a href="LandingPage.html"><img src="Group 1.png" alt="Vemenzon Logo"></a>
+      <h1><a href="LandingPage.html"><b>Vemenzon</b></a></h1>
+    </div>
+    <nav>
+      <ul>
+        <li> <a href="ALL.html">Shop By Category <span class="iconify" data-icon="mdi:chevron-down"></span></a>
+          <div class="dropdown"> <a href="WRITING.html">Writing & Correction</a> <a href="PAPERS.html">Paper &
+              Notebooks</a> <a href="FILING.html">Filing & Organizers</a> <a href="MATH.html">Math & Measuring</a> <a
+              href="ARTS.html">Arts & Crafts</a> <a href="CASES.html">Bags & Cases</a> <a href="CLASS.html">Classroom
+              Essentials</a> </div>
+        </li>
+        <li><a href="AboutUS.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+    </nav>
+    <div class="search-container"> <input type="text" placeholder="Search for school supplies..."> <button><span
+          class="iconify" data-icon="mdi:magnify"></span></button> </div>
+    <div class="icons"> <a href="addtocart.html" title="Cart"><span class="iconify"
+          data-icon="mdi:cart-outline"></span></a> <a href="HEARTS.html" title="Favorites"><span class="iconify"
+          data-icon="mdi:heart-outline"></span></a> <a href="login.html" title="Profile"><span class="iconify"
+          data-icon="mdi:account-circle-outline"></span></a> </div>
+  </header>
 
-<div class="search-bar">
-  <input type="text" id="searchInput" placeholder="Search for products...">
-  <button onclick="searchProducts()">🔍</button>
-</div>
 
-<div class="container">
-  <div class="sidebar">
-    <h2>Categories</h2>
-    <ul>
-        <a href="ALL.html "> All </a> 
-          <br>
-       <br>
-        <a href="WRITING.html"> Writing & Correction </a> 
-       <br>
-       <br>
+
+  <div class="container">
+    <div class="sidebar">
+      <h2>Categories</h2>
+      <ul>
+        <a href="ALL.html "> All </a>
+        <br>
+        <br>
+        <a href="WRITING.html"> Writing & Correction </a>
+        <br>
+        <br>
         <a href="PAPERS.html "> Papers & Notebooks </a>
         <br>
         <br>
-      <a href="FILING.html "> Filing & Organizers </a>  
-      <br>
-       <br>
-       <a href="MATH.html">Math & Measuring Tools </a>  
-    
-      <br>
-       <br>
-    
-       <a href=" ARTS.html ">Arts & Crafts</a> 
+        <a href="FILING.html "> Filing & Organizers </a>
         <br>
-       <br>
-       <a href="CASES.html ">Bags & Cases</a> 
-       <br>
-       <br>
-       <a href="CLASS.html">Classroom Essentials</a> 
-       
-    
-    </ul>
-  </div>
+        <br>
+        <a href="MATH.html">Math & Measuring Tools </a>
 
-  <div class="products">
-    <div class="tabs">
-      <button class="active">Popular</button>
-      <button>Latest</button>
-      <button>Top Sales</button>
+        <br>
+        <br>
+
+        <a href=" ARTS.html ">Arts & Crafts</a>
+        <br>
+        <br>
+        <a href="CASES.html ">Bags & Cases</a>
+        <br>
+        <br>
+        <a href="CLASS.html">Classroom Essentials</a>
+
+
+      </ul>
     </div>
 
-    <div class="product-grid" id="productGrid"></div>
-  </div>
-</div>
+    <div class="products">
+      <div class="tabs">
+        <button class="active">Popular</button>
+        <button>Latest</button>
+        <button>Top Sales</button>
+      </div>
 
-<footer>
-  <div class="footer-links">
-    <a href="about.html">About</a> |
-    <a href="contact.html">Contact</a> |
-    <a href="help.html">Help</a> |
-     <a href="https://maps.app.goo.gl/jXrTi31t3e7H8ei67">Location</a> |
+      <div class="product-grid" id="productGrid"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="help.html">Help</a> |
+      <a href="https://maps.app.goo.gl/jXrTi31t3e7H8ei67">Location</a> |
       <a href="Email">Email</a> |
-       <a href="Phone">Phone</a> |
-  </div>
-  © 2025 Vemenzon. All rights reserved.
-</footer>
+      <a href="Phone">Phone</a> |
+    </div>
+    © 2025 Vemenzon. All rights reserved.
+  </footer>
 
-<script>
-  const products = [
-    { name: "Scissors", price: 50, img: "https://m.media-amazon.com/images/I/71hKMPbrLbL._AC_SL1500_.jpg" },
-    { name: "Tailor Scissors", price: 50, img: "https://5.imimg.com/data5/WE/XG/XP/SELLER-20691471/golden-cloth-right-handed-tailor-scissors-1000x1000.jpg" },
-    { name: "Cutting Mat", price: 50, img: "https://tse4.mm.bing.net/th/id/OIP.EexoclvFLc9CB298I0mcfQHaFl?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" },
-    { name: "Circular Ruler", price: 50, img: "https://i5.walmartimages.com/seo/25cm-Circle-Protractor-360-Degree-Measuring-Tool-Round-Protractor-Rule-Math-Protractor-Circle-Stencil-for-Student_ce7bf504-aa15-4c1c-8f3f-3f1e59f478f2.dd2a0d7ecb6a32f94e7e023059358018.jpeg" },
-    { name: "Direction Compass", price: 50, img: "https://play-lh.googleusercontent.com/o4xa6tWy-QxTMglmMA8RZRivBknbyiPjnX0KTt9bHamW1_9ltJSf1zaLG6uJoYV2Gbh6" },
-    { name: "Protactor", price: 50, img: "https://down-ph.img.susercontent.com/file/ea03d15b697543ff0e178c9416c7374e.webp" },
-    { name: "Clear Ruler", price: 50, img: "https://m.media-amazon.com/images/I/71h1H90KVkL.jpg" },
-    { name: "Ruler Set", price: 50, img: "https://hbw.ph/wp-content/uploads/2017/10/hbw-ruler-set-12-inch.jpg" },
-    { name: "Craft Scissor", price: 50, img: "https://i5.walmartimages.com/asr/1e069a70-3ff2-4425-ae59-4e9e46a45e2b_1.1e3fc4c551007bd42cb3e50afb30f31d.jpeg" },
-    { name: "Mathematics Set", price: 50, img: "https://m.media-amazon.com/images/I/81zaNKgIjpL.SS700.jpg" },
-    { name: "Ruler Metal", price: 50, img: "https://tse3.mm.bing.net/th/id/OIP.mLVJplvyG7v3Uy2EB7YGNgHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" },
-    { name: "Utility Knife", price: 50, img: "https://lh7-us.googleusercontent.com/jbBOYMTYSRGDCGXqEsmd7vsFcu-l_BqZMHmZFzI6WP8DlHyuSyEZc9rOF7rUAsY99MRmcHdns8Rc76FM48ZkBAw_7TLAN0kG2buKhC4X4sbzWk7aVTQU0p1D6vvBdfBiBjxyEs7iLEaNF_cRSka0jB8" },
-    { name: "Beaker Glass", price: 50, img: "https://tse2.mm.bing.net/th/id/OIP.3zmVl2GtjXPa2qNL2YknQAHaHa?cb=12&w=887&h=887&rs=1&pid=ImgDetMain&o=7&rm=3" },
-    { name: "Digital Angle Ruler", price: 50, img: "https://i5.walmartimages.com/seo/Digital-Angle-Ruler-Digital-Angle-Finder-Digital-Protractor-Angle-Gauge-200mm-No-Battery_0b526113-68aa-4504-aeee-3f690cedfb64.4661d90bead26c2334da6bc9e8d58281.jpeg" },
-    { name: "Cutter Knife", price: 50, img: "https://m.media-amazon.com/images/I/71S2JYSASSL._SL1500_.jpg" },
-    { name: "T-square Ruler", price: 50, img: "https://m.media-amazon.com/images/I/619xugJVi1S.jpg" },
-    { name: "Technical Compass", price: 50, img: "https://tse2.mm.bing.net/th/id/OIP.fK3qULacNJZLJskuYACAXQHaLF?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" },
-    { name: "Folding Ruler", price: 50, img: "https://tse3.mm.bing.net/th/id/OIP.W9jThaakfRjMWEZ17xl-TAHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" },
-  ];
+  <script>
+    const products = [
+      { name: "Scissors", price: 50, img: "https://m.media-amazon.com/images/I/71hKMPbrLbL._AC_SL1500_.jpg" },
+      { name: "Tailor Scissors", price: 50, img: "https://5.imimg.com/data5/WE/XG/XP/SELLER-20691471/golden-cloth-right-handed-tailor-scissors-1000x1000.jpg" },
+      { name: "Cutting Mat", price: 50, img: "https://tse4.mm.bing.net/th/id/OIP.EexoclvFLc9CB298I0mcfQHaFl?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" },
+      { name: "Circular Ruler", price: 50, img: "https://i5.walmartimages.com/seo/25cm-Circle-Protractor-360-Degree-Measuring-Tool-Round-Protractor-Rule-Math-Protractor-Circle-Stencil-for-Student_ce7bf504-aa15-4c1c-8f3f-3f1e59f478f2.dd2a0d7ecb6a32f94e7e023059358018.jpeg" },
+      { name: "Direction Compass", price: 50, img: "https://play-lh.googleusercontent.com/o4xa6tWy-QxTMglmMA8RZRivBknbyiPjnX0KTt9bHamW1_9ltJSf1zaLG6uJoYV2Gbh6" },
+      { name: "Protactor", price: 50, img: "https://down-ph.img.susercontent.com/file/ea03d15b697543ff0e178c9416c7374e.webp" },
+      { name: "Clear Ruler", price: 50, img: "https://m.media-amazon.com/images/I/71h1H90KVkL.jpg" },
+      { name: "Ruler Set", price: 50, img: "https://hbw.ph/wp-content/uploads/2017/10/hbw-ruler-set-12-inch.jpg" },
+      { name: "Craft Scissor", price: 50, img: "https://i5.walmartimages.com/asr/1e069a70-3ff2-4425-ae59-4e9e46a45e2b_1.1e3fc4c551007bd42cb3e50afb30f31d.jpeg" },
+      { name: "Mathematics Set", price: 50, img: "https://m.media-amazon.com/images/I/81zaNKgIjpL.SS700.jpg" },
+      { name: "Ruler Metal", price: 50, img: "https://tse3.mm.bing.net/th/id/OIP.mLVJplvyG7v3Uy2EB7YGNgHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" },
+      { name: "Utility Knife", price: 50, img: "https://lh7-us.googleusercontent.com/jbBOYMTYSRGDCGXqEsmd7vsFcu-l_BqZMHmZFzI6WP8DlHyuSyEZc9rOF7rUAsY99MRmcHdns8Rc76FM48ZkBAw_7TLAN0kG2buKhC4X4sbzWk7aVTQU0p1D6vvBdfBiBjxyEs7iLEaNF_cRSka0jB8" },
+      { name: "Beaker Glass", price: 50, img: "https://tse2.mm.bing.net/th/id/OIP.3zmVl2GtjXPa2qNL2YknQAHaHa?cb=12&w=887&h=887&rs=1&pid=ImgDetMain&o=7&rm=3" },
+      { name: "Digital Angle Ruler", price: 50, img: "https://i5.walmartimages.com/seo/Digital-Angle-Ruler-Digital-Angle-Finder-Digital-Protractor-Angle-Gauge-200mm-No-Battery_0b526113-68aa-4504-aeee-3f690cedfb64.4661d90bead26c2334da6bc9e8d58281.jpeg" },
+      { name: "Cutter Knife", price: 50, img: "https://m.media-amazon.com/images/I/71S2JYSASSL._SL1500_.jpg" },
+      { name: "T-square Ruler", price: 50, img: "https://m.media-amazon.com/images/I/619xugJVi1S.jpg" },
+      { name: "Technical Compass", price: 50, img: "https://tse2.mm.bing.net/th/id/OIP.fK3qULacNJZLJskuYACAXQHaLF?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" },
+      { name: "Folding Ruler", price: 50, img: "https://tse3.mm.bing.net/th/id/OIP.W9jThaakfRjMWEZ17xl-TAHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" },
+    ];
 
-  const grid = document.getElementById('productGrid');
+    const grid = document.getElementById('productGrid');
     function viewProduct(product) {
       localStorage.setItem("selectedProduct", JSON.stringify(product));
       window.location.href = "PRODUCTDETAILS.html";
     }
 
 
-  function loadProducts() {
-    grid.innerHTML = '';
-    products.forEach(p => {
-      const card = document.createElement('div');
-      card.className = 'product-card';
-      card.innerHTML = `
+    function loadProducts() {
+      grid.innerHTML = '';
+      products.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
         <img src="${p.img}" alt="${p.name}" onclick="viewProduct(${JSON.stringify(p).replace(/"/g, '&quot;')})" style="cursor: pointer;">  <!-- Made image clickable to view details -->
           <h3 onclick="viewProduct(${JSON.stringify(p).replace(/"/g, '&quot;')})" style="cursor: pointer;">${p.name}</h3>  <!-- Made title clickable too -->
           <p class="price">₱${p.price}.00</p>
@@ -131,32 +149,32 @@
            <button class="buy-btn" onclick="viewProduct({ name: '${p.name}', img: '${p.img}', price: ${p.price} })">Buy</button>
           </div>
       `;
-      grid.appendChild(card);
-    });
-  }
+        grid.appendChild(card);
+      });
+    }
 
-  function addToCart(name, img, price) {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push({ name, img, price });
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${name} added to cart!`);
-  }
+    function addToCart(name, img, price) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name, img, price });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`${name} added to cart!`);
+    }
 
-  function addToFavorites(name, img, price, btn) {
-    const favs = JSON.parse(localStorage.getItem('favorites')) || [];
-    favs.push({ name, img, price });
-    localStorage.setItem('favorites', JSON.stringify(favs));
-    btn.classList.add('active');
-  }
+    function addToFavorites(name, img, price, btn) {
+      const favs = JSON.parse(localStorage.getItem('favorites')) || [];
+      favs.push({ name, img, price });
+      localStorage.setItem('favorites', JSON.stringify(favs));
+      btn.classList.add('active');
+    }
 
-  function searchProducts() {
-    const query = document.getElementById('searchInput').value.toLowerCase();
-    const filtered = products.filter(p => p.name.toLowerCase().includes(query));
-    grid.innerHTML = '';
-    filtered.forEach(p => {
-      const card = document.createElement('div');
-      card.className = 'product-card';
-      card.innerHTML = `
+    function searchProducts() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const filtered = products.filter(p => p.name.toLowerCase().includes(query));
+      grid.innerHTML = '';
+      filtered.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
         <img src="${p.img}" alt="${p.name}">
         <h3>${p.name}</h3>
         <p class="price">₱${p.price}.00</p>
@@ -166,12 +184,13 @@
           <button class="heart-btn" onclick="addToFavorites('${p.name}','${p.img}',${p.price}, this)">♡</button>
         </div>
       `;
-      grid.appendChild(card);
-    });
-  }
+        grid.appendChild(card);
+      });
+    }
 
-  loadProducts();
-</script>
+    loadProducts();
+  </script>
 
 </body>
+
 </html>
