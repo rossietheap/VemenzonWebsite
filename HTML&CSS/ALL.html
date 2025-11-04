@@ -33,30 +33,32 @@
     <div class="sidebar">
       <h2>Categories</h2>
       <ul>
+        <a href="ALL.html "> All </a> 
+          <br>
+       <br>
+        <a href="WRITING.html"> Writing & Correction </a> 
+       <br>
+       <br>
+        <a href="PAPERS.html "> Papers & Notebooks </a>
         <br>
         <br>
-        <a href="ALL.html"> All </a>
+      <a href="FILING.html "> Filing & Organizers </a>  
+      <br>
+       <br>
+       <a href="MATH.html">Math & Measuring Tools </a>  
+    
+    
         <br>
         <br>
-        <a href="WRITING.html"> Writing & Correction </a>
+    
+       <a href="ARTS.html ">Arts & Crafts</a> 
         <br>
-        <br>
-        <a href="PAPERS.html"> Papers & Notebooks </a>
-        <br>
-        <br>
-        <a href="FILING.html"> Filing & Organizers </a>
-        <br>
-        <br>
-        <a href="MATH.html">Math & Measuring Tools </a>
-        <br>
-        <br>
-        <a href="ARTS.html">Arts & Crafts</a>
-        <br>
-        <br>
-        <a href="CASES.html">Bags & Cases</a>
-        <br>
-        <br>
-        <a href="CLASS.html">Classroom Essentials</a>
+       <br>
+       <a href="CASES.html ">Bags & Cases</a> 
+       <br>
+       <br>
+       <a href="CLASS.html ">Classroom Essentials</a> 
+       
       </ul>
     </div>
 
@@ -138,7 +140,7 @@
             <button class="cart-btn" onclick="addToCart('${p.name}','${p.img}',${p.price})">
               <iconify-icon icon="mdi:cart-outline"></iconify-icon>
             </button>
-            <button class="buy-btn" onclick="addToCart('${p.name}','${p.img}',${p.price})">Buy</button>
+           <button class="buy-btn" onclick="viewProduct({ name: '${p.name}', img: '${p.img}', price: ${p.price} })">Buy</button>
           </div>
         `;
         grid.appendChild(card);

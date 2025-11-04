@@ -3,216 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shop | Vemenzon</title>
-<style>
-  * { box-sizing: border-box; }
+ <link rel="stylesheet" href="style.css">
+  <script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
+<title>Papers and NoteBooks</title>
 
-  body {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    background-color: #fff;
-    color: #333;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 80px;
-    background-color: #fff;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.1);
-  }
-
-  header img { height: 45px; }
-
-  nav a {
-    text-decoration: none;
-    color: #333;
-    margin: 0 15px;
-    font-weight: 500;
-  }
-
-  nav a:hover { color: #d10000; }
-
-  
-  .search-bar {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-  }
-
-  .search-bar input {
-    width: 50%;
-    padding: 12px 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px 0 0 8px;
-    font-size: 15px;
-    outline: none;
-  }
-
-  .search-bar button {
-    background-color: #b22222;
-    border: none;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 0 8px 8px 0;
-    cursor: pointer;
-  }
-
-  .container {
-    display: flex;
-    justify-content: space-between;
-    padding: 40px 80px;
-  }
-
-  
-  .sidebar {
-    width: 200px;
-  }
-
-  .sidebar h2 {
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
-
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .sidebar ul li {
-    padding: 8px 0;
-    cursor: pointer;
-    color: #444;
-    transition: color 0.2s;
-  }
-
-  .sidebar ul li:hover {
-    color: #b22222;
-  }
-
-  
-  .tabs {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-
-  .tabs button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 500;
-  }
-
-  .tabs button.active {
-    background-color: #b22222;
-    color: white;
-  }
-
-  
-  .products {
-    flex: 1;
-  }
-
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 25px;
-  }
-
-  .product-card {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-    overflow: hidden;
-    text-align: center;
-    padding: 15px;
-    position: relative;
-    transition: transform 0.2s;
-  }
-
-  .product-card:hover {
-    transform: translateY(-4px);
-  }
-
-  .product-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-
-  .product-card h3 {
-    font-size: 16px;
-    margin: 12px 0 6px;
-  }
-
-  .price {
-    color: #b22222;
-    font-weight: bold;
-  }
-
-  .buttons {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 10px;
-  }
-
-  .buy-btn, .heart-btn {
-    border: none;
-    padding: 8px 14px;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: 0.2s;
-  }
-
-  .buy-btn {
-    background-color: #b22222;
-    color: white;
-  }
-
-  .buy-btn:hover { background-color: #8b1a1a; }
-
-  .heart-btn {
-    background-color: #fff;
-    border: 1px solid #b22222;
-    color: #b22222;
-  }
-
-  .heart-btn.active {
-    background-color: #b22222;
-    color: white;
-  }
-
-  
-  footer {
-    text-align: center;
-    padding: 25px;
-    background-color: #fff;
-    border-top: 1px solid #eee;
-    color: #777;
-    font-size: 14px;
-    margin-top: 50px;
-  }
-
-  footer a {
-    text-decoration: none;
-    color: #b22222;
-    margin: 0 10px;
-    font-weight: 500;
-  }
-
-  footer a:hover {
-    text-decoration: underline;
-  }
-
-  .footer-links {
-    margin-bottom: 10px;
-  }
-</style>
 </head>
 <body>
 
@@ -236,13 +30,7 @@
     <h2>Categories</h2>
     <ul>
 
-       <style>
-
-         a {
-          text-decoration: underline;
-          color: #b22222;
-          }
-          </style>
+       
           
   <a href="ALL.html "> All </a> 
           <br>
@@ -466,27 +254,36 @@
 
   const grid = document.getElementById('productGrid');
 
-  // 🧱 Load all products into grid
+ function viewProduct(product) {
+      localStorage.setItem("selectedProduct", JSON.stringify(product));
+      window.location.href = "PRODUCTDETAILS.html";
+    }
+
   function loadProducts() {
     grid.innerHTML = '';
     products.forEach(p => {
       const card = document.createElement('div');
       card.className = 'product-card';
       card.innerHTML = `
-        <img src="${p.img}" alt="${p.name}">
-        <h3>${p.name}</h3>
-        <p class="price">₱${p.price}.00</p>
-        <div class="buttons">
-          <button class="buy-btn" onclick='viewProduct(${JSON.stringify(p)})'>Buy</button>
-          <button class="buy-btn" onclick="addToCart('${p.name}','${p.img}',${p.price})">🛒</button>
-          <button class="heart-btn" onclick="addToFavorites('${p.name}','${p.img}',${p.price}, this)">♡</button>
-        </div>
+        <img src="${p.img}" alt="${p.name}" onclick="viewProduct(${JSON.stringify(p).replace(/"/g, '&quot;')})" style="cursor: pointer;">  <!-- Made image clickable to view details -->
+          <h3 onclick="viewProduct(${JSON.stringify(p).replace(/"/g, '&quot;')})" style="cursor: pointer;">${p.name}</h3>  <!-- Made title clickable too -->
+          <p class="price">₱${p.price}.00</p>
+          <div class="buttons">
+            <label class="heart-toggle">
+              <input type="checkbox" onchange="addToFavorites('${p.name}','${p.img}',${p.price}, this)">
+              <span class="heart-btn">♡</span>
+            </label>
+            <button class="cart-btn" onclick="addToCart('${p.name}','${p.img}',${p.price})">
+              <iconify-icon icon="mdi:cart-outline"></iconify-icon>
+            </button>
+           <button class="buy-btn" onclick="viewProduct({ name: '${p.name}', img: '${p.img}', price: ${p.price} })">Buy</button>
+          </div>
       `;
       grid.appendChild(card);
     });
   }
 
-  // 🛒 Add to Cart
+ 
   function addToCart(name, img, price) {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.push({ name, img, price });
@@ -494,7 +291,7 @@
     alert(`${name} added to cart!`);
   }
 
-  // ❤️ Add to Favorites
+  
   function addToFavorites(name, img, price, btn) {
     const favs = JSON.parse(localStorage.getItem('favorites')) || [];
     favs.push({ name, img, price });
@@ -502,7 +299,7 @@
     btn.classList.add('active');
   }
 
-  // 🔍 Search Products
+  
   function searchProducts() {
     const query = document.getElementById('searchInput').value.toLowerCase();
     const filtered = products.filter(p => p.name.toLowerCase().includes(query));
@@ -524,13 +321,9 @@
     });
   }
 
-  // 🪄 View Product — Go to Product Details
-  function viewProduct(product) {
-    localStorage.setItem("selectedProduct", JSON.stringify(product));
-    window.location.href = "PRODUCTDETAILS.html"; // your details page
-  }
+ 
 
-  // 🔄 Load products on page load
+
   loadProducts();
 </script>
 
