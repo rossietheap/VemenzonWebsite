@@ -7,12 +7,12 @@
 
 header {
     width: 100%;
-    background-color: #ffffff;
+    background-color: #ba3e3e;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 60px;
+    padding: 14px 15px;
     position: sticky;
     top: 0;
     z-index: 999;
@@ -25,8 +25,8 @@ header {
 
 h1 {
     margin-left: 15px;
-    margin-top: 16px;
-    font-size: 25px;
+    margin-top: 12px;
+    font-size: 20px;
 }
 
 h1 a {
@@ -36,7 +36,7 @@ h1 a {
 
 .logo img {
     margin-left: 5px;
-    height: 60px;
+    height: 45px;
 }
 
 nav ul {
@@ -52,7 +52,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #111;
+    color: #000000;
     font-weight: 500;
     font-size: 16px;
     transition: color 0.2s ease;
@@ -66,7 +66,7 @@ nav ul li a:hover {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #fff;
+    background-color: #d62727;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
@@ -78,14 +78,14 @@ nav ul li a:hover {
 
 .dropdown a {
     padding: 10px 20px;
-    color: #333;
+    color: #ffdfdf;
     text-decoration: none;
     font-size: 15px;
     transition: background 0.2s;
 }
 
 .dropdown a:hover {
-    background-color: #f9f9f9;
+    background-color: #ed3e3e;
     color: #b22222;
 }
 
@@ -107,18 +107,18 @@ nav ul li .dropdown:hover {
     border: none;
     outline: none;
     background: transparent;
-    color: #fff;
+    color: #fff9f9;
     padding: 5px 10px;
     width: 180px;
     font-size: 15px;
 }
 
 .search-container input::placeholder {
-    color: #f8dcdc;
+    color: #cd5a5a;
 }
 
 .search-container button {
-    background: #fff;
+    background: #ebb5b5;
     border: none;
     border-radius: 12px;
     cursor: pointer;

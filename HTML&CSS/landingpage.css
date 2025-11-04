@@ -7,12 +7,12 @@
 
 header {
     width: 100%;
-    background-color: #ffffff;
+    background-color: #ba3e3e;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 60px;
+    padding: 14px 15px;
     position: sticky;
     top: 0;
     z-index: 999;
@@ -25,18 +25,24 @@ header {
 
 h1 {
     margin-left: 15px;
-    margin-top: 16px;
-    font-size: 25px;
+    margin-top: 12px;
+    font-size: 20px;
 }
+
 
 h1 a {
     text-decoration: none;
     color: black;
 }
 
+a{
+  text-decoration: none;
+  color: blanchedalmond;
+}
+
 .logo img {
     margin-left: 5px;
-    height: 60px;
+    height: 45px;
 }
 
 nav ul {
@@ -52,7 +58,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #111;
+    color: #000000;
     font-weight: 500;
     font-size: 16px;
     transition: color 0.2s ease;
@@ -66,7 +72,7 @@ nav ul li a:hover {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #fff;
+    background-color: #d62727;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
@@ -78,14 +84,14 @@ nav ul li a:hover {
 
 .dropdown a {
     padding: 10px 20px;
-    color: #333;
+    color: #ffdfdf;
     text-decoration: none;
     font-size: 15px;
     transition: background 0.2s;
 }
 
 .dropdown a:hover {
-    background-color: #f9f9f9;
+    background-color: #ed3e3e;
     color: #b22222;
 }
 
@@ -107,18 +113,18 @@ nav ul li .dropdown:hover {
     border: none;
     outline: none;
     background: transparent;
-    color: #fff;
+    color: #fff9f9;
     padding: 5px 10px;
     width: 180px;
     font-size: 15px;
 }
 
 .search-container input::placeholder {
-    color: #f8dcdc;
+    color: #cd5a5a;
 }
 
 .search-container button {
-    background: #fff;
+    background: #ebb5b5;
     border: none;
     border-radius: 12px;
     cursor: pointer;
@@ -167,46 +173,82 @@ nav ul li .dropdown:hover {
     }
 }
 
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 80px;
+}
+
+
     .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 80px 60px;
-      flex-wrap: wrap;
-    }
+  position: relative;
+  width: 100%;
+  height: 100vh; /* full screen height */
+  background: url("Abdullahalamir195 Author Portfolio _ Freepik.jpg") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 40px;
+}
 
-    .hero-text {
-      max-width: 550px;
-    }
+/* Dark overlay (para sa shadow effect sa text) */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* adjust opacity kung gusto mo mas madilim o mas light */
+  z-index: 1;
+}
 
-    .hero-text h1 {
-      font-size: 2.5rem;
-      line-height: 1.4;
-      font-family: 'Orbitron', sans-serif;
-      margin-bottom: 20px;
-      color: #111;
-    }
+/* Make sure text is above overlay */
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
 
-    .hero-text p {
-      color: #555;
-      font-size: 16px;
-      margin-bottom: 30px;
-    }
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
 
-    .hero-text button {
-      background-color: #b22222;
-      color: #fff;
-      border: none;
-      padding: 12px 35px;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
+.hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
 
-    .hero-text button:hover {
-      background-color: #8b1a1a;
-    }
+.hero-text button {
+  background-color: #cb0909;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.hero-text button:hover {
+  background-color: #a30707;
+}
+
+.paragone{
+  
+}
+.hero-text a {
+  color: white;
+  text-decoration: none;
+}
+
 
     .below-signup {
       width: 100%;
@@ -215,17 +257,10 @@ nav ul li .dropdown:hover {
       border-radius: 10px;
       display: block;
     }
-
-    .hero img {
-      width: 480px;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-
-    
     .recommendations {
-      padding: 60px 60px;
+      padding: 50px 20px;
       background-color: #fff;
+      
     }
 
     .recommendations h2 {
@@ -256,7 +291,9 @@ nav ul li .dropdown:hover {
     }
 
     .recommend-item:hover {
+      cursor: pointer;
       transform: translateY(-5px);
+      box-shadow: #00000092 0 8px 15px ;
     }
 
     .recommend-item img {
@@ -315,49 +352,72 @@ nav ul li .dropdown:hover {
       color: red;
     }
 
+.products {
+  padding: 60px 40px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
 
-    .products {
-      padding: 80px 60px;
-      text-align: center;
-    }
+.products h2 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
 
-    .products h2 {
-      font-size: 2rem;
-      margin-bottom: 40px;
-    }
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* smaller boxes */
+  gap: 20px;
+  justify-items: center;
+}
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
+.product {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  background: #fff;
+  transition: 0.3s ease;
+  width: 100%;
+  max-width: 230px; /* smaller width */
+  height: 310px; /* smaller height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
 
-    .product {
-      border: 1px solid #eee;
-      border-radius: 12px;
-      padding: 20px;
-      transition: 0.3s;
-    }
+.product:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
 
-    .product:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
+.product img {
+  width: 100%;
+  height: 150px; /* smaller image */
+  border-radius: 8px;
+  object-fit: cover;
+}
 
-    .product img {
-      width: 100%;
-      border-radius: 10px;
-    }
+.product h3 {
+  font-size: 16px;
+  margin: 8px 0 5px;
+}
 
-    .product h3 {
-      font-size: 18px;
-      margin: 10px 0 5px;
-    }
+.product a {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 12px;
+  background-color: #ff4b4b;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.3s;
+}
 
-    .product p {
-      color: #b22222;
-      font-weight: bold;
-    }
+.product a:hover {
+  background-color: #d00000;
+}
+
 
     footer {
       background-color: #111;

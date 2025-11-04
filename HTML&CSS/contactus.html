@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Vemenzon</title>
-
+<link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Oxanium:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Oxanium:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -129,136 +132,181 @@
       margin-top: 15px;
     }
 
- header {
-      display: flex;
-      justify-content: space-between;
-      align-items:top;
-      padding: 15px 60px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      position: relative;
-     
-      background-color: #fff;
-      
-    }
-
-    header img {
-      height: 50px;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-    }
-
-    nav ul {            
-      
-      list-style: none;
-      display: flex;
-      gap: 25px;
-      position: relative;
-    }
-
-    nav ul li {
-      position: relative;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #222;
-      font-weight: 500;
-      padding: 10px;
-    }
-
-    nav ul li a:hover {
-      color: #b22222;
-    }
-
    
-    .dropdown {
-      position: absolute;
-      top: calc(100% + 6px);
-      left: 0;
-      background-color: #eedcdc;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      min-width: 230px;
-      z-index: 1000;
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oxanium', sans-serif;
+}
 
-      visibility: hidden;
-      opacity: 0;
-      transform: translateY(-6px);
-      transition: opacity 160ms ease, transform 160ms ease, visibility 160ms;
-      pointer-events: none;
-      display: flex;
-      flex-direction: column;
+header {
+    width: 100%;
+    background-color: #ba3e3e;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 15px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    display: flex;
+    justify-content: baseline;
+}
+
+h1 {
+    margin-left: 15px;
+    margin-top: 12px;
+    font-size: 20px;
+}
+
+
+h1 a {
+    text-decoration: none;
+    color: black;
+}
+
+a{
+  text-decoration: none;
+  color: blanchedalmond;
+}
+
+.logo img {
+    margin-left: 5px;
+    height: 45px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: #b22222;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #d62727;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    min-width: 220px;
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.dropdown a {
+    padding: 10px 20px;
+    color: #ffdfdf;
+    text-decoration: none;
+    font-size: 15px;
+    transition: background 0.2s;
+}
+
+.dropdown a:hover {
+    background-color: #ed3e3e;
+    color: #b22222;
+}
+
+nav ul li:hover>.dropdown,
+nav ul li .dropdown:hover {
+    display: flex;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #b22222;
+    border-radius: 50px;
+    padding: 5px 10px;
+    height: 40px;
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff9f9;
+    padding: 5px 10px;
+    width: 180px;
+    font-size: 15px;
+}
+
+.search-container input::placeholder {
+    color: #cd5a5a;
+}
+
+.search-container button {
+    background: #ebb5b5;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-container button:hover {
+    background-color: #f2f2f2;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 26px;
+}
+
+.icons a {
+    color: #222;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.icons a:hover {
+    color: #b22222;
+}
+
+@media (max-width: 900px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
     }
 
-    .dropdown a {
-      padding: 10px 20px;
-      color: #111;
-      text-decoration: none;
-      font-weight: 500;
-      display: block;
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .dropdown a:hover {
-      background-color: #fff0f0;
-      color: #b22222;
-    }
-
-    nav ul li:hover .dropdown,
-    nav ul li:focus-within .dropdown {
-      visibility: visible;
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    
     .search-container {
-      background-color: #a36b6b;
-      border-radius: 40px;
-      display: flex;
-      align-items: center;
-      padding: 5px 10px;
-      height: 40px;
+        width: 100%;
+        max-width: 300px;
     }
-
-    .search-container input {
-      border: none;
-      background: none;
-      outline: none;
-      padding: 5px 10px;
-      color: white;
-      font-size: 15px;
-      width: 180px;
-    }
-
-    .search-container input::placeholder {
-      color: #f5dada;
-    }
-
-    .search-container button {
-      background-color: #e7caca;
-      border: none;
-      border-radius: 12px;
-      padding: 5px 10px;
-      cursor: pointer;
-    }
-
-    .search-container button:hover {
-      background-color: #f7e0e0;
-    }
-
-    .icons {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      font-size: 22px;
-      cursor: pointer;
-    }
-
+}
 
     </style>
 </head>
@@ -267,43 +315,31 @@
 
 <body>
 
-    <header>
-        <div class="logo">
-            <img src="Screenshot_2025-10-16_133612-removebg-preview.png" alt="Vemenzon Logo">
-        </div>
-
-        <nav>
-            <ul>
-                <li>
-                    <a href="#">Shop By Category ▼</a>
-                    <div class="dropdown">
-                        <a href="http://127.0.0.1:5500/WRITING.html">Writing & Correction</a>
-                        <a href="http://127.0.0.1:5500/PAPERS.html">Paper & Notebooks</a>
-                        <a href="http://127.0.0.1:5500/FILING.html">Filing & Organizers</a>
-                        <a href="http://127.0.0.1:5500/MATH.html">Math & Measuring</a>
-                        <a href="http://127.0.0.1:5500/ARTS.html">Arts & Crafts</a>
-                        <a href="http://127.0.0.1:5500/CASES.html">Bags & Cases</a>
-                        <a href="http://127.0.0.1:5500/CLASS.html">Classroom Essentials</a>
-                    </div>
-                </li>
-                <li><a href="AboutUS.html">About us</a></li>
-        <li><a href="contactus.html">Contact us</a></li>
+  <header>
+     <div class="logo"> <a href="LandingPage.html"><img src="Group 1.png" alt="Vemenzon Logo"></a>
+      <h1><a href="LandingPage.html"><b>Vemenzon</b></a></h1>
+    </div>
+    <nav>
+      <ul>
+        <li> <a href="ALL.html">Shop By Category <span class="iconify" data-icon="mdi:chevron-down"></span></a>
+          <div class="dropdown"> <a href="WRITING.html">Writing & Correction</a> <a href="PAPERS.html">Paper &
+              Notebooks</a> <a href="FILING.html">Filing & Organizers</a> <a href="MATH.html">Math & Measuring</a> <a
+              href="ARTS.html">Arts & Crafts</a> <a href="CASES.html">Bags & Cases</a> <a href="CLASS.html">Classroom
+              Essentials</a> </div>
+        </li>
+        <li><a href="AboutUS.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
         <li><a href="help.html">Help</a></li>
-            </ul>
-        </nav>
+      </ul>
+    </nav>
+    <div class="search-container"> <input type="text" placeholder="Search for school supplies..."> <button><span
+          class="iconify" data-icon="mdi:magnify"></span></button> </div>
+    <div class="icons"> <a href="addtocart.html" title="Cart"><span class="iconify"
+          data-icon="mdi:cart-outline"></span></a> <a href="HEARTS.html" title="Favorites"><span class="iconify"
+          data-icon="mdi:heart-outline"></span></a> <a href="login.html" title="Profile"><span class="iconify"
+          data-icon="mdi:account-circle-outline"></span></a> </div>
 
-        <div class="search-container">
-            <input type="text" placeholder="Search for school supplies..." />
-            <button>🔍</button>
-        </div>
-
-        <div class="icons">
-            <a href="addtocart.html" title="View Cart">🛒</a>
-            <a href="HEARTS.html" title="View Favorites">❤️</a>
-            <a href="login.html" title="Profile">👤</a>
-        </div>
-
-    </header>
+  </header>
 
 
 
