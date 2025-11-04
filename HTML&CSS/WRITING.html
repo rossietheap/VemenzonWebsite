@@ -1,268 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Oxanium:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
   <script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
-<title>Writing and Correction </title>
+  <title>Writing and Correction </title>
 
 </head>
+
 <body>
 
-<header>
-  <img src="Screenshot_2025-10-16_133612-removebg-preview.png" alt="Vemenzon Logo">
-  <nav>
-    <a href="websites.html">Home</a>
-    <a href="ALL.html" style="color:#d10000;">Shop</a>
-    <a href="HEARTS.html">❤️</a>
-    <a href="addtocart.html">🛒</a>
-  </nav>
-</header>
+  <header>
+    <div class="logo"> <a href="LandingPage.html"><img src="Group 1.png" alt="Vemenzon Logo"></a>
+      <h1><a href="LandingPage.html"><b>Vemenzon</b></a></h1>
+    </div>
+    <nav>
+      <ul>
+        <li> <a href="ALL.html">Shop By Category <span class="iconify" data-icon="mdi:chevron-down"></span></a>
+          <div class="dropdown"> <a href="WRITING.html">Writing & Correction</a> <a href="PAPERS.html">Paper &
+              Notebooks</a> <a href="FILING.html">Filing & Organizers</a> <a href="MATH.html">Math & Measuring</a> <a
+              href="ARTS.html">Arts & Crafts</a> <a href="CASES.html">Bags & Cases</a> <a href="CLASS.html">Classroom
+              Essentials</a> </div>
+        </li>
+        <li><a href="AboutUS.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+    </nav>
+    <div class="search-container"> <input type="text" placeholder="Search for school supplies..."> <button><span
+          class="iconify" data-icon="mdi:magnify"></span></button> </div>
+    <div class="icons"> <a href="addtocart.html" title="Cart"><span class="iconify"
+          data-icon="mdi:cart-outline"></span></a> <a href="HEARTS.html" title="Favorites"><span class="iconify"
+          data-icon="mdi:heart-outline"></span></a> <a href="login.html" title="Profile"><span class="iconify"
+          data-icon="mdi:account-circle-outline"></span></a> </div>
+  </header>
 
-<div class="search-bar">
-  <input type="text" id="searchInput" placeholder="Search for products...">
-  <button onclick="searchProducts()">🔍</button>
-</div>
 
-<div class="container">
-  <div class="sidebar">
-    <h2>Categories</h2>
-    <ul>
-     <a href="ALL.html "> All </a> 
-          <br>
-       <br>
-        <a href="WRITING.html"> Writing & Correction </a> 
-       <br>
-       <br>
+
+  <div class="container">
+    <div class="sidebar">
+      <h2>Categories</h2>
+      <ul>
+        <a href="ALL.html "> All </a>
+        <br>
+        <br>
+        <a href="WRITING.html"> Writing & Correction </a>
+        <br>
+        <br>
         <a href="PAPERS.html "> Papers & Notebooks </a>
         <br>
         <br>
-      <a href="FILING.html "> Filing & Organizers </a>  
-      <br>
-       <br>
-       <a href="MATH.html">Math & Measuring Tools </a>  
-    
-    
+        <a href="FILING.html "> Filing & Organizers </a>
         <br>
         <br>
-    
-       <a href="ARTS.html ">Arts & Crafts</a> 
-        <br>
-       <br>
-       <a href="CASES.html ">Bags & Cases</a> 
-       <br>
-       <br>
-       <a href="CLASS.html ">Classroom Essentials</a> 
-       
-    </ul>
-  </div>
+        <a href="MATH.html">Math & Measuring Tools </a>
 
-  <div class="products">
-    <div class="tabs">
-      <button class="active">Popular</button>
-      <button>Latest</button>
-      <button>Top Sales</button>
+
+        <br>
+        <br>
+
+        <a href="ARTS.html ">Arts & Crafts</a>
+        <br>
+        <br>
+        <a href="CASES.html ">Bags & Cases</a>
+        <br>
+        <br>
+        <a href="CLASS.html ">Classroom Essentials</a>
+
+      </ul>
     </div>
 
-    <div class="product-grid" id="productGrid"></div>
-  </div>
-</div>
+    <div class="products">
+      <div class="tabs">
+        <button class="active">Popular</button>
+        <button>Latest</button>
+        <button>Top Sales</button>
+      </div>
 
-<footer>
-  <div class="footer-links">
-    <a href="about.html">About</a> |
-    <a href="contact.html">Contact</a> |
-    <a href="http://127.0.0.1:5500/help.html">Help</a> |
-     <a href="https://maps.app.goo.gl/jXrTi31t3e7H8ei67">Location</a> |
+      <div class="product-grid" id="productGrid"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="http://127.0.0.1:5500/help.html">Help</a> |
+      <a href="https://maps.app.goo.gl/jXrTi31t3e7H8ei67">Location</a> |
       <a href="Email">Email</a> |
-       <a href="Phone">Phone</a> |
-  </div>
-  © 2025 Vemenzon. All rights reserved.
-</footer>
+      <a href="Phone">Phone</a> |
+    </div>
+    © 2025 Vemenzon. All rights reserved.
+  </footer>
 
-<script>  
-
-
-const products = [
-  { 
-    name: "Pentel Pen", 
-    price: 50, 
-    img: "https://www.forsupplies.com/img/p/4/3/8/4/0/43840-large_default.jpg",
-    description: "Smooth-writing pen for everyday use.",
-    brand: "Pentel",
-    stock: "Available",
-    shipping: "Ships in 3–5 days"
-  },
-  { 
-    name: "OB Gel Pen", 
-    price: 50, 
-    img: "https://online.carrefour.com.tw/on/demandware.static/-/Sites-carrefour-tw-m-inner/default/dw941b8c0c/images/large/0158826_ob200a053.jpeg",
-    description: "Comfortable grip and rich ink flow for neat writing.",
-    brand: "OB Stationery",
-    stock: "Available",
-    shipping: "Ships in 3–5 days"
-  },
-  { 
-    name: "Matrix Marker", 
-    price: 50, 
-    img: "https://cdn11.bigcommerce.com/s-wtulnkmvw7/images/stencil/1280x1280/products/16776/66295/Assorted-Colors-Chisel-Tip-Desk-Style-Permanent-Markers-3Pack-24-Pack-223398_29719__17739.1716633612.jpg?c=1",
-    description: "Permanent marker perfect for labeling and artwork.",
-    brand: "Matrix",
-    stock: "Limited Stock",
-    shipping: "Ships in 2–4 days"
-  },
-  { 
-    name: "WhiteBoard Pentel Pen", 
-    price: 50, 
-    img: "https://5.imimg.com/data5/IS/BN/MY-45773064/whiteboard-marker-8-pen-pack-500x500.jpg",
-    description: "Refillable whiteboard marker ideal for classrooms.",
-    brand: "Pentel",
-    stock: "Available",
-    shipping: "Ships in 5–7 days"
-  },
-  { 
-    name: "Avanti Pastel", 
-    price: 50, 
-    img: "https://cdn.store-assets.com/s/1328220/i/63245399.jpg?width=1024",
-    description: "Soft pastel colors for smooth highlighting.",
-    brand: "Avanti",
-    stock: "Available",
-    shipping: "Ships in 5–7 days"
-  },
-  { 
-    name: "Yellow Pencil", 
-    price: 50, 
-    img: "https://cdn11.bigcommerce.com/s-98fz2hbpcm/images/stencil/1280x1280/products/1258/1985/764__35359.1671879516.jpg?c=1",
-    description: "Classic wooden pencil with smooth graphite.",
-    brand: "HBW",
-    stock: "Available",
-    shipping: "Ships in 3–5 days"
-  },
-  { 
-    name: "Color Pencil (Fiber Castell)", 
-    price: 50, 
-    img: "https://www.artilleryphilippines.com/10065-medium_default/faber-castell-classic-colour-pencil-set-of-24.jpg",
-    description: "24 vibrant colors for artistic drawing.",
-    brand: "Faber Castell",
-    stock: "Low Stock",
-    shipping: "Ships in 2–3 days"
-  },
-  { 
-    name: "Correction (8m)", 
-    price: 50, 
-    img: "https://tse1.mm.bing.net/th/id/OIP.Ucxin_JjB94z3ZifU74GsAHaHa?w=1599&h=1599&rs=1&pid=ImgDetMain&o=7&rm=3",
-    description: "Smooth and precise correction tape, 8m long.",
-    brand: "HBW",
-    stock: "Available",
-    shipping: "Ships in 4–6 days"
-  },
-  { 
-    name: "Erasers (jar)", 
-    price: 50, 
-    img: "https://hbw.ph/wp-content/uploads/2019/05/HBW-Eraser-in-jar-E-00.jpg",
-    description: "Soft erasers in jar — 30 pcs per jar.",
-    brand: "HBW",
-    stock: "Available",
-    shipping: "Ships in 5–7 days"
-  },
-  { 
-    name: "Magic Pencil", 
-    price: 50, 
-    img: "https://ph-test-11.slatic.net/p/f4be4cb1114c8e83990dd27ae24a44ac.jpg",
-    description: "Multi-color pencil with smooth color transitions.",
-    brand: "Magic",
-    stock: "Low Stock",
-    shipping: "Ships in 5–7 days"
-  },
-  { 
-    name: "311 Pentel Pen", 
-    price: 50, 
-    img: "https://www.youngones.com.my/image/cache/catalog/Stationery/Pen%20And%20Refill/PENTAL%20NF450-600x800.jpg",
-    description: "Durable pen ideal for daily writing tasks.",
-    brand: "Pentel",
-    stock: "Available",
-    shipping: "Ships in 3–5 days"
-  },
-  { 
-    name: "Correction Tape (5m)", 
-    price: 50, 
-    img: "https://caterqatar.com/wp-content/uploads/2025/02/CORRECTION-TAPE-5M-5MM-CT805-PARTNR.png",
-    description: "Compact correction tape for quick fixes.",
-    brand: "HBW",
-    stock: "Available",
-    shipping: "Ships in 4–6 days"
-  },
-  { 
-    name: "Avanti Neon", 
-    price: 50, 
-    img: "https://www.lebez.com/wp-content/uploads/2023/11/81242_1.jpg",
-    description: "Bright neon highlighters for bold notes.",
-    brand: "Avanti",
-    stock: "Available",
-    shipping: "Ships in 5–7 days"
-  },
-  { 
-    name: "Charcoal Pencil", 
-    price: 50, 
-    img: "https://m.media-amazon.com/images/I/61VbpUNp64L.jpg",
-    description: "High-quality charcoal pencil for shading.",
-    brand: "Faber Castell",
-    stock: "Available",
-    shipping: "Ships in 3–5 days"
-  },
-  { 
-    name: "Highlighter", 
-    price: 50, 
-    img: "https://tse3.mm.bing.net/th/id/OIP.z0wPUNlu3dY-1MqysDOt0QHaF4?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
-    description: "Bright and long-lasting highlighting ink.",
-    brand: "Stabilo",
-    stock: "Available",
-    shipping: "Ships in 3–5 days"
-  },
-  { 
-    name: "Mechanical Pen", 
-    price: 50, 
-    img: "https://i5.walmartimages.com/asr/29339d9c-1f30-492d-a008-e91a391a5090.9ff7708cf06935f7796a8361513736f8.jpeg",
-    description: "Ergonomic mechanical pen with refillable lead.",
-    brand: "Pilot",
-    stock: "Available",
-    shipping: "Ships in 3–5 days"
-  },
-  { 
-    name: "Pencil Lead", 
-    price: 50, 
-    img: "https://i5.walmartimages.com/seo/BIC-Xtra-Strong-Mechanical-Lead-Pencil-Colorful-Barrel-Thick-Point-0-9mm-10-Count-Lead-Pencils-Pencil-Mechanical-Pencil_004b7265-9fcc-4edf-8686-ecced7391ee3.bb30a39f77d9f26b78ee4e968088af20.jpeg",
-    description: "0.9mm thick mechanical pencil leads.",
-    brand: "BIC",
-    stock: "Available",
-    shipping: "Ships in 3–5 days"
-  },
-  { 
-    name: "Calligraphy Pen", 
-    price: 50, 
-    img: "https://www.nationalbookstore.com/156649-thickbox_default/zig-calligraphy-pen-square-writing-supplies-arts-supplies-lettering.jpg",
-    description: "Square tip pen perfect for lettering and art.",
-    brand: "Zig",
-    stock: "Available",
-    shipping: "Ships in 4–6 days"
-  }
-];
+  <script>
 
 
-  const grid = document.getElementById('productGrid');
+    const products = [
+      {
+        name: "Pentel Pen",
+        price: 50,
+        img: "https://www.forsupplies.com/img/p/4/3/8/4/0/43840-large_default.jpg",
+        description: "Smooth-writing pen for everyday use.",
+        brand: "Pentel",
+        stock: "Available",
+        shipping: "Ships in 3–5 days"
+      },
+      {
+        name: "OB Gel Pen",
+        price: 50,
+        img: "https://online.carrefour.com.tw/on/demandware.static/-/Sites-carrefour-tw-m-inner/default/dw941b8c0c/images/large/0158826_ob200a053.jpeg",
+        description: "Comfortable grip and rich ink flow for neat writing.",
+        brand: "OB Stationery",
+        stock: "Available",
+        shipping: "Ships in 3–5 days"
+      },
+      {
+        name: "Matrix Marker",
+        price: 50,
+        img: "https://cdn11.bigcommerce.com/s-wtulnkmvw7/images/stencil/1280x1280/products/16776/66295/Assorted-Colors-Chisel-Tip-Desk-Style-Permanent-Markers-3Pack-24-Pack-223398_29719__17739.1716633612.jpg?c=1",
+        description: "Permanent marker perfect for labeling and artwork.",
+        brand: "Matrix",
+        stock: "Limited Stock",
+        shipping: "Ships in 2–4 days"
+      },
+      {
+        name: "WhiteBoard Pentel Pen",
+        price: 50,
+        img: "https://5.imimg.com/data5/IS/BN/MY-45773064/whiteboard-marker-8-pen-pack-500x500.jpg",
+        description: "Refillable whiteboard marker ideal for classrooms.",
+        brand: "Pentel",
+        stock: "Available",
+        shipping: "Ships in 5–7 days"
+      },
+      {
+        name: "Avanti Pastel",
+        price: 50,
+        img: "https://cdn.store-assets.com/s/1328220/i/63245399.jpg?width=1024",
+        description: "Soft pastel colors for smooth highlighting.",
+        brand: "Avanti",
+        stock: "Available",
+        shipping: "Ships in 5–7 days"
+      },
+      {
+        name: "Yellow Pencil",
+        price: 50,
+        img: "https://cdn11.bigcommerce.com/s-98fz2hbpcm/images/stencil/1280x1280/products/1258/1985/764__35359.1671879516.jpg?c=1",
+        description: "Classic wooden pencil with smooth graphite.",
+        brand: "HBW",
+        stock: "Available",
+        shipping: "Ships in 3–5 days"
+      },
+      {
+        name: "Color Pencil (Fiber Castell)",
+        price: 50,
+        img: "https://www.artilleryphilippines.com/10065-medium_default/faber-castell-classic-colour-pencil-set-of-24.jpg",
+        description: "24 vibrant colors for artistic drawing.",
+        brand: "Faber Castell",
+        stock: "Low Stock",
+        shipping: "Ships in 2–3 days"
+      },
+      {
+        name: "Correction (8m)",
+        price: 50,
+        img: "https://tse1.mm.bing.net/th/id/OIP.Ucxin_JjB94z3ZifU74GsAHaHa?w=1599&h=1599&rs=1&pid=ImgDetMain&o=7&rm=3",
+        description: "Smooth and precise correction tape, 8m long.",
+        brand: "HBW",
+        stock: "Available",
+        shipping: "Ships in 4–6 days"
+      },
+      {
+        name: "Erasers (jar)",
+        price: 50,
+        img: "https://hbw.ph/wp-content/uploads/2019/05/HBW-Eraser-in-jar-E-00.jpg",
+        description: "Soft erasers in jar — 30 pcs per jar.",
+        brand: "HBW",
+        stock: "Available",
+        shipping: "Ships in 5–7 days"
+      },
+      {
+        name: "Magic Pencil",
+        price: 50,
+        img: "https://ph-test-11.slatic.net/p/f4be4cb1114c8e83990dd27ae24a44ac.jpg",
+        description: "Multi-color pencil with smooth color transitions.",
+        brand: "Magic",
+        stock: "Low Stock",
+        shipping: "Ships in 5–7 days"
+      },
+      {
+        name: "311 Pentel Pen",
+        price: 50,
+        img: "https://www.youngones.com.my/image/cache/catalog/Stationery/Pen%20And%20Refill/PENTAL%20NF450-600x800.jpg",
+        description: "Durable pen ideal for daily writing tasks.",
+        brand: "Pentel",
+        stock: "Available",
+        shipping: "Ships in 3–5 days"
+      },
+      {
+        name: "Correction Tape (5m)",
+        price: 50,
+        img: "https://caterqatar.com/wp-content/uploads/2025/02/CORRECTION-TAPE-5M-5MM-CT805-PARTNR.png",
+        description: "Compact correction tape for quick fixes.",
+        brand: "HBW",
+        stock: "Available",
+        shipping: "Ships in 4–6 days"
+      },
+      {
+        name: "Avanti Neon",
+        price: 50,
+        img: "https://www.lebez.com/wp-content/uploads/2023/11/81242_1.jpg",
+        description: "Bright neon highlighters for bold notes.",
+        brand: "Avanti",
+        stock: "Available",
+        shipping: "Ships in 5–7 days"
+      },
+      {
+        name: "Charcoal Pencil",
+        price: 50,
+        img: "https://m.media-amazon.com/images/I/61VbpUNp64L.jpg",
+        description: "High-quality charcoal pencil for shading.",
+        brand: "Faber Castell",
+        stock: "Available",
+        shipping: "Ships in 3–5 days"
+      },
+      {
+        name: "Highlighter",
+        price: 50,
+        img: "https://tse3.mm.bing.net/th/id/OIP.z0wPUNlu3dY-1MqysDOt0QHaF4?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
+        description: "Bright and long-lasting highlighting ink.",
+        brand: "Stabilo",
+        stock: "Available",
+        shipping: "Ships in 3–5 days"
+      },
+      {
+        name: "Mechanical Pen",
+        price: 50,
+        img: "https://i5.walmartimages.com/asr/29339d9c-1f30-492d-a008-e91a391a5090.9ff7708cf06935f7796a8361513736f8.jpeg",
+        description: "Ergonomic mechanical pen with refillable lead.",
+        brand: "Pilot",
+        stock: "Available",
+        shipping: "Ships in 3–5 days"
+      },
+      {
+        name: "Pencil Lead",
+        price: 50,
+        img: "https://i5.walmartimages.com/seo/BIC-Xtra-Strong-Mechanical-Lead-Pencil-Colorful-Barrel-Thick-Point-0-9mm-10-Count-Lead-Pencils-Pencil-Mechanical-Pencil_004b7265-9fcc-4edf-8686-ecced7391ee3.bb30a39f77d9f26b78ee4e968088af20.jpeg",
+        description: "0.9mm thick mechanical pencil leads.",
+        brand: "BIC",
+        stock: "Available",
+        shipping: "Ships in 3–5 days"
+      },
+      {
+        name: "Calligraphy Pen",
+        price: 50,
+        img: "https://www.nationalbookstore.com/156649-thickbox_default/zig-calligraphy-pen-square-writing-supplies-arts-supplies-lettering.jpg",
+        description: "Square tip pen perfect for lettering and art.",
+        brand: "Zig",
+        stock: "Available",
+        shipping: "Ships in 4–6 days"
+      }
+    ];
 
-  function viewProduct(product) {
+
+    const grid = document.getElementById('productGrid');
+
+    function viewProduct(product) {
       localStorage.setItem("selectedProduct", JSON.stringify(product));
       window.location.href = "PRODUCTDETAILS.html";
     }
 
-  function loadProducts() {
-    grid.innerHTML = '';
-    products.forEach(p => {
-      const card = document.createElement('div');
-      card.className = 'product-card';
-      card.innerHTML = `
+    function loadProducts() {
+      grid.innerHTML = '';
+      products.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
        <img src="${p.img}" alt="${p.name}" onclick="viewProduct(${JSON.stringify(p).replace(/"/g, '&quot;')})" style="cursor: pointer;">  <!-- Made image clickable to view details -->
           <h3 onclick="viewProduct(${JSON.stringify(p).replace(/"/g, '&quot;')})" style="cursor: pointer;">${p.name}</h3>  <!-- Made title clickable too -->
           <p class="price">₱${p.price}.00</p>
@@ -277,34 +295,34 @@ const products = [
            <button class="buy-btn" onclick="viewProduct({ name: '${p.name}', img: '${p.img}', price: ${p.price} })">Buy</button>
           </div>
       `;
-      grid.appendChild(card);
-    });
-  }
+        grid.appendChild(card);
+      });
+    }
 
-  function addToCart(name, img, price) {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push({ name, img, price });
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${name} added to cart!`);
-  }
+    function addToCart(name, img, price) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name, img, price });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`${name} added to cart!`);
+    }
 
-  // ❤️ Add to Favorites
-  function addToFavorites(name, img, price, btn) {
-    const favs = JSON.parse(localStorage.getItem('favorites')) || [];
-    favs.push({ name, img, price });
-    localStorage.setItem('favorites', JSON.stringify(favs));
-    btn.classList.add('active');
-  }
+    // ❤️ Add to Favorites
+    function addToFavorites(name, img, price, btn) {
+      const favs = JSON.parse(localStorage.getItem('favorites')) || [];
+      favs.push({ name, img, price });
+      localStorage.setItem('favorites', JSON.stringify(favs));
+      btn.classList.add('active');
+    }
 
-  // 🔍 Search Products
-  function searchProducts() {
-    const query = document.getElementById('searchInput').value.toLowerCase();
-    const filtered = products.filter(p => p.name.toLowerCase().includes(query));
-    grid.innerHTML = '';
-    filtered.forEach(p => {
-      const card = document.createElement('div');
-      card.className = 'product-card';
-      card.innerHTML = `
+    // 🔍 Search Products
+    function searchProducts() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const filtered = products.filter(p => p.name.toLowerCase().includes(query));
+      grid.innerHTML = '';
+      filtered.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
         <img src="${p.img}" alt="${p.name}">
         <h3>${p.name}</h3>
         <p class="price">₱${p.price}.00</p>
@@ -314,35 +332,22 @@ const products = [
           <button class="heart-btn" onclick="addToFavorites('${p.name}','${p.img}',${p.price}, this)">♡</button>
         </div>
       `;
-      grid.appendChild(card);
-    });
-  }
+        grid.appendChild(card);
+      });
+    }
 
-  // 🪄 View Product — Go to Product Details
-  function viewProduct(product) {
-    localStorage.setItem("selectedProduct", JSON.stringify(product));
-    window.location.href = "PRODUCTDETAILS.html"; // your details page
-  }
+    // 🪄 View Product — Go to Product Details
+    function viewProduct(product) {
+      localStorage.setItem("selectedProduct", JSON.stringify(product));
+      window.location.href = "PRODUCTDETAILS.html"; // your details page
+    }
 
-  // 🔄 Load products on page load
-  loadProducts();
-</script>
+    // 🔄 Load products on page load
+    loadProducts();
+  </script>
 
 
 
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

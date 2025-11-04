@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
+ <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Oxanium:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 <script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
 <title>Bags and Cases</title>
 
@@ -11,19 +15,31 @@
 <body>
 
 <header>
-  <img src="Screenshot_2025-10-16_133612-removebg-preview.png" alt="Vemenzon Logo">
-  <nav>
-    <a href="websites.html">Home</a>
-    <a href="ALL.html" style="color:#d10000;">Shop</a>
-    <a href="HEARTS.html">❤️</a>
-    <a href="addtocart.html">🛒</a>
-  </nav>
+  <div class="logo"> <a href="LandingPage.html"><img src="Group 1.png" alt="Vemenzon Logo"></a>
+      <h1><a href="LandingPage.html"><b>Vemenzon</b></a></h1>
+    </div>
+    <nav>
+      <ul>
+        <li> <a href="ALL.html">Shop By Category <span class="iconify" data-icon="mdi:chevron-down"></span></a>
+          <div class="dropdown"> <a href="WRITING.html">Writing & Correction</a> <a href="PAPERS.html">Paper &
+              Notebooks</a> <a href="FILING.html">Filing & Organizers</a> <a href="MATH.html">Math & Measuring</a> <a
+              href="ARTS.html">Arts & Crafts</a> <a href="CASES.html">Bags & Cases</a> <a href="CLASS.html">Classroom
+              Essentials</a> </div>
+        </li>
+        <li><a href="AboutUS.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+    </nav>
+    <div class="search-container"> <input type="text" placeholder="Search for school supplies..."> <button><span
+          class="iconify" data-icon="mdi:magnify"></span></button> </div>
+    <div class="icons"> <a href="addtocart.html" title="Cart"><span class="iconify"
+          data-icon="mdi:cart-outline"></span></a> <a href="HEARTS.html" title="Favorites"><span class="iconify"
+          data-icon="mdi:heart-outline"></span></a> <a href="login.html" title="Profile"><span class="iconify"
+          data-icon="mdi:account-circle-outline"></span></a> </div>
 </header>
 
-<div class="search-bar">
-  <input type="text" id="searchInput" placeholder="Search for products...">
-  <button onclick="searchProducts()">🔍</button>
-</div>
+
 
 <div class="container">
   <div class="sidebar">
