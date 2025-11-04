@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading...</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #dcecfb, #f3f7ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .loader-container {
+    position: relative;
+    text-align: center;
+  }
+
+  
+  .circle {
+    width: 120px;
+    height: 120px;
+    border: 6px solid #ffffff;
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    animation: spin 1.5s linear infinite;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .pencil {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: orbit 1.5s linear infinite;
+  }
+
+  @keyframes orbit {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  h2 {
+    font-size: 1.4em;
+    color: #1e293b;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-top: 15px;
+    animation: fadeText 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes fadeText {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+  }
+
+  
+  .icon {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.7;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-25px); }
+  }
+
+ 
+  .sparkle {
+    position: absolute;
+    background: rgba(59, 130, 246, 0.4);
+    border-radius: 50%;
+    animation: sparkle 3s infinite ease-in-out;
+  }
+
+  @keyframes sparkle {
+    0%, 100% { transform: scale(0.5); opacity: 0.2; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+  }
+</style>
+</head>
+<body>
+
+<div class="loader-container">
+  <div class="circle"></div>
+  <img class="pencil" src="https://cdn-icons-png.flaticon.com/512/2972/2972149.png" alt="Pencil">
+  <h2>Please wait a while...</h2>
+</div>
+
+<script>
+  const icons = ["📚","📖","📓","📝","📐","📏","🧮","🎓","✏️","📘","📄","📎"];
+  for (let i = 0; i < 18; i++) {
+    const icon = document.createElement('div');
+    icon.classList.add('icon');
+    icon.textContent = icons[Math.floor(Math.random() * icons.length)];
+    icon.style.left = Math.random() * 100 + "vw";
+    icon.style.top = Math.random() * 100 + "vh";
+    icon.style.animationDelay = (Math.random() * 5) + "s";
+    icon.style.fontSize = (Math.random() * 1.5 + 1.5) + "rem";
+    document.body.appendChild(icon);
+  }
+
+  
+  for (let i = 0; i < 25; i++) {
+    const sparkle = document.createElement('div');
+    sparkle.classList.add('sparkle');
+    sparkle.style.width = sparkle.style.height = (Math.random() * 4 + 2) + "px";
+    sparkle.style.left = Math.random() * 100 + "vw";
+    sparkle.style.top = Math.random() * 100 + "vh";
+    sparkle.style.animationDelay = Math.random() * 3 + "s";
+    document.body.appendChild(sparkle);
+  }
+</script>
+
+</body>
+</html>
