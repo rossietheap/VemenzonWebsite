@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout & Order Summary</title>
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Left form section */
+    .checkout-form {
+      flex: 2;
+      padding-right: 20px;
+      border-right: 1px solid #ddd;
+    }
+
+    .checkout-form h2 {
+      margin-bottom: 20px;
+      font-weight: 600;
+      border-bottom: 2px solid #b22222;
+      padding-bottom: 8px;
+      color: #b22222;
+    }
+
+    .input-group {
+      margin-bottom: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .input-group label {
+      flex: 1 1 120px;
+      font-weight: 600;
+      margin-top: 6px;
+    }
+
+    .input-group input,
+    .input-group textarea,
+    .input-group select {
+      flex: 2 1 300px;
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    /* Radio group styles */
+    fieldset {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 10px 15px 20px;
+      margin-bottom: 20px;
+    }
+    legend {
+      font-weight: 600;
+      padding: 0 5px;
+      color: #b22222;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .radio-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+    .radio-label input[type="radio"] {
+      cursor: pointer;
+    }
+
+    /* Right order summary */
+    .order-summary {
+      flex: 1;
+      background: #fafafa;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: inset 0 0 10px #ddd;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: sticky;
+      top: 20px;
+      height: fit-content;
+    }
+
+    .order-summary h3 {
+      margin: 0 0 15px 0;
+      color: #555;
+      font-weight: 600;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 8px;
+    }
+
+    .summary-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 1rem;
+      color: #444;
+    }
+    .summary-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .summary-list li.total {
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-bottom: none;
+      margin-top: 10px;
+    }
+
+    /* Product in order summary */
+    .order-product {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .order-product img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+    .order-product-details {
+      flex: 1;
+      font-size: 0.9rem;
+      color: #444;
+    }
+    .order-product-details p {
+      margin: 2px 0;
+    }
+
+    .buy-button {
+      background-color: #b22222;
+      color: white;
+      border: none;
+      padding: 15px 0;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .buy-button:hover {
+      background-color: #8b1a1a;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 10px;
+      }
+      .checkout-form {
+        border-right: none;
+        padding-right: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="checkout-form">
+      <h2>Secure Checkout</h2>
+      <form id="checkoutForm">
+        <fieldset>
+          <legend>Delivery Information</legend>
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" required placeholder="you@example.com" />
+          </div>
+          <div class="input-group">
+            <label for="firstName">First Name</label>
+            <input id="firstName" type="text" required placeholder="First Name"/>
+            <label for="lastName">Last Name</label>
+            <input id="lastName" type="text" required placeholder="Last Name"/>
+          </div>
+          <div class="input-group">
+            <label for="address1">Address</label>
+            <input id="address1" type="text" required placeholder="Street address"/>
+          </div>
+          <div class="input-group">
+            <label for="address2">Address 2</label>
+            <input id="address2" type="text" placeholder="Apartment, suite, etc. (optional)"/>
+          </div>
+          <div class="input-group">
+            <label for="city">City</label>
+            <input id="city" type="text" required placeholder="City"/>
+            <label for="postalCode">Postal Code</label>
+            <input id="postalCode" type="text" required placeholder="Postal Code"/>
+          </div>
+          <div class="input-group">
+            <label for="region">State / Region</label>
+            <input id="region" type="text" placeholder="State or Region (optional)"/>
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" placeholder="Phone number"/>
+          </div>
+          <div class="input-group">
+            <label for="country">Country</label>
+            <select id="country" required>
+              <option value="" disabled selected>Select country</option>
+              <option value="Philippines">Philippines</option>
+              <option value="USA">USA</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Delivery Method</legend>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="deliveryMethod" value="standard" checked />
+              <span>Standard (8-13 business days) - ₱30.53</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="deliveryMethod" value="express" />
+              <span>Express (6-11 business days) - ₱50.00</span>
+            </label>
+          </div>
+        </fieldset>
+
+        
+        <fieldset>
+          <legend>Payment Method</legend>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="paymentMethod" value="gcash" />
+              GCash (Instant mobile payment)
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="paymentMethod" value="securitybank" />
+              Security Bank (Direct bank transfer)
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="paymentMethod" value="cod" />
+              Cash on Delivery (Pay when item arrives)
+            </label>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+
+
+    <aside class="order-summary">
+      <h3>Your Order</h3>
+      <ul class="summary-list">
+        <li><span>Items:</span> <span id="itemsPrice">₱0.00</span></li>
+        <li><span>Shipping:</span> <span id="shippingPrice">₱0.00</span></li>
+        <li class="total"><span>Total:</span> <span id="totalPrice">₱ 0.00</span></li>
+      </ul>
+
+      <div class="order-product">
+        <img src="" alt="Product image" id="orderProductImage"/>
+        <div class="order-product-details">
+          <p id="orderProductName">Product Name</p>
+          <p id="orderProductVariant">Variant: -</p>
+          <p id="orderProductQuantity">Quantity: 1</p>
+          <p id="orderProductPrice">₱0.00</p>
+        </div>
+      </div>
+
+      <button class="buy-button" onclick="finalizePurchase()">Continue to Payment</button>
+    </aside>
+  </div>
+
+  <script>
+    
+    const productWithQuantity = JSON.parse(localStorage.getItem('selectedProductWithQuantity')) || {
+      name: "Sample Product",
+      img: "https://www.forsupplies.com/img/p/4/3/8/4/0/43840-large_default.jpg",
+      price: 49,
+      quantity: 1,
+      variant: "-",  
+      stock: 100
+    };
+
+    // Fill order summary with product data
+    document.getElementById('orderProductImage').src = productWithQuantity.img;
+    document.getElementById('orderProductName').textContent = productWithQuantity.name;
+    document.getElementById('orderProductVariant').textContent = `Variant: ${productWithQuantity.variant || '-'}`;
+    document.getElementById('orderProductQuantity').textContent = `Quantity: ${productWithQuantity.quantity}`;
+    document.getElementById('orderProductPrice').textContent = `₱${(productWithQuantity.price * productWithQuantity.quantity).toFixed(2)}`;
+
+    // Prices for summary
+    const shippingCostStandard = 30.53;
+    const shippingCostExpress = 50.00;
+    const taxRate = 0.15; // 15% tax
+
+    let currentShippingCost = shippingCostStandard;
+
+    const itemsPriceEl = document.getElementById('itemsPrice');
+    const shippingPriceEl = document.getElementById('shippingPrice');
+    const taxesPriceEl = document.getElementById('taxesPrice');
+    const totalPriceEl = document.getElementById('totalPrice');
+
+    function updatePrices() {
+      const itemsPrice = productWithQuantity.price * productWithQuantity.quantity;
+      
+      const total = itemsPrice  + currentShippingCost;
+
+      itemsPriceEl.textContent = `₱${itemsPrice.toFixed(2)}`;
+      shippingPriceEl.textContent = `₱${currentShippingCost.toFixed(2)}`;
+      
+      totalPriceEl.textContent = `₱${total.toFixed(2)}`;
+    }
+    updatePrices();
+
+    document.querySelectorAll('input[name="deliveryMethod"]').forEach(el => {
+      el.addEventListener('change', (e) => {
+        currentShippingCost = e.target.value === 'express' ? shippingCostExpress : shippingCostStandard;
+        updatePrices();
+      });
+    });
+
+    function finalizePurchase() {
+      const form = document.getElementById('checkoutForm');
+
+      if (!form.email.value) {
+        alert("Please enter your email.");
+        form.email.focus();
+        return;
+      }
+      if (!form.firstName.value) {
+        alert("Please enter your first name.");
+        form.firstName.focus();
+        return;
+      }
+      if (!form.lastName.value) {
+        alert("Please enter your last name.");
+        form.lastName.focus();
+        return;
+      }
+      if (!form.address1.value) {
+        alert("Please enter your address.");
+        form.address1.focus();
+        return;
+      }
+      if (!form.city.value) {
+        alert("Please enter your city.");
+        form.city.focus();
+        return;
+      }
+      if (!form.postalCode.value) {
+        alert("Please enter your postal code.");
+        form.postalCode.focus();
+        return;
+      }
+      if (!form.country.value) {
+        alert("Please select your country.");
+        form.country.focus();
+        return;
+      }
+      if (!form.paymentMethod.value) {
+        alert("Please select a payment method.");
+        return;
+      }
+
+
+      alert("Thank you for your purchase! Redirecting to confirmation page...");
+      window.location.href = "thankyou.html";
+    }
+  </script>
+</body>
+</html>

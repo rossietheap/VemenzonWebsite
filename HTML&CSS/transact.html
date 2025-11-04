@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank you for ordering!</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1 {
+    position: absolute;
+    color: #ff6b81;
+    font-size: 3.5em;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    animation: popIn 1s ease forwards;
+    z-index: 10;
+  }
+
+  @keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    70% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+
+  .item {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0;
+    animation: explode 2s ease-out forwards;
+  }
+
+  @keyframes explode {
+    0% {
+      transform: translate(0, 0) scale(0.2) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(var(--x), var(--y)) scale(1) rotate(var(--r));
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>Thank you for ordering!</h1>
+
+<script>
+const emojis = ["✏️", "📓", "📒", "📘", "📕", "📗", "📙", "📔", "📄", "🗒️", "📎", "📐", "📏", "🖍️", "📝", "📂", "📁", "🗂️", "🖋️", "✂️", "📠"];
+const total = 40;
+
+for (let i = 0; i < total; i++) {
+  const item = document.createElement("div");
+  item.classList.add("item");
+  item.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+
+  const x = (Math.random() - 0.5) * 800 + "px";
+  const y = (Math.random() - 0.5) * 600 + "px";
+  const r = Math.random() * 720 + "deg";
+
+  item.style.setProperty("--x", x);
+  item.style.setProperty("--y", y);
+  item.style.setProperty("--r", r);
+  item.style.left = "50%";
+  item.style.top = "50%";
+  item.style.animationDelay = `${Math.random()}s`;
+
+  document.body.appendChild(item);
+
+  item.addEventListener("animationend", () => {
+    item.remove();
+  });
+}
+setInterval(() => {
+  document.querySelector('h1').style.color = `hsl(${Math.random()*360}, 80%, 60%)`;
+}, 800);
+</script>
+
+</body>
+</html>
