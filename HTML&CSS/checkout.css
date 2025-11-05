@@ -1,7 +1,10 @@
 
+    
+    
     * {
       box-sizing: border-box;
     }
+    
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -11,7 +14,7 @@
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1500px;
       margin: auto;
       background: white;
       display: flex;
@@ -229,3 +232,16 @@ h1 {
     margin-top: 7px;
     font-size: 20px;
 }
+
+.container {
+  transform: scale(0.7);           /* 90% size */
+  transform-origin: top center;    /* shrink from the top center */
+}
+
+@media (max-width: 768px) {
+  .container {
+    transform: none; /* normal size sa mobile para readable */
+  }
+}
+
+

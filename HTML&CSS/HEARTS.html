@@ -1,214 +1,396 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Favorites | Vemenzon</title>
-<style>
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: "Poppins", sans-serif;
-    background-color: #f8f8f8;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Oxanium:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  <title>Your Favorites | Vemenzon</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+      line-height: 1.4;
+    }
+    
+* {
     margin: 0;
     padding: 0;
-    color: #333;
-  }
-
-  header {
+    box-sizing: border-box;
+    font-family: 'Oxanium', sans-serif;
+}
+header {
+    width: 100%;
+    background-color: #ba3e3e;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    padding: 20px 80px;
-    background-color: white;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.1);
-  }
+    padding: 12px 13px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
 
-  header img {
-    height: 45px;
-  }
-
-  nav a {
-    text-decoration: none;
-    color: #333;
-    margin: 0 15px;
-    font-weight: 500;
-  }
-
-  nav a:hover {
-    color: #d10000;
-  }
-
-  h1 {
-    color: #222;
-    font-size: 32px;
-    text-align: center;
-    margin: 50px 0 30px;
-  }
-
-  .favorites-container {
+.logo {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 60px;
-  }
+    justify-content: baseline;
+}
 
-  .favorite-item {
-    display: flex;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
-    width: 80%;
-    max-width: 900px;
-    transition: transform 0.2s ease;
-  }
-
-  .favorite-item:hover {
-    transform: translateY(-3px);
-  }
-
-  .favorite-item img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-  }
-
-  .details {
-    padding: 30px;
-    flex: 1;
-  }
-
-  .details h2 {
-    margin: 0 0 10px;
-    font-size: 22px;
-  }
-
-  .price {
-    color: #d10000;
+h1 {
+    margin-left: 15px;
+    margin-top: 12px;
     font-size: 20px;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
+}
 
-  .stock {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 20px;
-  }
+h1 a {
+    text-decoration: none;
+    color: black;
+}
 
-  .btn-group {
+.logo img {
+    margin-left: 5px;
+    height: 45px;
+}
+
+nav ul {
+    list-style: none;
     display: flex;
-    gap: 15px;
-  }
+    gap: 30px;
+    align-items: center;
+}
 
-  button {
-    border: none;
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    font-size: 13px;
+    transition: color 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: #b22222;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #d62727;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    min-width: 220px;
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.dropdown a {
     padding: 10px 20px;
-    border-radius: 6px;
-    font-size: 14px;
+    color: #ffdfdf;
+    text-decoration: none;
+    font-size: 12px;
+    transition: background 0.2s;
+}
+
+.dropdown a:hover {
+    background-color: #ed3e3e;
+    color: #b22222;
+}
+
+nav ul li:hover>.dropdown,
+nav ul li .dropdown:hover {
+    display: flex;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #b22222;
+    border-radius: 50px;
+    padding: 5px 10px;
+    height: 30px;
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff9f9;
+    padding: 5px 10px;
+    width: 180px;
+    font-size: 10px;
+}
+
+.search-container input::placeholder {
+    color: #cd5a5a;
+}
+
+.search-container button {
+    background: #cd2f2f;
+    border: none;
+    border-radius: 12px;
     cursor: pointer;
-    transition: all 0.2s ease;
-  }
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-  .addcart-btn {
-    background-color: #333;
-    color: white;
-  }
+.search-container button:hover {
+    background-color: #f2f2f2;
+}
 
-  .addcart-btn:hover {
-    background-color: #000;
-  }
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 19px;
+    margin-right: 50px;
+}
 
-  .remove-btn {
-    background-color: #d10000;
-    color: white;
-  }
+.icons a {
+    color: #222;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
 
-  .remove-btn:hover {
-    background-color: #a00000;
-  }
+.icons a:hover {
+    color: #b22222;
+}
+  .recommendations, .products{
+  transform: scale(0.9);   /* 90% of original size */
+  transform-origin: top center; /* para di lumihis */
+}
 
-  .empty {
-    text-align: center;
-    font-size: 18px;
-    color: #777;
-    margin-top: 80px;
-  }
 
-  footer {
-    background-color: white;
-    padding: 20px;
-    text-align: center;
-    font-size: 14px;
-    color: #777;
-    border-top: 1px solid #eee;
-  }
 
-</style>
+@media (max-width: 900px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .search-container {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+  .wish{
+    margin-bottom: 60px;
+      font-size: 30px;
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #222;
+    }
+    .favorites-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 30px;
+      padding: 0 60px 60px;
+    }
+    .favorite-item {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .favorite-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+    .favorite-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .details {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .details h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+    .price {
+      color: #d10000;
+      font-size: 17px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .stock {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 18px;
+    }
+    .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+    .btn-group button {
+      flex: 1;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+    .btn-group button:active {
+      transform: scale(0.97);
+    }
+    .addcart-btn {
+      background-color: #333;
+      color: #fff;
+    }
+    .addcart-btn:hover {
+      background-color: #000;
+    }
+    .remove-btn {
+      background-color: #d10000;
+      color: #fff;
+    }
+    .remove-btn:hover {
+      background-color: #a00000;
+    }
+    .empty {
+      text-align: center;
+      font-size: 18px;
+      color: #777;
+      margin: 80px 0;
+    }
+    footer {
+      padding: 30px 0;
+      background-color: #fff;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      border-top: 1px solid #eee;
+    }
+    @media (max-width: 768px) {
+      header {
+        padding: 15px 20px;
+      }
+      h1 {
+        font-size: 26px;
+        margin: 30px 0 15px;
+      }
+      .favorites-container {
+        padding: 0 20px 40px;
+      }
+    }
+    .wishlist-scale {
+  transform: scale(0.7);   /* 90% of original size */
+  transform-origin: top center; /* para di lumihis */
+}
+
+  </style>
 </head>
 <body>
 
 <header>
-  <img src="Screenshot_2025-10-16_133612-removebg-preview.png" alt="Vemenzon Logo">
-  <nav>
-    <a href="websites.html">Home</a>
-    <a href="ALL.html">Shop</a>
-    <a href="addtocart.html">Cart</a>
-    <a href="favorites.html" style="color:#d10000;">Favorites</a>
-  </nav>
-</header>
+     <div class="logo"> <a href="LandingPage.html"><img src="Group 1.png" alt="Vemenzon Logo"></a>
+      <h1><a href="LandingPage.html"><b>Vemenzon</b></a></h1>
+    </div>
+    <nav>
+      <ul>
+        <li> <a href="ALL.html">Shop By Category <span class="iconify" data-icon="mdi:chevron-down"></span></a>
+          <div class="dropdown"> <a href="WRITING.html">Writing & Correction</a> <a href="PAPERS.html">Paper &
+              Notebooks</a> <a href="FILING.html">Filing & Organizers</a> <a href="MATH.html">Math & Measuring</a> <a
+              href="ARTS.html">Arts & Crafts</a> <a href="CASES.html">Bags & Cases</a> <a href="CLASS.html">Classroom
+              Essentials</a> </div>
+        </li>
+        <li><a href="AboutUS.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+    </nav>
+    <div class="search-container"> <input type="text" placeholder="Search for school supplies..."> <button><span
+          class="iconify" data-icon="mdi:magnify"></span></button> </div>
+    <div class="icons"> <a href="addtocart.html" title="Cart"><span class="iconify"
+          data-icon="mdi:cart-outline"></span></a> <a href="HEARTS.html" title="Favorites"><span class="iconify"
+          data-icon="mdi:heart-outline"></span></a> <a href="login.html" title="Profile"><span class="iconify"
+          data-icon="mdi:account-circle-outline"></span></a> </div>
 
-<h1>❤️ Your Wishlist</h1>
+  </header>
+
+<div class="wishlist-scale">
+<h1 class="wish">Your Wishlist</h1>
 
 <div id="favoritesList" class="favorites-container"></div>
 
+</div>
 <footer>
   © 2025 Vemenzon. All rights reserved.
 </footer>
 
 <script>
   const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-  const list = document.getElementById('favoritesList');
+  const listEl = document.getElementById('favoritesList');
 
   if (favorites.length === 0) {
-    list.innerHTML = "<p class='empty'>You haven't added any favorites yet.</p>";
+    listEl.innerHTML = "<p class='empty'>You haven't added any favorites yet.</p>";
   } else {
     favorites.forEach((item, index) => {
       const div = document.createElement('div');
-      div.classList.add('favorite-item');
+      div.className = 'favorite-item';
       div.innerHTML = `
         <img src="${item.img}" alt="${item.name}">
         <div class="details">
           <h2>${item.name}</h2>
           <p class="price">₱${item.price}.00</p>
-          <p class="stock">14 stocks available</p>
+          <p class="stock">In stock</p>
           <div class="btn-group">
-            <button class="remove-btn">Remove</button>
             <button class="addcart-btn">Add to Cart</button>
+            <button class="remove-btn">Remove</button>
           </div>
         </div>
       `;
 
-      div.querySelector('.remove-btn').addEventListener('click', () => {
+      const btnAdd = div.querySelector('.addcart-btn');
+      const btnRemove = div.querySelector('.remove-btn');
+
+      btnAdd.addEventListener('click', () => {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        // Add only if not already in cart
+        cart.push({ ...item, quantity: 1 });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${item.name} added to your cart.`);
+      });
+
+      btnRemove.addEventListener('click', () => {
         favorites.splice(index, 1);
         localStorage.setItem('favorites', JSON.stringify(favorites));
         div.remove();
       });
 
-      div.querySelector('.addcart-btn').addEventListener('click', () => {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart.push(item);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        alert(`${item.name} added to your cart.`);
-      });
-
-      list.appendChild(div);
+      listEl.appendChild(div);
     });
   }
 </script>
+
 </body>
 </html>
