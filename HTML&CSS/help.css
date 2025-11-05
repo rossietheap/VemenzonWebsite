@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oxanium', sans-serif;
+}
+header {
+    width: 100%;
+    background-color: #ba3e3e;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 13px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    display: flex;
+    justify-content: baseline;
+}
+
+h1 {
+    margin-left: 15px;
+    margin-top: 9px;
+    font-size: 20px;
+}
+
+h1 a {
+    text-decoration: none;
+    color: black;
+}
+
+.logo img {
+    margin-left: 5px;
+    height: 45px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    font-size: 13px;
+    transition: color 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: #b22222;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #d62727;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    min-width: 220px;
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.dropdown a {
+    padding: 10px 20px;
+    color: #ffdfdf;
+    text-decoration: none;
+    font-size: 12px;
+    transition: background 0.2s;
+}
+
+.dropdown a:hover {
+    background-color: #ed3e3e;
+    color: #b22222;
+}
+
+nav ul li:hover>.dropdown,
+nav ul li .dropdown:hover {
+    display: flex;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #b22222;
+    border-radius: 50px;
+    padding: 5px 10px;
+    height: 30px;
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff9f9;
+    padding: 5px 10px;
+    width: 180px;
+    font-size: 10px;
+}
+
+.search-container input::placeholder {
+    color: #cd5a5a;
+}
+
+.search-container button {
+    background: #cd2f2f;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-container button:hover {
+    background-color: #f2f2f2;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 19px;
+    margin-right: 50px;
+}
+
+.icons a {
+    color: #222;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.icons a:hover {
+    color: #b22222;
+}
+
+@media (max-width: 900px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .search-container {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Help page-specific styles */
+body {
+    font-family: 'Oxanium', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.hero {
+    background: linear-gradient(135deg, #ba3e3e 0%, #d62727 100%);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.faq-search {
+    height: 40px;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    background: white;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-search input {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    outline: none;
+    font-size: 10px;
+}
+
+.faq-search button {
+    background: #b22222;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.faq-search button:hover {
+    background: #ed3e3e;
+}
+
+.faq-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.faq-categories {
+    
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+    
+}
+
+
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+.category-card h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ba3e3e;
+    font-size: 15px; /* Smaller font */
+    margin-bottom: 10px; /* Smaller margin */
+    display: flex;
+    align-items: center;
+}
+
+.category-card h2 .iconify {
+    margin-right: 8px; /* Smaller margin */
+}
+
+.interactive-box summary,
+.interactive-box .content {
+    padding: 20px;
+}
+
+.interactive-box {
+    margin-bottom: 10px; /* Smaller margin */
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+.interactive-box summary {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px; /* Smaller font */
+   
+    cursor: pointer;
+    background: #f9f9f9;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s;
+}
+
+.interactive-box summary:hover {
+    background: #ed3e3e;
+    
+}
+
+.interactive-box[open] summary {
+    background: #ba3e3e;
+    color: white;
+}
+
+.interactive-box .content {
+  
+    background: white;
+    display: none;
+}
+
+.interactive-box[open] .content {
+    display: block;
+}
+.content{
+     font-size:13px ;
+}
+
+.content ul {
+     font-size:13px ;
+    padding-left: 18px;
+    list-style-type: disc;
+}
+
+.content li {
+    font-size:13px ;
+    margin-bottom: 6px; /* Smaller margin */
+}
+
+.contact-section {
+    background: white;
+    padding: 30px 20px; /* Smaller padding */
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.contact-section h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ba3e3e;
+    margin-bottom: 15px; /* Smaller margin */
+}
+
+.contact-section p {
+    margin-bottom: 15px; /* Smaller margin */
+}
+
+.contact-section a {
+    color: #b22222;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-section a:hover {
+    text-decoration: underline;
+}
+

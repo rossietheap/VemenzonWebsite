@@ -12,6 +12,7 @@
       <h1><a href="LandingPage.html"><b>Vemenzon</b></a></h1>
     </div>
 </header>
+
 <body>
   <div class="container">
     <section class="checkout-form">
@@ -115,102 +116,108 @@
     </aside>
   </div>
 
-  <script>
-    
-    const productWithQuantity = JSON.parse(localStorage.getItem('selectedProductWithQuantity')) || {
-      name: "Sample Product",
-      img: "https://www.forsupplies.com/img/p/4/3/8/4/0/43840-large_default.jpg",
-      price: 49,
-      quantity: 1,
-      variant: "-",  
-      stock: 100
-    };
+ <script>
+  // 🔹 Load data from localStorage
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const buyNowProduct = JSON.parse(localStorage.getItem("buyNowProduct"));
+  let selectedItems = JSON.parse(localStorage.getItem("selectedForCheckout")) || [];
 
-    // Fill order summary with product data
-    document.getElementById('orderProductImage').src = productWithQuantity.img;
-    document.getElementById('orderProductName').textContent = productWithQuantity.name;
-    document.getElementById('orderProductVariant').textContent = `Variant: ${productWithQuantity.variant || '-'}`;
-    document.getElementById('orderProductQuantity').textContent = `Quantity: ${productWithQuantity.quantity}`;
-    document.getElementById('orderProductPrice').textContent = `₱${(productWithQuantity.price * productWithQuantity.quantity).toFixed(2)}`;
+  // 🔹 Priority logic: Buy Now > Selected Items > Cart
+  if (buyNowProduct) {
+    selectedItems = [buyNowProduct];
+    localStorage.removeItem("buyNowProduct"); // clear after use
+  } else if (selectedItems.length === 0 && cart.length > 0) {
+    selectedItems = cart;
+  }
 
-    // Prices for summary
-    const shippingCostStandard = 30.53;
-    const shippingCostExpress = 50.00;
-    const taxRate = 0.15; // 15% tax
+  // 🔹 Elements
+  const orderContainer = document.querySelector('.order-product');
+  const itemsPriceEl = document.getElementById('itemsPrice');
+  const shippingPriceEl = document.getElementById('shippingPrice');
+  const totalPriceEl = document.getElementById('totalPrice');
 
-    let currentShippingCost = shippingCostStandard;
+  const shippingCostStandard = 30.53;
+  const shippingCostExpress = 50.00;
+  let currentShippingCost = shippingCostStandard;
 
-    const itemsPriceEl = document.getElementById('itemsPrice');
-    const shippingPriceEl = document.getElementById('shippingPrice');
-    const taxesPriceEl = document.getElementById('taxesPrice');
-    const totalPriceEl = document.getElementById('totalPrice');
-
-    function updatePrices() {
-      const itemsPrice = productWithQuantity.price * productWithQuantity.quantity;
-      
-      const total = itemsPrice  + currentShippingCost;
-
-      itemsPriceEl.textContent = `₱${itemsPrice.toFixed(2)}`;
-      shippingPriceEl.textContent = `₱${currentShippingCost.toFixed(2)}`;
-      
-      totalPriceEl.textContent = `₱${total.toFixed(2)}`;
+  // 🧾 Render selected items
+  function renderSelectedItems() {
+    if (selectedItems.length === 0) {
+      orderContainer.innerHTML = "<p>No items selected.</p>";
+      itemsPriceEl.textContent = "₱0.00";
+      totalPriceEl.textContent = "₱0.00";
+      return;
     }
+
+    orderContainer.innerHTML = selectedItems.map(item => {
+      const price = Number(item.price) || 0;
+      const qty = Number(item.quantity) || 1;
+      return `
+        <div class="order-product">
+          <img src="${item.img}" alt="${item.name}" />
+          <div class="order-product-details">
+            <p>${item.name}</p>
+            <p>Quantity: ${qty}</p>
+            <p>₱${(price * qty).toFixed(2)}</p>
+          </div>
+        </div>
+      `;
+    }).join('');
+
     updatePrices();
+  }
 
-    document.querySelectorAll('input[name="deliveryMethod"]').forEach(el => {
-      el.addEventListener('change', (e) => {
-        currentShippingCost = e.target.value === 'express' ? shippingCostExpress : shippingCostStandard;
-        updatePrices();
-      });
+  // 💰 Compute totals
+  function updatePrices() {
+    const itemsPrice = selectedItems.reduce((sum, item) => {
+      const price = Number(item.price) || 0;
+      const qty = Number(item.quantity) || 1;
+      return sum + price * qty;
+    }, 0);
+
+    const total = itemsPrice + currentShippingCost;
+
+    itemsPriceEl.textContent = `₱${itemsPrice.toFixed(2)}`;
+    shippingPriceEl.textContent = `₱${currentShippingCost.toFixed(2)}`;
+    totalPriceEl.textContent = `₱${total.toFixed(2)}`;
+  }
+
+  // 🚚 Handle shipping selection
+  document.querySelectorAll('input[name="deliveryMethod"]').forEach(el => {
+    el.addEventListener('change', (e) => {
+      currentShippingCost = e.target.value === 'express' ? shippingCostExpress : shippingCostStandard;
+      updatePrices();
     });
+  });
 
-    function finalizePurchase() {
-      const form = document.getElementById('checkoutForm');
-
-      if (!form.email.value) {
-        alert("Please enter your email.");
-        form.email.focus();
+  // ✅ Validate form and finalize
+  function finalizePurchase() {
+    const form = document.getElementById('checkoutForm');
+    const fields = ['email', 'firstName', 'lastName', 'address1', 'city', 'postalCode'];
+    
+    for (const field of fields) {
+      if (!form[field].value.trim()) {
+        alert(`Please fill out your ${field.replace(/([A-Z])/g, ' $1').toLowerCase()}.`);
+        form[field].focus();
         return;
       }
-      if (!form.firstName.value) {
-        alert("Please enter your first name.");
-        form.firstName.focus();
-        return;
-      }
-      if (!form.lastName.value) {
-        alert("Please enter your last name.");
-        form.lastName.focus();
-        return;
-      }
-      if (!form.address1.value) {
-        alert("Please enter your address.");
-        form.address1.focus();
-        return;
-      }
-      if (!form.city.value) {
-        alert("Please enter your city.");
-        form.city.focus();
-        return;
-      }
-      if (!form.postalCode.value) {
-        alert("Please enter your postal code.");
-        form.postalCode.focus();
-        return;
-      }
-      if (!form.country.value) {
-        alert("Please select your country.");
-        form.country.focus();
-        return;
-      }
-      if (!form.paymentMethod.value) {
-        alert("Please select a payment method.");
-        return;
-      }
-
-
-      alert("Thank you for your purchase! Redirecting to confirmation page...");
-      window.location.href = "thankyou.html";
     }
-  </script>
+
+    if (!form.paymentMethod.value) {
+      alert("Please select a payment method.");
+      return;
+    }
+
+    alert("✅ Thank you for your purchase! Redirecting to confirmation page...");
+    localStorage.removeItem('selectedForCheckout');
+    window.location.href = "thankyou.html";
+  }
+
+  // 🖼 Render on page load
+  renderSelectedItems();
+</script>
+
+
+
 </body>
 </html>

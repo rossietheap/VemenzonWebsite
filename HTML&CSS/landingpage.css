@@ -1,10 +1,10 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Oxanium', sans-serif;
 }
-
 header {
     width: 100%;
     background-color: #ba3e3e;
@@ -12,7 +12,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 15px;
+    padding: 12px 13px;
     position: sticky;
     top: 0;
     z-index: 999;
@@ -29,15 +29,9 @@ h1 {
     font-size: 20px;
 }
 
-
 h1 a {
     text-decoration: none;
     color: black;
-}
-
-a{
-  text-decoration: none;
-  color: blanchedalmond;
 }
 
 .logo img {
@@ -60,7 +54,7 @@ nav ul li a {
     text-decoration: none;
     color: #000000;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 13px;
     transition: color 0.2s ease;
 }
 
@@ -86,7 +80,7 @@ nav ul li a:hover {
     padding: 10px 20px;
     color: #ffdfdf;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 12px;
     transition: background 0.2s;
 }
 
@@ -106,7 +100,7 @@ nav ul li .dropdown:hover {
     background-color: #b22222;
     border-radius: 50px;
     padding: 5px 10px;
-    height: 40px;
+    height: 30px;
 }
 
 .search-container input {
@@ -116,7 +110,7 @@ nav ul li .dropdown:hover {
     color: #fff9f9;
     padding: 5px 10px;
     width: 180px;
-    font-size: 15px;
+    font-size: 10px;
 }
 
 .search-container input::placeholder {
@@ -124,7 +118,7 @@ nav ul li .dropdown:hover {
 }
 
 .search-container button {
-    background: #ebb5b5;
+    background: #cd2f2f;
     border: none;
     border-radius: 12px;
     cursor: pointer;
@@ -141,8 +135,9 @@ nav ul li .dropdown:hover {
 .icons {
     display: flex;
     align-items: center;
-    gap: 20px;
-    font-size: 26px;
+    gap: 15px;
+    font-size: 19px;
+    margin-right: 50px;
 }
 
 .icons a {
@@ -154,6 +149,12 @@ nav ul li .dropdown:hover {
 .icons a:hover {
     color: #b22222;
 }
+  .recommendations, .products{
+  transform: scale(0.9);   /* 90% of original size */
+  transform-origin: top center; /* para di lumihis */
+}
+
+
 
 @media (max-width: 900px) {
     header {
@@ -173,8 +174,6 @@ nav ul li .dropdown:hover {
     }
 }
 
-
-
 .container {
     display: flex;
     justify-content: space-between;
@@ -185,7 +184,7 @@ nav ul li .dropdown:hover {
     .hero {
   position: relative;
   width: 100%;
-  height: 100vh; /* full screen height */
+  height: 90vh; /* full screen height */
   background: url("Abdullahalamir195 Author Portfolio _ Freepik.jpg") no-repeat center center/cover;
   display: flex;
   align-items: center;
@@ -216,7 +215,7 @@ nav ul li .dropdown:hover {
 }
 
 .hero-text h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 20px;
 }
 
