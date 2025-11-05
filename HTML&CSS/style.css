@@ -183,6 +183,8 @@ nav ul li .dropdown:hover {
 
 
 .sidebar {
+    margin-top: 60px;
+    row-gap: 22px;
     width: 200px;
 }
 
@@ -194,6 +196,7 @@ nav ul li .dropdown:hover {
 
 
 .sidebar ul {
+    margin-top:35px;
     list-style: none;
     padding: 0;
 }
