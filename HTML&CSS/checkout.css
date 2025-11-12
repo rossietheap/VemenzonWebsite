@@ -101,14 +101,14 @@
       flex: 1;
       background: #fafafa;
       border-radius: 8px;
-      padding: 20px;
+      padding: 20px 50px;
       box-shadow: inset 0 0 10px #ddd;
       display: flex;
       flex-direction: column;
       gap: 20px;
-      position: sticky;
+      position: static;
       top: 20px;
-      height: fit-content;
+      
     }
 
     .order-summary h3 {
@@ -141,9 +141,11 @@
 
     /* Product in order summary */
     .order-product {
-      display: flex;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      justify-content: space-evenly;  
       gap: 15px;
-      align-items: center;
+      
       margin-top: 10px;
     }
     .order-product img {

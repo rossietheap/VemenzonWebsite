@@ -448,25 +448,16 @@ nav ul li .dropdown:hover {
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
   <script>
-    /*
-      Fixes:
-      - sanitize price/quantity to numbers
-      - always ensure quantity exists (default 1)
-      - event listeners bound reliably
-      - computinfootg summary uses checked checkboxes and current quantities
-      - persists cart to localStorage after changes
-    */
-
-    // Load cart, sanitize data types
+ 
     function loadCartFromStorage() {
       const raw = JSON.parse(localStorage.getItem('cart')) || [];
-      // ensure price and quantity are numbers, default quantity to 1
+      
       return raw.map(item => ({
         name: item.name,
         img: item.img,
         price: Number(item.price) || 0,
         quantity: (item.quantity === undefined || item.quantity === null) ? 1 : (Number(item.quantity) || 1),
-        // copy other props if needed
+       
         variant: item.variant || null
       }));
     }
@@ -481,11 +472,11 @@ nav ul li .dropdown:hover {
     const checkoutBtn = document.getElementById('checkoutBtn');
 
     function saveCart() {
-      // Save current cart (keep numbers as numbers)
+    
       localStorage.setItem('cart', JSON.stringify(cart));
     }
 
-    // Render cart items and attach event listeners reliably
+   
     function renderCart() {
       cartContainer.innerHTML = '';
       if (!cart || cart.length === 0) {
@@ -493,11 +484,11 @@ nav ul li .dropdown:hover {
         summaryPanel.style.display = 'none';
         return;
       }
-      // show summary
+     
       summaryPanel.style.display = 'block';
 
       cart.forEach((item, index) => {
-        // ensure sanitized
+        
         if (typeof item.price !== 'number') item.price = Number(item.price) || 0;
         if (typeof item.quantity !== 'number') item.quantity = Number(item.quantity) || 1;
 
@@ -505,7 +496,7 @@ nav ul li .dropdown:hover {
         wrapper.className = 'cart-item';
         wrapper.dataset.index = index;
 
-        // Build inner HTML (checkbox, image, info, quantity controls, remove)
+      
         wrapper.innerHTML = `
       <input type="checkbox" class="item-checkbox" checked style="margin-right:10px">
       <img src="${item.img}" alt="${escapeHtml(item.name)}">
@@ -521,30 +512,30 @@ nav ul li .dropdown:hover {
       <button class="remove-btn" title="Remove item">✕</button>
     `;
 
-        // Append to container
+        
         cartContainer.appendChild(wrapper);
 
-        // Attach listeners
+       
         const checkbox = wrapper.querySelector('.item-checkbox');
         const btnDec = wrapper.querySelector('.qty-decrease');
         const btnInc = wrapper.querySelector('.qty-increase');
         const qtyInput = wrapper.querySelector('.qty-input');
         const removeBtn = wrapper.querySelector('.remove-btn');
 
-        // checkbox change -> update summary only
+        
         checkbox.addEventListener('change', () => updateSummary());
 
-        // decrease
+       
         btnDec.addEventListener('click', () => {
           changeQuantity(index, -1);
         });
 
-        // increase
+      
         btnInc.addEventListener('click', () => {
           changeQuantity(index, +1);
         });
 
-        // manual input
+       
         qtyInput.addEventListener('change', (e) => {
           const v = parseInt(e.target.value);
           if (isNaN(v) || v < 1) {
@@ -554,17 +545,17 @@ nav ul li .dropdown:hover {
           setQuantity(index, v);
         });
 
-        // remove
+    
         removeBtn.addEventListener('click', () => {
           removeItem(index);
         });
       });
 
-      // after rendering, update summary
+
       updateSummary();
     }
 
-    // helper to change quantity (and re-render & persist)
+  
     function changeQuantity(index, delta) {
       if (!cart[index]) return;
       const newQty = Math.max(1, Number(cart[index].quantity) + Number(delta));
@@ -573,7 +564,6 @@ nav ul li .dropdown:hover {
       renderCart();
     }
 
-    // set absolute quantity
     function setQuantity(index, qty) {
       if (!cart[index]) return;
       cart[index].quantity = Math.max(1, Number(qty));
@@ -581,7 +571,7 @@ nav ul li .dropdown:hover {
       renderCart();
     }
 
-    // remove item
+
     function removeItem(index) {
       if (!cart[index]) return;
       cart.splice(index, 1);
@@ -589,9 +579,8 @@ nav ul li .dropdown:hover {
       renderCart();
     }
 
-    // compute summary using checked items
     function updateSummary() {
-      // get item nodes
+ 
       const nodes = Array.from(document.querySelectorAll('.cart-item'));
       let subtotal = 0;
       let count = 0;
@@ -613,9 +602,9 @@ nav ul li .dropdown:hover {
       summaryTotal.textContent = `₱${formatNumber(subtotal)}`;
     }
 
-    // Proceed to checkout with selected items
+   
     checkoutBtn.addEventListener('click', () => {
-      // collect checked items
+     
       const nodes = Array.from(document.querySelectorAll('.cart-item'));
       const selected = [];
       nodes.forEach(node => {
@@ -631,7 +620,7 @@ nav ul li .dropdown:hover {
         return;
       }
       localStorage.setItem('selectedForCheckout', JSON.stringify(selected));
-      // optionally: remove selected items from cart or keep them
+     
       window.location.href = 'checkout.html';
     });
 
@@ -652,7 +641,6 @@ nav ul li .dropdown:hover {
     }
 
 
-    // small util functions
     function formatNumber(n) {
       return Number(n).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     }
@@ -660,7 +648,6 @@ nav ul li .dropdown:hover {
       return (s + '').replace(/[&<>"']/g, function (m) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]; });
     }
 
-    // initial render
     renderCart();
   </script>
 </body>

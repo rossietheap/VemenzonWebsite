@@ -96,13 +96,7 @@
 
     <aside class="order-summary">
       <h3>Your Order</h3>
-      <ul class="summary-list">
-        <li><span>Items:</span> <span id="itemsPrice">₱0.00</span></li>
-        <li><span>Shipping:</span> <span id="shippingPrice">₱0.00</span></li>
-        <li class="total"><span>Total:</span> <span id="totalPrice">₱ 0.00</span></li>
-      </ul>
-
-      <div class="order-product">
+<div class="order-product">
         <img src="" alt="Product image" id="orderProductImage"/>
         <div class="order-product-details">
           <p id="orderProductName">Product Name</p>
@@ -112,9 +106,18 @@
         </div>
       </div>
 
+      <ul class="summary-list">
+        <li><span>Items:</span> <span id="itemsPrice">₱0.00</span></li>
+        <li><span>Shipping:</span> <span id="shippingPrice">₱0.00</span></li>
+        <li class="total"><span>Total:</span> <span id="totalPrice">₱ 0.00</span></li>
+      </ul>
+
+      
+
       <button class="buy-button" onclick="finalizePurchase()">Continue to Payment</button>
     </aside>
   </div>
+  
 <footer class="footer">
   <div class="footer-top">
     <div class="footer-logo">
@@ -161,21 +164,23 @@
 
 <link rel="stylesheet" href="footer.css">
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
  <script>
-  // 🔹 Load data from localStorage
+  
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   const buyNowProduct = JSON.parse(localStorage.getItem("buyNowProduct"));
   let selectedItems = JSON.parse(localStorage.getItem("selectedForCheckout")) || [];
 
-  // 🔹 Priority logic: Buy Now > Selected Items > Cart
+ 
   if (buyNowProduct) {
     selectedItems = [buyNowProduct];
-    localStorage.removeItem("buyNowProduct"); // clear after use
+    localStorage.removeItem("buyNowProduct"); 
   } else if (selectedItems.length === 0 && cart.length > 0) {
     selectedItems = cart;
   }
 
-  // 🔹 Elements
+ 
   const orderContainer = document.querySelector('.order-product');
   const itemsPriceEl = document.getElementById('itemsPrice');
   const shippingPriceEl = document.getElementById('shippingPrice');
@@ -185,7 +190,7 @@
   const shippingCostExpress = 50.00;
   let currentShippingCost = shippingCostStandard;
 
-  // 🧾 Render selected items
+  
   function renderSelectedItems() {
     if (selectedItems.length === 0) {
       orderContainer.innerHTML = "<p>No items selected.</p>";
@@ -212,7 +217,7 @@
     updatePrices();
   }
 
-  // 💰 Compute totals
+  
   function updatePrices() {
     const itemsPrice = selectedItems.reduce((sum, item) => {
       const price = Number(item.price) || 0;
@@ -227,7 +232,7 @@
     totalPriceEl.textContent = `₱${total.toFixed(2)}`;
   }
 
-  // 🚚 Handle shipping selection
+  
   document.querySelectorAll('input[name="deliveryMethod"]').forEach(el => {
     el.addEventListener('change', (e) => {
       currentShippingCost = e.target.value === 'express' ? shippingCostExpress : shippingCostStandard;
@@ -235,7 +240,7 @@
     });
   });
 
-  // ✅ Validate form and finalize
+  
   function finalizePurchase() {
     const form = document.getElementById('checkoutForm');
     const fields = ['email', 'firstName', 'lastName', 'address1', 'city', 'postalCode'];
@@ -258,7 +263,7 @@
     window.location.href = "transact.html";
   }
 
-  // 🖼 Render on page load
+ 
   renderSelectedItems();
 </script>
 
