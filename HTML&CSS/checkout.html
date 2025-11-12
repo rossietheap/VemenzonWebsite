@@ -96,13 +96,7 @@
 
     <aside class="order-summary">
       <h3>Your Order</h3>
-      <ul class="summary-list">
-        <li><span>Items:</span> <span id="itemsPrice">₱0.00</span></li>
-        <li><span>Shipping:</span> <span id="shippingPrice">₱0.00</span></li>
-        <li class="total"><span>Total:</span> <span id="totalPrice">₱ 0.00</span></li>
-      </ul>
-
-      <div class="order-product">
+<div class="order-product">
         <img src="" alt="Product image" id="orderProductImage"/>
         <div class="order-product-details">
           <p id="orderProductName">Product Name</p>
@@ -112,9 +106,18 @@
         </div>
       </div>
 
+      <ul class="summary-list">
+        <li><span>Items:</span> <span id="itemsPrice">₱0.00</span></li>
+        <li><span>Shipping:</span> <span id="shippingPrice">₱0.00</span></li>
+        <li class="total"><span>Total:</span> <span id="totalPrice">₱ 0.00</span></li>
+      </ul>
+
+      
+
       <button class="buy-button" onclick="finalizePurchase()">Continue to Payment</button>
     </aside>
   </div>
+  
 <footer class="footer">
   <div class="footer-top">
     <div class="footer-logo">
@@ -161,6 +164,8 @@
 
 <link rel="stylesheet" href="footer.css">
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
  <script>
   
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
