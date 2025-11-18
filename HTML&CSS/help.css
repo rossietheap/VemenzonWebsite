@@ -92,7 +92,9 @@ nav ul li:hover>.dropdown,
 nav ul li .dropdown:hover {
     display: flex;
 }
-
+h3{
+    color: #b22222;
+}
 .search-container {
     display: flex;
     align-items: center;
@@ -227,13 +229,14 @@ body {
 }
 
 .faq-container {
+    margin-left: 40%;
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 10px;
 }
 
 .faq-categories {
-    
+     margin-left: 22%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
@@ -249,7 +252,7 @@ body {
 .category-card h2 {
     font-family: 'Orbitron', sans-serif;
     color: #ba3e3e;
-    font-size: 15px; /* Smaller font */
+    font-size: 20px; /* Smaller font */
     margin-bottom: 10px; /* Smaller margin */
     display: flex;
     align-items: center;
@@ -265,7 +268,7 @@ body {
 }
 
 .interactive-box {
-    margin-bottom: 10px; /* Smaller margin */
+    margin-bottom: 15px; /* Smaller margin */
     border: 1px solid #eee;
     border-radius: 8px;
     overflow: hidden;
@@ -273,7 +276,7 @@ body {
 
 
 .interactive-box summary {
-    font-family: 'Orbitron', sans-serif;
+    
     font-size: 13px; /* Smaller font */
    
     cursor: pointer;
@@ -284,10 +287,14 @@ body {
 }
 
 .interactive-box summary:hover {
+    cursor: S;
     background: #ed3e3e;
     
 }
-
+summary{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
 .interactive-box[open] summary {
     background: #ba3e3e;
     color: rgb(0, 0, 0);
@@ -303,21 +310,25 @@ body {
     display: block;
 }
 .content{
-     font-size:13px ;
+     font-size:13.5px ;
+   
 }
 
 .content ul {
      font-size:13px ;
     padding-left: 18px;
     list-style-type: disc;
+    
 }
 
 .content li {
+    
     font-size:13px ;
     margin-bottom: 6px; /* Smaller margin */
 }
 
 .contact-section {
+    
     background: white;
     padding: 30px 20px; /* Smaller padding */
     text-align: center;
@@ -335,6 +346,13 @@ body {
 
 .contact-section p {
     margin-bottom: 15px; /* Smaller margin */
+}
+
+.fak p{
+    font-family: sans-serif;
+    font-size: 13;
+    margin-left: 8px;
+    margin-bottom: 20px;
 }
 
 .contact-section a {
