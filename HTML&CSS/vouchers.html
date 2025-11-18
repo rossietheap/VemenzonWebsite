@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="ordertracking.css" /> <!-- Assuming this CSS file handles the styles for both pages -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Oxanium:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  <title>Vouchers | Vemenzon</title>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="LandingPage.html"><img src="Group 1.png" alt="Vemenzon Logo"></a>
+      <h1><a href="LandingPage.html"><b>Vemenzon</b></a></h1>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <a href="ALL.html">Shop By Category <span class="iconify" data-icon="mdi:chevron-down"></span></a>
+          <div class="dropdown">
+            <a href="WRITING.html">Writing & Correction</a>
+            <a href="PAPERS.html">Paper & Notebooks</a>
+            <a href="FILING.html">Filing & Organizers</a>
+            <a href="MATH.html">Math & Measuring</a>
+            <a href="ARTS.html">Arts & Crafts</a>
+            <a href="CASES.html">Bags & Cases</a>
+            <a href="CLASS.html">Classroom Essentials</a>
+          </div>
+        </li>
+        <li><a href="AboutUS.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+    </nav>
+    <div class="search-container">
+      <input type="text" placeholder="Search for school supplies...">
+      <button><span class="iconify" data-icon="mdi:magnify"></span></button>
+    </div>
+    <div class="icons">
+      <a href="addtocart.html" title="Cart"><span class="iconify" data-icon="mdi:cart-outline"></span></a>
+      <a href="HEARTS.html" title="Favorites"><span class="iconify" data-icon="mdi:heart-outline"></span></a>
+      <a href="profile.html" title="Profile"><span class="iconify" data-icon="mdi:account-circle-outline"></span></a>
+    </div>
+  </header>
+
+  <div class="profile-container">
+    <div class="sidebar">
+      <div class="profile-header">
+        <div class="profile-picture">
+          <span class="iconify" data-icon="mdi:account-circle"></span>
+        </div>
+        <div class="profile-info">
+          <h2>Juan Dela Cruz</h2>
+          <p>juan.delacruz@example.com</p>
+          <p>Member since: January 2023</p>
+        </div>
+      </div>
+      <div class="follow-stats">
+        <div class="follow-stat">
+          <h3>150</h3>
+          <p>Followers</p>
+        </div>
+        <div class="follow-stat">
+          <h3>75</h3>
+          <p>Following</p>
+        </div>
+      </div>
+      <h3>Menu</h3>
+      <ul>
+        <li><a href="profile.html#order-tracking"><span class="icon iconify" data-icon="mdi:truck-delivery"></span> Order Tracking</a></li>
+        <li><a href="account-settings.html"><span class="icon iconify" data-icon="mdi:account-settings"></span> Account Settings</a></li>
+        <li><a href="purchases.html"><span class="icon iconify" data-icon="mdi:shopping"></span> Purchases</a></li>
+        <li><a href="vouchers.html" class="active"><span class="icon iconify" data-icon="mdi:ticket-percent"></span> Vouchers</a></li> <!-- Updated link to vouchers.html and added active class -->
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <h1 class="profile-title">My Vouchers</h1>
+
+      <!-- Vouchers Section -->
+      <div id="vouchers" class="section active">
+        <div class="my-vouchers">
+          <h1 class="vouch">Vouchers</h1>
+          
+          <div class="voucher-list">
+            <h3>Available Vouchers</h3>
+            <div class="voucher-item">
+              <div class="voucher-icon">
+                <span class="iconify" data-icon="mdi:ticket-percent" style="font-size: 50px; color: #ba3e3e;"></span>
+              </div>
+              <div class="voucher-details">
+                <h4>10% Off School Supplies</h4>
+                <p>Code: SCHOOL10</p>
+                <p>Discount: 10% on orders over $50</p>
+                <p>Expires: December 31, 2023</p>
+              </div>
+              <div class="voucher-actions">
+                <button class="edit-button">Copy Code</button>
+              </div>
+            </div>
+            <div class="voucher-item">
+              <div class="voucher-icon">
+                <span class="iconify" data-icon="mdi:ticket-percent" style="font-size: 50px; color: #ba3e3e;"></span>
+              </div>
+              <div class="voucher-details">
+                <h4>Free Shipping</h4>
+                <p>Code: FREESHIP</p>
+                <p>Discount: Free shipping on orders over $100</p>
+                <p>Expires: November 30, 2023</p>
+              </div>
+              <div class="voucher-actions">
+                <button class="edit-button">Copy Code</button>
+              </div>
+            </div>
+            
+            <h3>Redeemed Vouchers</h3>
+            <div class="voucher-item">
+              <div class="voucher-icon">
+                <span class="iconify" data-icon="mdi:ticket-percent" style="font-size: 50px; color: #ba3e3e;"></span>
+              </div>
+              <div class="voucher-details">
+                <h4>$5 Off Notebook</h4>
+                <p>Code: NOTEBOOK5</p>
+                <p>Discount: $5 off notebooks</p>
+                <p>Redeemed on: October 5, 2023</p>
+              </div>
+              <div class="voucher-actions">
+                <p>Redeemed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
