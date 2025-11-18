@@ -1,89 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thank you for ordering!</title>
-<style>
-  body {
-    margin: 0;
-    height: 100vh;
-    background: linear-gradient(135deg, #fdfbfb, #ebedee);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    font-family: 'Poppins', sans-serif;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | VemenZon</title>
 
-  h1 {
-    position: absolute;
-    color: #ff6b81;
-    font-size: 3.5em;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    animation: popIn 1s ease forwards;
-    z-index: 10;
-  }
+    <style>
+        body {
+            margin: 0;
+            font-family: "Inter", sans-serif;
 
-  @keyframes popIn {
-    0% { transform: scale(0); opacity: 0; }
-    70% { transform: scale(1.2); opacity: 1; }
-    100% { transform: scale(1); }
-  }
+            /* Full Image School Background */
+            background: 
+                linear-gradient(rgba(150, 0, 0, 0.55), rgba(120, 0, 0, 0.75)),
+                url('https://greenily.co/wp-content/uploads/2016/06/schoolsuppliespic.jpeg') center/cover no-repeat;
+            
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-  .item {
-    position: absolute;
-    font-size: 2rem;
-    opacity: 0;
-    animation: explode 2s ease-out forwards;
-  }
+        /* Card container */
+        .box {
+            background: rgba(255, 255, 255, 0.96);
+            width: 90%;
+            max-width: 540px;
+            padding: 50px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            opacity: 0;
+            animation: fadeIn 1.2s forwards ease;
+        }
 
-  @keyframes explode {
-    0% {
-      transform: translate(0, 0) scale(0.2) rotate(0deg);
-      opacity: 1;
-    }
-    100% {
-      transform: translate(var(--x), var(--y)) scale(1) rotate(var(--r));
-      opacity: 0;
-    }
-  }
-</style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(25px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo {
+            width: 160px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 12px;
+            letter-spacing: -.5px;
+        }
+
+        p {
+            color: #3a3a3a;
+            font-size: 17px;
+            line-height: 1.65;
+            max-width: 420px;
+            margin: auto;
+        }
+
+        /* Red VemenZon Button */
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            background: #d62828;
+            padding: 14px 32px;
+            color: white;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            box-shadow: 0 6px 14px rgba(214, 40, 40, 0.32);
+            transition: 0.25s ease;
+        }
+
+        .btn:hover {
+            background: #b11f1f;
+            transform: translateY(-3px);
+        }
+    </style>
 </head>
 <body>
 
-<h1>Thank you for ordering!</h1>
+    <div class="box">
+        <img src="Group 1.png" class="logo" alt="Logo">
 
-<script>
-const emojis = ["✏️", "📓", "📒", "📘", "📕", "📗", "📙", "📔", "📄", "🗒️", "📎", "📐", "📏", "🖍️", "📝", "📂", "📁", "🗂️", "🖋️", "✂️", "📠"];
-const total = 40;
+        <h1>Thank You for Your Purchase!</h1>
 
-for (let i = 0; i < total; i++) {
-  const item = document.createElement("div");
-  item.classList.add("item");
-  item.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        <p>
+            Your order is confirmed and we're preparing it for delivery.  
+            A confirmation has been sent to you with all the details, kindly check your Profile.
+            Thank you for choosing Vemenzon, your one-stop school shop!
+        </p>
 
-  const x = (Math.random() - 0.5) * 800 + "px";
-  const y = (Math.random() - 0.5) * 600 + "px";
-  const r = Math.random() * 720 + "deg";
-
-  item.style.setProperty("--x", x);
-  item.style.setProperty("--y", y);
-  item.style.setProperty("--r", r);
-  item.style.left = "50%";
-  item.style.top = "50%";
-  item.style.animationDelay = `${Math.random()}s`;
-
-  document.body.appendChild(item);
-
-  item.addEventListener("animationend", () => {
-    item.remove();
-  });
-}
-setInterval(() => {
-  document.querySelector('h1').style.color = `hsl(${Math.random()*360}, 80%, 60%)`;
-}, 800);
-</script>
+        <a href="profile.html" class="btn">Continue</a>
+    </div>
 
 </body>
 </html>
