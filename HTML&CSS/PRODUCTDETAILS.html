@@ -564,7 +564,7 @@
 
   <div class="main-content">
   <div class="back-button">
-    <button onclick="history.back()">← Back</button>
+    <button onclick=""history.back()">← Back</button>
   </div>
 
   <div class="product-container">
@@ -743,7 +743,7 @@
     if (product) {
       document.querySelector(".product-info h2").textContent = product.name;
       document.querySelector(".price").textContent = `₱${product.price}.00`;
-      document.querySelector(".desc").textContent = product.description || "⭐ 4.8 | 2.1K Sold";
+      document.querySelector(".desc").textContent = product.description || "No description available.";
       document.querySelector(".details").innerHTML = `
         <p><strong>Brand:</strong> ${product.brand || "N/A"}</p>
         <p><strong>Stock:</strong> ${product.stock || "In Stock"}</p>
@@ -779,7 +779,7 @@
       const quantity = parseInt(document.getElementById("quantity").value);
       const productWithQuantity = { ...product, quantity };
       localStorage.setItem("selectedProductWithQuantity", JSON.stringify(productWithQuantity));
-      window.location.href = "checkout.html";
+      window.location.href = "checkoutindiv.html";
     }
 
      const reportBtn = document.getElementById('reportBtn');

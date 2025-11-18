@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="ordertracking.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Oxanium:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  <title>Account Settings | Vemenzon</title>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="LandingPage.html"><img src="Group 1.png" alt="Vemenzon Logo"></a>
+      <h1><a href="LandingPage.html"><b>Vemenzon</b></a></h1>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <a href="ALL.html">Shop By Category <span class="iconify" data-icon="mdi:chevron-down"></span></a>
+          <div class="dropdown">
+            <a href="WRITING.html">Writing & Correction</a>
+            <a href="PAPERS.html">Paper & Notebooks</a>
+            <a href="FILING.html">Filing & Organizers</a>
+            <a href="MATH.html">Math & Measuring</a>
+            <a href="ARTS.html">Arts & Crafts</a>
+            <a href="CASES.html">Bags & Cases</a>
+            <a href="CLASS.html">Classroom Essentials</a>
+          </div>
+        </li>
+        <li><a href="AboutUS.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+    </nav>
+    <div class="search-container">
+      <input type="text" placeholder="Search for school supplies...">
+      <button><span class="iconify" data-icon="mdi:magnify"></span></button>
+    </div>
+    <div class="icons">
+      <a href="addtocart.html" title="Cart"><span class="iconify" data-icon="mdi:cart-outline"></span></a>
+      <a href="HEARTS.html" title="Favorites"><span class="iconify" data-icon="mdi:heart-outline"></span></a>
+      <a href="profile.html" title="Profile"><span class="iconify" data-icon="mdi:account-circle-outline"></span></a>
+    </div>
+  </header>
+
+  <div class="profile-container">
+    <div class="sidebar">
+      <div class="profile-header">
+        <div class="profile-picture">
+          <span class="iconify" data-icon="mdi:account-circle"></span>
+        </div>
+        <div class="profile-info">
+          <h2>Juan Dela Cruz</h2>
+          <p>juan.delacruz@example.com</p>
+          <p>Member since: January 2023</p>
+        </div>
+      </div>
+      <div class="follow-stats">
+        <div class="follow-stat">
+          <h3>150</h3>
+          <p>Followers</p>
+        </div>
+        <div class="follow-stat">
+          <h3>75</h3>
+          <p>Following</p>
+        </div>
+      </div>
+      <h3>Menu</h3>
+      <ul>
+        <li><a href="profile.html"><span class="icon iconify" data-icon="mdi:truck-delivery"></span> Order Tracking</a></li>
+        <li><a href="accountsetting.html" class="active"><span class="icon iconify" data-icon="mdi:account-settings"></span> Account Settings</a></li>
+        <li><a href="purchases.html"><span class="icon iconify" data-icon="mdi:shopping"></span> Purchases</a></li>
+       
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <h1 class="profile-title">Account Settings</h1>
+
+      <!-- Account Settings Section -->
+      <div id="account-settings" class="section active">
+        <h3>Personal Information</h3>
+        <form class="account-form">
+          <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" value="Juan" required>
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" value="Dela Cruz" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="juan.delacruz@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" value="+63 912 345 6789">
+          </div>
+          <button type="submit" class="edit-button">Save Changes</button>
+        </form>
+
+        <h3>Change Password</h3>
+        <form class="account-form">
+          <div class="form-group">
+            <label for="current-password">Current Password</label>
+            <input type="password" id="current-password" name="current-password" required>
+          </div>
+          <div class="form-group">
+            <label for="new-password">New Password</label>
+            <input type="password" id="new-password" name="new-password" required>
+          </div>
+          <div class="form-group">
+            <label for="confirm-password">Confirm New Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+          </div>
+          <button type="submit" class="edit-button">Update Password</button>
+        </form>
+
+        <h3>Address Information</h3>
+        <form class="account-form">
+          <div class="form-group">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="3" required>123 Sample Street, Barangay Example, City, Philippines</textarea>
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" value="Manila" required>
+          </div>
+          <div class="form-group">
+            <label for="zip">ZIP Code</label>
+            <input type="text" id="zip" name="zip" value="1000" required>
+          </div>
+          <button type="submit" class="edit-button">Save Address</button>
+        </form>
+
+        <h3>Privacy Settings</h3>
+        <div class="privacy-settings">
+          <div class="setting-item">
+            <input type="checkbox" id="email-notifications" checked>
+            <label for="email-notifications">Receive email notifications for orders</label>
+          </div>
+          <div class="setting-item">
+            <input type="checkbox" id="sms-notifications">
+            <label for="sms-notifications">Receive SMS notifications for deliveries</label>
+          </div>
+          <div class="setting-item">
+            <input type="checkbox" id="profile-visibility" checked>
+            <label for="profile-visibility">Make profile visible to other users</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
