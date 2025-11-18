@@ -7,7 +7,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Oxanium:wght@300;400;600&display=swap" rel="stylesheet">
   <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
   <title>Profile | Vemenzon</title>
-  
+  <style>
+    /* Additional styles for horizontal product images */
+    .product-images {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .product-images img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .product-list {
+      margin-bottom: 10px;
+    }
+    .product-list p {
+      margin: 0;
+      font-size: 14px;
+    }
+  </style>
 </head>
 
 <body>
@@ -45,7 +65,7 @@
       <a href="profile.html" title="Profile"><span class="iconify" data-icon="mdi:account-circle-outline"></span></a>
     </div>
   </header>
-
+ <div class="all">
   <div class="profile-container">
     <div class="sidebar">
       <div class="profile-header">
@@ -69,9 +89,9 @@
       <h3>Menu</h3>
       <ul>
         <li><a href="profile.html" class="active"><span class="icon iconify" data-icon="mdi:truck-delivery"></span> Order Tracking</a></li>
-        <li><a href="accountsetting.html"><span class="icon iconify" data-icon="mdi:account-settings"></span> Account Settings</a></li>
         <li><a href="purchases.html"><span class="icon iconify" data-icon="mdi:shopping"></span> Purchases</a></li>
-       
+               <li><a href="accountsetting.html"><span class="icon iconify" data-icon="mdi:account-settings"></span> Account Settings</a></li>
+
       </ul>
     </div>
 
@@ -84,7 +104,13 @@
         <div class="order-tracking">
           <div class="order-item">
             <h4>Order #12345</h4>
-            <p>Product: Notebook Set</p>
+            <div class="product-images">
+              <img src="https://lzd-img-global.slatic.net/g/p/6975659f30619f2f7d88098fe9afcb77.jpg_720x720q80.jpg" alt="Notebook Set">
+              
+            </div>
+            <div class="product-list">
+              <p>Products: Gotham Paper</p>
+            </div>
             <p>Estimated Delivery: October 15, 2023</p>
             <div class="tracking-steps">
               <div class="step completed">
@@ -110,8 +136,48 @@
             </div>
           </div>
           <div class="order-item">
+            <h4>Order #12345</h4>
+            <div class="product-images">
+              <img src="https://lzd-img-global.slatic.net/g/p/6975659f30619f2f7d88098fe9afcb77.jpg_720x720q80.jpg" alt="Notebook Set">
+              <img src="https://online.carrefour.com.tw/on/demandware.static/-/Sites-carrefour-tw-m-inner/default/dw941b8c0c/images/large/0158826_ob200a053.jpeg" alt="Pen Set">
+              <img src="https://hbw.ph/wp-content/uploads/2019/05/HBW-Eraser-in-jar-E-00.jpg"" alt="Eraser Pack"> <!-- Added another product -->
+            </div>
+            <div class="product-list">
+              <p>Products: Gotham Paper, OB Gel Pen, Eraser Pack</p>
+            </div>
+            <p>Estimated Delivery: October 15, 2023</p>
+            <div class="tracking-steps">
+              <div class="step completed">
+                <div class="step-icon"><span class="iconify" data-icon="mdi:clipboard-check"></span></div>
+                <div class="step-label">Order Placed</div>
+              </div>
+              <div class="step completed">
+                <div class="step-icon"><span class="iconify" data-icon="mdi:credit-card-check"></span></div>
+                <div class="step-label">Payment Confirmed</div>
+              </div>
+              <div class="step completed">
+                <div class="step-icon"><span class="iconify" data-icon="mdi:package-variant-closed"></span></div>
+                <div class="step-label">Preparing to Ship</div>
+              </div>
+              <div class="step active">
+                <div class="step-icon"><span class="iconify" data-icon="mdi:truck-delivery"></span></div>
+                <div class="step-label">Shipped</div>
+              </div>
+              <div class="step">
+                <div class="step-icon"><span class="iconify" data-icon="mdi:package-variant"></span></div>
+                <div class="step-label">Delivered</div>
+              </div>
+            </div>
+          </div>
+          <div class="order-item">
+            <p class="remov">Remove</p>
             <h4>Order #12346</h4>
-            <p>Product: Pen Set</p>
+            <div class="product-images">
+              <img src="https://online.carrefour.com.tw/on/demandware.static/-/Sites-carrefour-tw-m-inner/default/dw941b8c0c/images/large/0158826_ob200a053.jpeg" alt="Pen Set">
+            </div>
+            <div class="product-list">
+              <p>Products: OB Gel Pen</p>
+            </div>
             <p>Estimated Delivery: October 10, 2023</p>
             <div class="tracking-steps">
               <div class="step completed">
@@ -139,8 +205,8 @@
         </div>
       </div>
 
-      <!-- Other sections can be added here if needed -->
     </div>
+  </div>
   </div>
 </body>
 </html>

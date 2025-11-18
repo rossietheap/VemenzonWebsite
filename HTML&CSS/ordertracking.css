@@ -1,12 +1,16 @@
 
     body {
-      font-family: 'Oxanium', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #fff;
       color: #000;
+      margin: 0%;
     }
-
+.remov {
+  font-size: 13px;
+  cursor: pointer;
+}
     * {
       margin: 0;
       padding: 0;
@@ -27,6 +31,7 @@
     }
 
     .logo {
+      font-family: 'Oxanium', sans-serif;
       display: flex;
       justify-content: baseline;
     }
@@ -510,7 +515,7 @@
       margin: 0;
       color: #666;
     }
-
+   
     /* Vouchers Styles */
     .vouchers-list {
       display: grid;
@@ -641,7 +646,7 @@
   display: flex;
   align-items: center;
   background-color: #f9f9f9;
-  padding: 15px;
+  padding: 10px;
   border-radius: 10px;
   margin-bottom: 15px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -669,9 +674,17 @@ h1.purch {
 .purchase-details p {
   margin: 0;
   color: #666;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .purchase-actions {
   margin-left: 15px;
+}
+
+.all {
+  
+  align-items: center;
+  transform: scale(0.8); /* 90% ng original size */
+  transform-origin:  center; /* para hindi mag-shift sa gitna */
+  
 }
