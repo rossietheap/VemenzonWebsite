@@ -290,7 +290,7 @@ body {
 
 .interactive-box[open] summary {
     background: #ba3e3e;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .interactive-box .content {
