@@ -9,457 +9,636 @@
   <title>Profile | Vemenzon</title>
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Oxanium', sans-serif;
       margin: 0;
       padding: 0;
       background-color: #fff;
       color: #000;
     }
 
-    
     * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Oxanium', sans-serif;
-}
-header {
-    width: 100%;
-    background-color: #ba3e3e;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 13px;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-}
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.logo {
-    display: flex;
-    justify-content: baseline;
-}
-
-h1 {
-    margin-left: 15px;
-    margin-top: 12px;
-    font-size: 20px;
-}
-
-h1 a {
-    text-decoration: none;
-    color: black;
-}
-
-.logo img {
-    margin-left: 5px;
-    height: 45px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
-nav ul li {
-    position: relative;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #000000;
-    font-weight: 500;
-    font-size: 13px;
-    transition: color 0.2s ease;
-}
-
-nav ul li a:hover {
-    color: #b22222;
-}
-
-.dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #d62727;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
-    min-width: 220px;
-    display: none;
-    flex-direction: column;
-    z-index: 1000;
-}
-
-.dropdown a {
-    padding: 10px 20px;
-    color: #ffdfdf;
-    text-decoration: none;
-    font-size: 12px;
-    transition: background 0.2s;
-}
-
-.dropdown a:hover {
-    background-color: #ed3e3e;
-    color: #b22222;
-}
-
-nav ul li:hover>.dropdown,
-nav ul li .dropdown:hover {
-    display: flex;
-}
-
-.search-container {
-    display: flex;
-    align-items: center;
-    background-color: #b22222;
-    border-radius: 50px;
-    padding: 5px 10px;
-    height: 30px;
-}
-
-.search-container input {
-    border: none;
-    outline: none;
-    background: transparent;
-    color: #fff9f9;
-    padding: 5px 10px;
-    width: 180px;
-    font-size: 10px;
-}
-
-.search-container input::placeholder {
-    color: #cd5a5a;
-}
-
-.search-container button {
-    background: #cd2f2f;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    padding: 5px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.search-container button:hover {
-    background-color: #f2f2f2;
-}
-
-.icons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 19px;
-    margin-right: 50px;
-}
-
-.icons a {
-    color: #222;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.icons a:hover {
-    color: #b22222;
-}
-
-@media (max-width: 900px) {
     header {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+      width: 100%;
+      background-color: #ba3e3e;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 13px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: baseline;
+    }
+
+    h1 {
+      margin-left: 15px;
+      margin-top: 12px;
+      font-size: 20px;
+    }
+
+    h1 a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .logo img {
+      margin-left: 5px;
+      height: 45px;
     }
 
     nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #000000;
+      font-weight: 500;
+      font-size: 13px;
+      transition: color 0.2s ease;
+    }
+
+    nav ul li a:hover {
+      color: #b22222;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #d62727;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+      min-width: 220px;
+      display: none;
+      flex-direction: column;
+      z-index: 1000;
+    }
+
+    .dropdown a {
+      padding: 10px 20px;
+      color: #ffdfdf;
+      text-decoration: none;
+      font-size: 12px;
+      transition: background 0.2s;
+    }
+
+    .dropdown a:hover {
+      background-color: #ed3e3e;
+      color: #b22222;
+    }
+
+    nav ul li:hover>.dropdown,
+    nav ul li .dropdown:hover {
+      display: flex;
     }
 
     .search-container {
+      display: flex;
+      align-items: center;
+      background-color: #b22222;
+      border-radius: 50px;
+      padding: 5px 10px;
+      height: 30px;
+    }
+
+    .search-container input {
+      border: none;
+      outline: none;
+      background: transparent;
+      color: #fff9f9;
+      padding: 5px 10px;
+      width: 180px;
+      font-size: 10px;
+    }
+
+    .search-container input::placeholder {
+      color: #cd5a5a;
+    }
+
+    .search-container button {
+      background: #cd2f2f;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      padding: 5px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .search-container button:hover {
+      background-color: #f2f2f2;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 19px;
+      margin-right: 50px;
+    }
+
+    .icons a {
+      color: #222;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .icons a:hover {
+      color: #b22222;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .search-container {
         width: 100%;
         max-width: 300px;
-    }
-}
-
-/* Profile Page Styles */
-.profile-container {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.profile-title {
-    text-align: center;
-    font-size: 32px;
-    color: #ba3e3e;
-    margin-bottom: 30px;
-}
-
-.profile-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.profile-picture {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: #ba3e3e;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 40px;
-    margin-right: 20px;
-}
-
-.profile-info {
-    flex: 1;
-}
-
-.profile-info h2 {
-    margin: 0;
-    font-size: 28px;
-    color: #333;
-}
-
-.profile-info p {
-    margin: 5px 0;
-    color: #666;
-}
-
-.follow-stats {
-    display: flex;
-    gap: 20px;
-}
-
-.follow-stat {
-    text-align: center;
-}
-
-.follow-stat h3 {
-    margin: 0;
-    font-size: 24px;
-    color: #ba3e3e;
-}
-
-.follow-stat p {
-    margin: 5px 0 0;
-    color: #666;
-}
-
-.section {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.section h3 {
-    margin-bottom: 15px;
-    color: #ba3e3e;
-    font-size: 20px;
-}
-
-.section p, .section ul {
-    margin-bottom: 10px;
-    color: #555;
-}
-
-.section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.section ul li {
-    padding: 5px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.section ul li:last-child {
-    border-bottom: none;
-}
-
-.edit-button {
-    background-color: #ba3e3e;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s;
-}
-
-.edit-button:hover {
-    background-color: #a32d2d;
-}
-
-.change-username {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.change-username input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.my-purchases {
-    margin-bottom: 20px;
-}
-
-.purchase-statuses {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.purchase-status {
-    flex: 1;
-    min-width: 200px;
-    text-align: center;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.purchase-status .icon {
-    font-size: 40px;
-    color: #ba3e3e;
-    margin-bottom: 10px;
-}
-
-.purchase-status h4 {
-    margin: 0 0 10px;
-    color: #333;
-}
-
-.purchase-status p {
-    margin: 0;
-    color: #666;
-}
-
-.account-details {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.account-detail {
-    flex: 1;
-    min-width: 200px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.account-detail .icon {
-    font-size: 30px;
-    color: #ba3e3e;
-}
-
-.account-detail-content {
-    flex: 1;
-}
-
-.account-detail h4 {
-    margin: 0 0 10px;
-    color: #333;
-}
-
-.account-detail p {
-    margin: 0 0 10px;
-    color: #555;
-}
-
-@media (max-width: 768px) {
-    .profile-header {
-        flex-direction: column;
-        text-align: center;
+      }
     }
 
-    .profile-picture {
-        margin-bottom: 20px;
+    /* Profile Page Styles */
+    .profile-container {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      gap: 20px;
     }
 
-    .follow-stats {
-        justify-content: center;
-        margin-top: 20px;
+    .sidebar {
+      width: 300px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .sidebar .profile-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .sidebar .profile-picture {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #ba3e3e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .sidebar .profile-info h2 {
+      margin: 0 0 5px;
+      font-size: 20px;
+      color: #333;
+    }
+
+    .sidebar .profile-info p {
+      margin: 0;
+      color: #666;
+      font-size: 12px;
+    }
+
+    .sidebar .follow-stats {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    .sidebar .follow-stat h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #ba3e3e;
+    }
+
+    .sidebar .follow-stat p {
+      margin: 5px 0 0;
+      color: #666;
+      font-size: 10px;
+    }
+
+    .sidebar h3 {
+      margin-bottom: 15px;
+      color: #ba3e3e;
+      font-size: 18px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .sidebar ul li a:hover,
+    .sidebar ul li a.active {
+      background-color: #ba3e3e;
+      color: white;
+    }
+
+    .sidebar ul li a .icon {
+      font-size: 18px;
+    }
+
+    .main-content {
+      flex: 1;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .profile-title {
+      text-align: center;
+      font-size: 32px;
+      color: #ba3e3e;
+      margin-bottom: 30px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .section h3 {
+      margin-bottom: 15px;
+      color: #ba3e3e;
+      font-size: 20px;
+    }
+
+    .section p, .section ul {
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    .section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .section ul li {
+      padding: 5px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .section ul li:last-child {
+      border-bottom: none;
+    }
+
+    .edit-button {
+      background-color: #ba3e3e;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    .edit-button:hover {
+      background-color: #a32d2d;
+    }
+
+    /* Order Tracking Styles */
+    .order-tracking {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .order-item {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .order-item h4 {
+      color: #ba3e3e;
+      margin-bottom: 10px;
+    }
+
+    .order-item p {
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .tracking-steps {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .step {
+      text-align: center;
+      flex: 1;
+      position: relative;
+    }
+
+    .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: -50%;
+      width: 100%;
+      height: 2px;
+      background-color: #ddd;
+      z-index: 1;
+    }
+
+    .step.completed::after {
+      background-color: #ba3e3e;
+    }
+
+    .step-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .step.completed .step-icon {
+      background-color: #ba3e3e;
+      color: white;
+    }
+
+    .step.active .step-icon {
+      background-color: #ba3e3e;
+      color: white;
+    }
+
+    .step-label {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .step.completed .step-label {
+      color: #ba3e3e;
+      font-weight: bold;
+    }
+
+    .step.active .step-label {
+      color: #ba3e3e;
+      font-weight: bold;
+    }
+
+    /* Account Settings Styles */
+    .account-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .account-detail {
+      flex: 1;
+      min-width: 200px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .account-detail .icon {
+      font-size: 30px;
+      color: #ba3e3e;
+    }
+
+    .account-detail-content {
+      flex: 1;
+    }
+
+    .account-detail h4 {
+      margin: 0 0 10px;
+      color: #333;
+    }
+
+    .account-detail p {
+      margin: 0 0 10px;
+      color: #555;
+    }
+
+    /* Purchases Styles */
+    .my-purchases {
+      margin-bottom: 20px;
     }
 
     .purchase-statuses {
-        flex-direction: column;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
-    .account-details {
-        flex-direction: column;
+    .purchase-status {
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-}
-    
+
+    .purchase-status .icon {
+      font-size: 40px;
+      color: #ba3e3e;
+      margin-bottom: 10px;
+    }
+
+    .purchase-status h4 {
+      margin: 0 0 10px;
+      color: #333;
+    }
+
+    .purchase-status p {
+      margin: 0;
+      color: #666;
+    }
+
+    /* Vouchers Styles */
+    .vouchers-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .voucher-item {
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .voucher-item h4 {
+      color: #ba3e3e;
+      margin-bottom: 5px;
+    }
+
+    .voucher-item p {
+      color: #666;
+      font-size: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .profile-container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+      }
+
+      .sidebar .profile-header {
+        flex-direction: row;
+        text-align: left;
+      }
+
+      .sidebar .profile-picture {
+        margin-bottom: 0;
+        margin-right: 10px;
+      }
+
+      .sidebar .follow-stats {
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .account-details {
+        flex-direction: column;
+      }
+
+      .vouchers-list {
+        grid-template-columns: 1fr;
+      }
+
+      .tracking-steps {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .step:not(:last-child)::after {
+        display: none;
+      }
+
+      .purchase-statuses {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 
 <body>
   <header>
-     <div class="logo"> <a href="LandingPage.html"><img src="Group 1.png" alt="Vemenzon Logo"></a>
+    <div class="logo">
+      <a href="LandingPage.html"><img src="Group 1.png" alt="Vemenzon Logo"></a>
       <h1><a href="LandingPage.html"><b>Vemenzon</b></a></h1>
     </div>
     <nav>
       <ul>
-        <li> <a href="ALL.html">Shop By Category <span class="iconify" data-icon="mdi:chevron-down"></span></a>
-          <div class="dropdown"> <a href="WRITING.html">Writing & Correction</a> <a href="PAPERS.html">Paper &
-              Notebooks</a> <a href="FILING.html">Filing & Organizers</a> <a href="MATH.html">Math & Measuring</a> <a
-              href="ARTS.html">Arts & Crafts</a> <a href="CASES.html">Bags & Cases</a> <a href="CLASS.html">Classroom
-              Essentials</a> </div>
+        <li>
+          <a href="ALL.html">Shop By Category <span class="iconify" data-icon="mdi:chevron-down"></span></a>
+          <div class="dropdown">
+            <a href="WRITING.html">Writing & Correction</a>
+            <a href="PAPERS.html">Paper & Notebooks</a>
+            <a href="FILING.html">Filing & Organizers</a>
+            <a href="MATH.html">Math & Measuring</a>
+            <a href="ARTS.html">Arts & Crafts</a>
+            <a href="CASES.html">Bags & Cases</a>
+            <a href="CLASS.html">Classroom Essentials</a>
+          </div>
         </li>
         <li><a href="AboutUS.html">About Us</a></li>
         <li><a href="contactus.html">Contact Us</a></li>
         <li><a href="help.html">Help</a></li>
       </ul>
     </nav>
-    <div class="search-container"> <input type="text" placeholder="Search for school supplies..."> <button><span
-          class="iconify" data-icon="mdi:magnify"></span></button> </div>
-    <div class="icons"> <a href="addtocart.html" title="Cart"><span class="iconify"
-          data-icon="mdi:cart-outline"></span></a> <a href="HEARTS.html" title="Favorites"><span class="iconify"
-          data-icon="mdi:heart-outline"></span></a> <a href="profile.html" title="Profile"><span class="iconify"
-          data-icon="mdi:account-circle-outline"></span></a> </div>
+    <div class="search-container">
+      <input type="text" placeholder="Search for school supplies...">
+      <button><span class="iconify" data-icon="mdi:magnify"></span></button>
+    </div>
+    <div class="icons">
+      <a href="addtocart.html" title="Cart"><span class="iconify" data-icon="mdi:cart-outline"></span></a>
+      <a href="HEARTS.html" title="Favorites"><span class="iconify" data-icon="mdi:heart-outline"></span></a>
+      <a href="profile.html" title="Profile"><span class="iconify" data-icon="mdi:account-circle-outline"></span></a>
+    </div>
   </header>
 
-
   <div class="profile-container">
-
-    <h1 class="profile-title">My Profile</h1>
-
-   
-    <div class="profile-header">
-      <div class="profile-picture">
-        <span class="iconify" data-icon="mdi:account-circle"></span>
-      </div>
-      <div class="profile-info">
-        <h2>Juan Dela Cruz</h2>
-        <p>juan.delacruz@example.com</p>
-        <p>Member since: January 2023</p>
+    <div class="sidebar">
+      <div class="profile-header">
+        <div class="profile-picture">
+          <span class="iconify" data-icon="mdi:account-circle"></span>
+        </div>
+        <div class="profile-info">
+          <h2>Juan Dela Cruz</h2>
+          <p>juan.delacruz@example.com</p>
+          <p>Member since: January 2023</p>
+        </div>
       </div>
       <div class="follow-stats">
         <div class="follow-stat">
@@ -471,138 +650,18 @@ nav ul li .dropdown:hover {
           <p>Following</p>
         </div>
       </div>
-    </div>
-
-  
-    <div class="section">
-      <h3>Change Username</h3>
-      <div class="change-username">
-        <input type="text" placeholder="Enter new username" value="Juan Dela Cruz">
-        <button class="edit-button">Update</button>
-      </div>
-    </div>
-
-    
-    <div class="section my-purchases">
-      <h3>My Purchases</h3>
-      <div class="purchase-statuses">
-        <div class="purchase-status">
-          <div class="icon">
-            <span class="iconify" data-icon="mdi:credit-card-outline"></span>
-          </div>
-          <h4>To Pay</h4>
-          <p>2 items</p>
-        </div>
-        <div class="purchase-status">
-          <div class="icon">
-            <span class="iconify" data-icon="mdi:truck-outline"></span>
-          </div>
-          <h4>To Ship</h4>
-          <p>1 item</p>
-        </div>
-        <div class="purchase-status">
-          <div class="icon">
-            <span class="iconify" data-icon="mdi:package-variant-closed"></span>
-          </div>
-          <h4>To Receive</h4>
-          <p>3 items</p>
-        </div>
-        <div class="purchase-status">
-          <div class="icon">
-            <span class="iconify" data-icon="mdi:star-outline"></span>
-          </div>
-          <h4>To Rate</h4>
-          <p>5 items</p>
-        </div>
-      </div>
-    </div>
-
-   
-    <div class="section">
-      <h3>Account Details</h3>
-      <div class="account-details">
-        <div class="account-detail">
-          <div class="icon">
-            <span class="iconify" data-icon="mdi:cash"></span>
-          </div>
-          <div class="account-detail-content">
-            <h4>Balance</h4>
-            <p>$50.00</p>
-            <button class="edit-button">Add Funds</button>
-          </div>
-        </div>
-        <div class="account-detail">
-          <div class="icon">
-            <span class="iconify" data-icon="mdi:ticket-percent"></span>
-          </div>
-          <div class="account-detail-content">
-            <h4>Vouchers</h4>
-            <ul>
-              <li>10% Off Voucher - Expires Dec 2023</li>
-              <li>Free Shipping Voucher - Expires Nov 2023</li>
-            </ul>
-            <button class="edit-button">View All</button>
-          </div>
-        </div>
-        <div class="account-detail">
-          <div class="icon">
-            <span class="iconify" data-icon="mdi:tag-outline"></span>
-          </div>
-          <div class="account-detail-content">
-            <h4>Promo</h4>
-            <p>Current promotions and offers.</p>
-            <button class="edit-button">View Promos</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<footer class="footer">
-  <div class="footer-top">
-    <div class="footer-logo">
-      <h2>VEMENZON</h2>
-      <p class="trr">Your everyday style, redefined.</p>
-    </div>
-
-    <div class="footer-links">
-     
-
+      <h3>Menu</h3>
       <ul>
-        <li><a href="#">Location</a></li>
-                 <li><a href="https://www.google.com/maps/search/Main+Floor,+GCC+Bldg.,+Guadalupe,+Makati+City/@14.5573885,121.0156474,16.25z?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D">Main Floor, GCC Bldg., Guadalupe, Makati City</a></li>
-
-      </ul>
-
-      <ul>
-        <li><a href="contactus.html"><b>Contacts</b></a></li>
-        <li><a href="#">vmzbuscentre@gmail.com</a></li>
-        <li><a href="#">09178571286<br>09991639849</a></li>
-
-      </ul>
-
-      <ul>
-        <li><a href="#"><b>Links</b></a></li>
-        <li><a href="LandingPage.html">Home</a></li>
-        <li><a href="AboutUs.html">About Us</a></li>
-        <li><a href="contactus.html">Contact Us</a></li>
-        <li><a href="help.html">Help</a></li>
-
+        <li><a href="#order-tracking" class="active"><span class="icon iconify" data-icon="mdi:truck-delivery"></span> Order Tracking</a></li>
+        <li><a href="#account-settings"><span class="icon iconify" data-icon="mdi:account-settings"></span> Account Settings</a></li>
+        <li><a href="#purchases"><span class="icon iconify" data-icon="mdi:shopping"></span> Purchases</a></li>
+        <li><a href="#vouchers"><span class="icon iconify" data-icon="mdi:ticket-percent"></span> Vouchers</a></li>
       </ul>
     </div>
-  </div>
 
-  <hr>
+    <div class="main-content">
+      <h1 class="profile-title">My Profile</h1>
 
-  <div class="footer-bottom">
-    <div class="social-icons">
-      
-    </div>
-    <p class="trr">© 2025 Vemenzon. All rights reserved.</p>
-  </div>
-</footer>
-
-<link rel="stylesheet" href="footer.css">
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</body>
-</html>
+      <!-- Order Tracking Section -->
+      <div id="order-tracking" class="section active">
+        <h3>Order
