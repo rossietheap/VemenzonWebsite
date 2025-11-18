@@ -564,7 +564,7 @@
 
   <div class="main-content">
   <div class="back-button">
-    <button onclick="history.back()">← Back</button>
+    <button onclick=""history.back()">← Back</button>
   </div>
 
   <div class="product-container">
@@ -779,7 +779,7 @@
       const quantity = parseInt(document.getElementById("quantity").value);
       const productWithQuantity = { ...product, quantity };
       localStorage.setItem("selectedProductWithQuantity", JSON.stringify(productWithQuantity));
-      window.location.href = "checkout.html";
+      window.location.href = "checkoutindiv.html";
     }
 
      const reportBtn = document.getElementById('reportBtn');

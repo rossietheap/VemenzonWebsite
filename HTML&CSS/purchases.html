@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="ordertracking.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Oxanium:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  <title>Purchases | Vemenzon</title>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="LandingPage.html"><img src="Group 1.png" alt="Vemenzon Logo"></a>
+      <h1><a href="LandingPage.html"><b>Vemenzon</b></a></h1>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <a href="ALL.html">Shop By Category <span class="iconify" data-icon="mdi:chevron-down"></span></a>
+          <div class="dropdown">
+            <a href="WRITING.html">Writing & Correction</a>
+            <a href="PAPERS.html">Paper & Notebooks</a>
+            <a href="FILING.html">Filing & Organizers</a>
+            <a href="MATH.html">Math & Measuring</a>
+            <a href="ARTS.html">Arts & Crafts</a>
+            <a href="CASES.html">Bags & Cases</a>
+            <a href="CLASS.html">Classroom Essentials</a>
+          </div>
+        </li>
+        <li><a href="AboutUS.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+    </nav>
+    <div class="search-container">
+      <input type="text" placeholder="Search for school supplies...">
+      <button><span class="iconify" data-icon="mdi:magnify"></span></button>
+    </div>
+    <div class="icons">
+      <a href="addtocart.html" title="Cart"><span class="iconify" data-icon="mdi:cart-outline"></span></a>
+      <a href="HEARTS.html" title="Favorites"><span class="iconify" data-icon="mdi:heart-outline"></span></a>
+      <a href="profile.html" title="Profile"><span class="iconify" data-icon="mdi:account-circle-outline"></span></a>
+    </div>
+  </header>
+
+  <div class="profile-container">
+    <div class="sidebar">
+      <div class="profile-header">
+        <div class="profile-picture">
+          <span class="iconify" data-icon="mdi:account-circle"></span>
+        </div>
+        <div class="profile-info">
+          <h2>Juan Dela Cruz</h2>
+          <p>juan.delacruz@example.com</p>
+          <p>Member since: January 2023</p>
+        </div>
+      </div>
+      <div class="follow-stats">
+        <div class="follow-stat">
+          <h3>150</h3>
+          <p>Followers</p>
+        </div>
+        <div class="follow-stat">
+          <h3>75</h3>
+          <p>Following</p>
+        </div>
+      </div>
+      <h3>Menu</h3>
+      <ul>
+        <li><a href="profile.html"><span class="icon iconify" data-icon="mdi:truck-delivery"></span> Order Tracking</a></li>
+        <li><a href="accountsetting.html"><span class="icon iconify" data-icon="mdi:account-settings"></span> Account Settings</a></li>
+        <li><a href="purchases.html" class="active"><span class="icon iconify" data-icon="mdi:shopping"></span> Purchases</a></li>
+       
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <h1 class="profile-title">My Purchases</h1>
+
+      <!-- Purchases Section -->
+      <div id="purchases" class="section active">
+        <div class="my-purchases">
+         
+
+        <h1 class="purch">Purchases</h1>
+        
+        <div class="purchase-list">
+            <h3>Recent Purchases</h3>
+            <div class="purchase-item">
+            <div class="purchase-image">
+              <img src="notebook.jpg" alt="Notebook Set" style="width: 80px; height: 80px; object-fit: cover; border-radius: 5px;">
+            </div>
+            <div class="purchase-details">
+              <h4>Notebook Set</h4>
+              <p>Order #12345</p>
+              <p>Status: Shipped</p>
+              <p>Estimated Delivery: October 15, 2023</p>
+            </div>
+            <div class="purchase-actions">
+              <button class="edit-button">Track Order</button>
+            </div>
+          </div>
+          <div class="purchase-item">
+            <div class="purchase-image">
+              <img src="eraser.jpg" alt="Eraser Pack" style="width: 80px; height: 80px; object-fit: cover; border-radius: 5px;">
+            </div>
+            <div class="purchase-details">
+              <h4>Eraser Pack</h4>
+              <p>Order #12347</p>
+              <p>Status: To Ship</p>
+              <p>Preparing for shipment</p>
+            </div>
+            <div class="purchase-actions">
+              <button class="edit-button">Cancel Order</button>
+            </div>
+            
+          </div>
+        <h3>Completed</h3>
+          
+          <div class="purchase-item">
+            <div class="purchase-image">
+              <img src="pen.jpg" alt="Pen Set" style="width: 80px; height: 80px; object-fit: cover; border-radius: 5px;">
+            </div>
+            <div class="purchase-details">
+              <h4>Pen Set</h4>
+              <p>Order #12346</p>
+              <p>Status: Delivered</p>
+              <p>Delivered on: October 10, 2023</p>
+            </div>
+            <div class="purchase-actions">
+              <button class="edit-button">View Details</button>
+            </div>
+          </div>
+          
+           <h3>Cancelled Orders</h3>
+          <div class="purchase-item">
+            <div class="purchase-image">
+              <img src="eraser.jpg" alt="Eraser Pack" style="width: 80px; height: 80px; object-fit: cover; border-radius: 5px;">
+            </div>
+            <div class="purchase-details">
+              <h4>Eraser Pack</h4>
+              <p>Order #12347</p>
+              <p>Status: To Ship</p>
+              <p>Preparing for shipment</p>
+            </div>
+            <div class="purchase-actions">
+             <p>Cancelled</p>
+            </div>
+            
+          </div>
+            
+           
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

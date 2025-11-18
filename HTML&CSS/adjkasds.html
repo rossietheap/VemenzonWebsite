@@ -1,983 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product Details | Vemenzon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Oxanium:wght@300;400;600&display=swap" rel="stylesheet">
-  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
   <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Oxanium', sans-serif;
-    }
-
-    body {
-      background-color: #fff;
-      color: #222;
-    }
-
-    /* Header (kept same as your design) */
-   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Oxanium', sans-serif;
-}
-header {
-    width: 100%;
-    background-color: #ba3e3e;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 13px;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-}
-
-.logo {
-    display: flex;
-    justify-content: baseline;
-}
-
-h1 {
-    margin-left: 15px;
-    margin-top: 12px;
-    font-size: 20px;
-}
-
-h1 a {
-    text-decoration: none;
-    color: black;
-}
-
-.logo img {
-    margin-left: 5px;
-    height: 45px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
-nav ul li {
-    position: relative;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #000000;
-    font-weight: 500;
-    font-size: 13px;
-    transition: color 0.2s ease;
-}
-
-nav ul li a:hover {
-    color: #b22222;
-}
-
-.dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #d62727;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
-    min-width: 220px;
-    display: none;
-    flex-direction: column;
-    z-index: 1000;
-}
-
-.dropdown a {
-    padding: 10px 20px;
-    color: #ffdfdf;
-    text-decoration: none;
-    font-size: 12px;
-    transition: background 0.2s;
-}
-
-.dropdown a:hover {
-    background-color: #ed3e3e;
-    color: #b22222;
-}
-
-nav ul li:hover>.dropdown,
-nav ul li .dropdown:hover {
-    display: flex;
-}
-
-.search-container {
-    display: flex;
-    align-items: center;
-    background-color: #b22222;
-    border-radius: 50px;
-    padding: 5px 10px;
-    height: 30px;
-}
-
-.search-container input {
-    border: none;
-    outline: none;
-    background: transparent;
-    color: #fff9f9;
-    padding: 5px 10px;
-    width: 180px;
-    font-size: 10px;
-}
-
-.search-container input::placeholder {
-    color: #cd5a5a;
-}
-
-.search-container button {
-    background: #cd2f2f;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    padding: 5px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.search-container button:hover {
-    background-color: #f2f2f2;
-}
-
-.icons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 19px;
-    margin-right: 50px;
-}
-
-.icons a {
-    color: #222;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.icons a:hover {
-    color: #b22222;
-}
-  .recommendations, .products{
-  transform: scale(0.9);   /* 90% of original size */
-  transform-origin: top center; /* para di lumihis */
-}
-
-
-
-@media (max-width: 900px) {
-    header {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .search-container {
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
-    /* Product Section */
-    .product-container {
-      max-width: 900px;
-      margin: 50px auto;
-      display: flex;
-      flex-wrap: wrap;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      padding: 30px;
-      gap: 40px;
-    }
-
-    .product-image {
-      flex: 1 1 400px;
-      display: flex; align-items: center; justify-content: center;
-    }
-
-    .product-image img {
-      width: 100%;
-      max-width: 380px;
-      border-radius: 12px;
-      object-fit: contain;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .product-info {
-      flex: 1 1 400px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .product-info h2 {
-      font-size: 26px;
-      margin-bottom: 8px;
-      color: #111;
-    }
-
-    .price {
-      color: #ba3e3e;
-      font-size: 22px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    .desc {
-      font-size: 14px;
-      color: #444;
-      line-height: 1.5;
-      margin-bottom: 15px;
-    }
-
-    .details p {
-      font-size: 13px;
-      color: #555;
-      margin-bottom: 5px;
-    }
-
-    /* Quantity + Buttons */
-    .quantity-section {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 20px 0;
-    }
-
-    .quantity-section label {
-      font-size: 14px;
-      color: #333;
-    }
-
-    .quantity-controls {
-      display: flex;
-      align-items: center;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    .quantity-button {
-      background-color: #f8f8f8;
-      border: none;
-      padding: 6px 12px;
-      font-size: 1.1em;
-      cursor: pointer;
-      border-radius: 6px;
-      transition: 0.2s;
-    }
-
-    .quantity-button:hover {
-      background-color: #eaeaea;
-    }
-
-    .quantity-input {
-      width: 45px;
-      text-align: center;
-      border: none;
-      outline: none;
-      font-size: 14px;
-      padding: 6px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 12px;
-      margin-top: 15px;
-    }
-
-    .buttons button {
-      flex: 1;
-      padding: 12px;
-      font-size: 16px;
-      font-weight: bold;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .add-cart {
-      background: white;
-      color: #ba3e3e;
-      border: 2px solid #ba3e3e;
-    }
-    .add-cart:hover { background: #ba3e3e; color: white; }
-
-    .buy-now {
-      background: #ba3e3e;
-      color: white;
-    }
-    .buy-now:hover { background: #9e3030; }
-
-    /* Recommendations Section */
-    .recommendations {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 20px;
-    }
-
-    .recommendations h3 {
-      font-size: 24px;
-      color: #111;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .rec-products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .rec-product {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-      padding: 15px;
-      text-align: center;
-      transition: transform 0.2s;
-      cursor: pointer;
-    }
-
-    .rec-product:hover {
-      transform: translateY(-5px);
-    }
-
-    .rec-product img {
-      width: 100%;
-      max-width: 150px;
-      height: 150px;
-      object-fit: contain;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-
-    .rec-product h4 {
-      font-size: 16px;
-      color: #111;
-      margin-bottom: 5px;
-    }
-
-    .rec-product .price {
-      color: #ba3e3e;
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .rec-product button {
-      background: #ba3e3e;
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: 0.2s;
-    }
-
-    .rec-product button:hover {
-      background: #9e3030;
-    }
-
-    
-
-    @media (max-width: 800px) {
-      .product-container { flex-direction: column; align-items: center; text-align: center; }
-      .product-info { align-items: center; }
-      .buttons { flex-direction: column; width: 100%; }
-      .rec-products { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
-    }
-    * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Oxanium', sans-serif;
-}
-   .container {
-  transform: scale(0.8);   /* 90% of original size */
-  transform-origin: top center; /* para di lumihis */
-}
-
-
-header {
-    width: 100%;
-    background-color: #ba3e3e;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 13px;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-}
-
-.logo {
-    display: flex;
-    justify-content: baseline;
-}
-
-h1 {
-    margin-left: 15px;
-    margin-top: 12px;
-    font-size: 20px;
-}
-
-h1 a {
-    text-decoration: none;
-    color: black;
-}
-
-.logo img {
-    margin-left: 5px;
-    height: 45px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
-nav ul li {
-    position: relative;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #000000;
-    font-weight: 500;
-    font-size: 13px;
-    transition: color 0.2s ease;
-}
-
-nav ul li a:hover {
-    color: #b22222;
-}
-
-.dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #d62727;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
-    min-width: 220px;
-    display: none;
-    flex-direction: column;
-    z-index: 1000;
-}
-
-.dropdown a {
-    padding: 10px 20px;
-    color: #ffdfdf;
-    text-decoration: none;
-    font-size: 12px;
-    transition: background 0.2s;
-}
-
-.dropdown a:hover {
-    background-color: #ed3e3e;
-    color: #b22222;
-}
-
-nav ul li:hover>.dropdown,
-nav ul li .dropdown:hover {
-    display: flex;
-}
-
-.search-container {
-    display: flex;
-    align-items: center;
-    background-color: #b22222;
-    border-radius: 50px;
-    padding: 5px 10px;
-    height: 30px;
-}
-
-.search-container input {
-    border: none;
-    outline: none;
-    background: transparent;
-    color: #fff9f9;
-    padding: 5px 10px;
-    width: 180px;
-    font-size: 10px;
-}
-
-.search-container input::placeholder {
-    color: #cd5a5a;
-}
-
-.search-container button {
-    background: #cd2f2f;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    padding: 5px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.search-container button:hover {
-    background-color: #f2f2f2;
-}
-
-.icons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 19px;
-    margin-right: 50px;
-}
-
-.icons a {
-    color: #222;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.icons a:hover {
-    color: #b22222;
-}
-
-@media (max-width: 900px) {
-    header {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .search-container {
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    padding: 40px 80px;
-}
-
-
-
-
-.sidebar {
-    margin-top: 60px;
-    row-gap: 22px;
-    width: 200px;
-}
-
-
-.sidebar h2 {
-    font-size: 20px;
-    margin-bottom: 15px;
-}
-
-
-.sidebar ul {
-    margin-top:35px;
-    list-style: none;
-    padding: 0;
-}
-
-
-.sidebar ul li {
-    padding: 8px 0;
-    cursor: pointer;
-    color: #444;
-    transition: color 0.2s;
-}
-
-
-.sidebar ul li:hover {
-    color: #b22222;
-}
-
-
-
-
-.tabs {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-
-.tabs button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 500;
-}
-
-
-.tabs button.active {
-    background-color: #b22222;
-    color: white;
-}
-
-
-
-
-.products {
-    flex: 1;
-}
-.product-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 20px;
-    justify-content: flex-start;
-    overflow-x: auto; /* Optional: allows horizontal scrolling if too many items */
-  }
-.product-card {
-    width: 180px;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      background-color: #fff;
-      text-align: center;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-      padding: 15px;
-      position: relative;
-}
-
-.product-card:hover {
-    transform: translateY(-4px);
-}
-
-.product-card img {
-   width: 100%;
-      height: 130px;
-      object-fit: cover;
-      border-radius: 8px;}
-
-.product-card h3 {
-    font-size: 16px;
-    margin: 12px 0 6px;
-}
-
-
-
-.price {
-    color: #b22222;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-
-.buttons {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    margin-top: 10px;
-}
-
-
-
-.buy-btn {
-    background-color: #b22222;
-    color: white;
-    border: none;
-    padding: 9px 34px;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: 0.2s;
-}
-
-
-.buy-btn:hover {
-    background-color: #8b1a1a;
-}
-
-
-.cart-btn {
-    background-color: #b22222;
-    color: rgb(29, 28, 28);
-    border: none;
-    padding: 9px 9px;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: 0.2s;
-}
-
-
-
-
-
-.heart-toggle input {
-    display: none;
-}
-
-
-
-
-.heart-btn {
-    margin-top: 20px;
-    background-color: white;
-    color: #b22222;
-    border: 1px solid #b22222;
-    padding: 6px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: 0.3s;
-    user-select: none;
-
-
-
-}
-
-
-
-
-.heart-toggle input:checked+.heart-btn {
-    background-color: #b22222;
-    color: white;
-}
-
-
-
-
-footer {
-    text-align: center;
-    padding: 25px;
-    background-color: #fff;
-    border-top: 1px solid #eee;
-    color: #777;
-    font-size: 14px;
-    margin-top: 50px;
-}
-
-
-footer a {
-    text-decoration: none;
-    color: #b22222;
-    margin: 0 10px;
-    font-weight: 500;
-}
-
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-
-.footer-links {
-    margin-bottom: 10px;
-}
-
-
-
-
-
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-
-a:hover {
-    color: #b91b1b;
-}
-
-
-.cart-btn iconify-icon {
-    font-size: 17px;
-    color: rgb(229, 228, 228);
-    vertical-align: middle;
-}
-
-
-.cart-btn:hover iconify-icon {
-    color: #aea6a6;
-}
+    /* Add your CSS here for styling */
+    body { font-family: Arial, sans-serif; }
+    .product-card { border: 1px solid #ccc; padding: 10px; margin: 10px; }
+    .product-info { margin: 20px; }
+    .quantity-controls { display: flex; align-items: center; }
+    .quantity-controls button { margin: 0 5px; }
+    #checkoutModal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; }
+    #checkoutModal .modal-content { background: white; padding: 20px; border-radius: 5px; width: 400px; }
+    .order-product { display: flex; margin-bottom: 10px; }
+    .order-product img { width: 100px; height: 100px; margin-right: 10px; }
+    .order-product-details p { margin: 0; }
   </style>
 </head>
-
 <body>
-
-  <header>
-     <div class="logo"> <a href="LandingPage.html"><img src="Group 1.png" alt="Vemenzon Logo"></a>
-      <h1><a href="LandingPage.html"><b>Vemenzon</b></a></h1>
-    </div>
-    <nav>
-      <ul>
-        <li> <a href="ALL.html">Shop By Category <span class="iconify" data-icon="mdi:chevron-down"></span></a>
-          <div class="dropdown"> <a href="WRITING.html">Writing & Correction</a> <a href="PAPERS.html">Paper &
-              Notebooks</a> <a href="FILING.html">Filing & Organizers</a> <a href="MATH.html">Math & Measuring</a> <a
-              href="ARTS.html">Arts & Crafts</a> <a href="CASES.html">Bags & Cases</a> <a href="CLASS.html">Classroom
-              Essentials</a> </div>
-        </li>
-        <li><a href="AboutUS.html">About Us</a></li>
-        <li><a href="contactus.html">Contact Us</a></li>
-        <li><a href="help.html">Help</a></li>
-      </ul>
-    </nav>
-    <div class="search-container"> <input type="text" placeholder="Search for school supplies..."> <button><span
-          class="iconify" data-icon="mdi:magnify"></span></button> </div>
-    <div class="icons"> <a href="addtocart.html" title="Cart"><span class="iconify"
-          data-icon="mdi:cart-outline"></span></a> <a href="HEARTS.html" title="Favorites"><span class="iconify"
-          data-icon="mdi:heart-outline"></span></a> <a href="profile.html" title="Profile"><span class="iconify"
-          data-icon="mdi:account-circle-outline"></span></a> </div>
-
-  </header>
-
-  <div class="product-container">
+  <h1>Product Details</h1>
+  <div class="product-info">
     <div class="product-image">
-      <img src="" alt="Product Image">
+      <img src="" alt="Product Image" style="width: 300px; height: 300px;">
     </div>
-    <div class="product-info">
-      <h2>Loading...</h2>
-      <div class="price"></div>
-      <p class="desc"></p>
-      <div class="details"></div>
+    <h2>Product Name</h2>
+    <p class="price">₱0.00</p>
+    <p class="desc">Description</p>
+    <div class="details"></div>
+    <div class="quantity-controls">
+      <button onclick="updateQuantity(-1)">-</button>
+      <input type="number" id="quantity" value="1" min="1">
+      <button onclick="updateQuantity(1)">+</button>
+    </div>
+    <button onclick="addToCart()">Add to Cart</button>
+    <button onclick="buyNow()">Buy Now</button>
+    <button id="reportBtn">Report</button>
+  </div>
 
-      <div class="quantity-section">
-        <label>Quantity:</label>
-        <div class="quantity-controls">
-          <button class="quantity-button" onclick="updateQuantity(-1)">−</button>
-          <input type="number" id="quantity" class="quantity-input" value="1" min="1">
-          <button class="quantity-button" onclick="updateQuantity(1)">+</button>
-        </div>
-      </div>
-
-      <div class="buttons">
-        <button class="add-cart" onclick="addToCart()">Add to Cart</button>
-        <button class="buy-now" onclick="buyNow()">Buy Now</button>
-      </div>
+  <!-- Report Modal -->
+  <div id="reportModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center;">
+    <div class="modal-content">
+      <h3>Report Product</h3>
+      <textarea id="reportText" placeholder="Enter your report..."></textarea>
+      <button onclick="submitReport()">Submit</button>
+      <button onclick="closeReportModal()">Cancel</button>
     </div>
   </div>
 
-  <!-- Recommendations Section -->
-  <section class="recommendations">
-    <h3>You Might Also Like</h3>
-    
-
-      <div class="product-grid" id="productGrid"></div>
-    </div>
-  </section>
-
-<footer class="footer">
-  <div class="footer-top">
-    <div class="footer-logo">
-      <h2>VEMENZON</h2>
-      <p class="trr">Your everyday style, redefined.</p>
-    </div>
-
-    <div class="footer-links">
-     
-
-      <ul>
-        <li><a href="#">Location</a></li>
-                 <li><a href="https://www.google.com/maps/search/Main+Floor,+GCC+Bldg.,+Guadalupe,+Makati+City/@14.5573885,121.0156474,16.25z?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D">Main Floor, GCC Bldg., Guadalupe, Makati City</a></li>
-
-      </ul>
-
-      <ul>
-        <li><a href="contactus.html"><b>Contacts</b></a></li>
-        <li><a href="#">vmzbuscentre@gmail.com</a></li>
-        <li><a href="#">09178571286<br>09991639849</a></li>
-
-      </ul>
-
-      <ul>
-        <li><a href="#"><b>Links</b></a></li>
-        <li><a href="LandingPage.html">Home</a></li>
-        <li><a href="AboutUs.html">About Us</a></li>
-        <li><a href="contactus.html">Contact Us</a></li>
-        <li><a href="help.html">Help</a></li>
-
-      </ul>
-    </div>
-  </div>
-
-  <hr>
-
-  <div class="footer-bottom">
-    <div class="social-icons">
+  <!-- Checkout Modal -->
+  <div id="checkoutModal">
+    <div class="modal-content">
+      <h3>Checkout</h3>
+      <div id="orderProductContainer"></div>
+      <p>Items Price: <span id="itemsPrice">₱0.00</span></p>
+      <p>Shipping Price: <span id="shippingPrice">₱30.53</span></p>
+      <p>Total Price: <span id="totalPrice">₱0.00</span></p>
       
+      <form id="checkoutForm">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="firstName" placeholder="First Name" required>
+        <input type="text" name="lastName" placeholder="Last Name" required>
+        <input type="text" name="address1" placeholder="Address" required>
+        <input type="text" name="city" placeholder="City" required>
+        <input type="text" name="postalCode" placeholder="Postal Code" required>
+        
+        <label><input type="radio" name="deliveryMethod" value="standard" checked> Standard Shipping</label>
+        <label><input type="radio" name="deliveryMethod" value="express"> Express Shipping</label>
+        
+        <label><input type="radio" name="paymentMethod" value="card"> Credit Card</label>
+        <label><input type="radio" name="paymentMethod" value="paypal"> PayPal</label>
+        
+        <button type="button" onclick="finalizePurchase()">Complete Purchase</button>
+        <button type="button" onclick="closeCheckoutModal()">Cancel</button>
+      </form>
     </div>
-    <p class="trr">© 2025 Vemenzon. All rights reserved.</p>
   </div>
-</footer>
 
-<link rel="stylesheet" href="footer.css">
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
- <script>
+  <script>
     const product = JSON.parse(localStorage.getItem("selectedProduct"));
 
-  const products = [
+    const products = [
       { name: "Sketch Pad", price: 50, img: "https://images.thimbletoys.com/images/items/1630227a.jpg", brand: "Generic", stock: "Available", shipping: "Guaranteed to get by 5-7 Days", description: "High-quality sketch pad for artists." },
       { name: "Mathematics Set", price: 50, img: "https://m.media-amazon.com/images/I/81zaNKgIjpL.SS700.jpg", brand: "Generic", stock: "Available", shipping: "Guaranteed to get by 5-7 Days", description: "Complete set for math calculations." },
       { name: "Intermediate Pad", price: 50, img: "https://img.lazcdn.com/g/ff/kf/Sc0a190ca11aa45fb9e36960294cdfd54Q.jpg_720x720q80.jpg", brand: "Generic", stock: "Available", shipping: "Guaranteed to get by 5-7 Days", description: "Durable intermediate pad for notes." },
       { name: "Yellow pad", price: 50, img: "https://www.nationalbookstore.com/180048-thickbox_default/best-buy-yellow-pad-8-5x13-inches-80s-school-office-supplies.jpg", brand: "Generic", stock: "Available", shipping: "Guaranteed to get by 5-7 Days", description: "Classic yellow pad for writing." },
       { name: "Colored Pad", price: 50, img: "https://m.media-amazon.com/images/I/41I7vKcxSlL._AC_.jpg", brand: "Generic", stock: "Available", shipping: "Guaranteed to get by 5-7 Days", description: "Colorful pad for creative notes." },
-     
-      
     ];
 
-
     const grid = document.getElementById('productGrid');
-
-
 
     function viewProduct(product) {
       localStorage.setItem("selectedProduct", JSON.stringify(product));
       window.location.href = "PRODUCTDETAILS.html";
     }
 
-
     function loadProducts() {
-      grid.innerHTML = '';
-      products.forEach(p => {
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        card.innerHTML = `
-          <img src="${p.img}" alt="${p.name}" onclick="viewProduct(${JSON.stringify(p).replace(/"/g, '&quot;')})" style="cursor: pointer;">  <!-- Made image clickable to view details -->
-          <h3 onclick="viewProduct(${JSON.stringify(p).replace(/"/g, '&quot;')})" style="cursor: pointer;">${p.name}</h3>  <!-- Made title clickable too -->
-          <p class="price">₱${p.price}.00</p>
-          <div class="buttons">
-           
-            </button>
-           <button class="buy-btn" onclick="viewProduct({ name: '${p.name}', img: '${p.img}', price: ${p.price} })">View Product</button>
-          </div>
-        `;
-        grid.appendChild(card);
-      });
+      if (grid) {
+        grid.innerHTML = '';
+        products.forEach(p => {
+          const card = document.createElement('div');
+          card.className = 'product-card';
+          card.innerHTML = `
+            <img src="${p.img}" alt="${p.name}" onclick="viewProduct(${JSON.stringify(p).replace(/"/g, '&quot;')})" style="cursor: pointer;">
+            <h3 onclick="viewProduct(${JSON.stringify(p).replace(/"/g, '&quot;')})" style="cursor: pointer;">${p.name}</h3>
+            <p class="price">₱${p.price}.00</p>
+            <div class="buttons">
+              <button class="buy-btn" onclick="viewProduct({ name: '${p.name}', img: '${p.img}', price: ${p.price} })">View Product</button>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      }
     }
-
 
     function addToCart(name, img, price) {
       const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -986,7 +121,6 @@ a:hover {
       alert(`${name} added to cart!`);
     }
 
-
     function addToFavorites(name, img, price, btn) {
       const favs = JSON.parse(localStorage.getItem('favorites')) || [];
       favs.push({ name, img, price });
@@ -994,29 +128,29 @@ a:hover {
       btn.classList.add('active');
     }
 
-
     function searchProducts() {
       const query = document.getElementById('searchInput').value.toLowerCase();
       const filtered = products.filter(p => p.name.toLowerCase().includes(query));
-      grid.innerHTML = '';
-      filtered.forEach(p => {
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        card.innerHTML = `
-          <img src="${p.img}" alt="${p.name}" onclick="viewProduct(${JSON.stringify(p).replace(/"/g, '&quot;')})" style="cursor: pointer;">
-          <h3 onclick="viewProduct(${JSON.stringify(p).replace(/"/g, '&quot;')})" style="cursor: pointer;">${p.name}</h3>
-          <p class="price">₱${p.price}.00</p>
-          <div class="buttons">
-            <button class="buy-btn" onclick="addToCart('${p.name}','${p.img}',${p.price})">View Product</button>
-            
-        `;
-        grid.appendChild(card);
-      });
+      if (grid) {
+        grid.innerHTML = '';
+        filtered.forEach(p => {
+          const card = document.createElement('div');
+          card.className = 'product-card';
+          card.innerHTML = `
+            <img src="${p.img}" alt="${p.name}" onclick="viewProduct(${JSON.stringify(p).replace(/"/g, '&quot;')})" style="cursor: pointer;">
+            <h3 onclick="viewProduct(${JSON.stringify(p).replace(/"/g, '&quot;')})" style="cursor: pointer;">${p.name}</h3>
+            <p class="price">₱${p.price}.00</p>
+            <div class="buttons">
+              <button class="buy-btn" onclick="addToCart('${p.name}','${p.img}',${p.price})">View Product</button>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      }
     }
 
-
     loadProducts();
-  
+
     if (product) {
       document.querySelector(".product-info h2").textContent = product.name;
       document.querySelector(".price").textContent = `₱${product.price}.00`;
@@ -1055,7 +189,119 @@ a:hover {
       if (!product) return alert("No product selected!");
       const quantity = parseInt(document.getElementById("quantity").value);
       const productWithQuantity = { ...product, quantity };
-      localStorage.setItem("selectedProductWithQuantity", JSON.stringify(productWithQuantity));
-      window.location.href = "checkout.html";
+      selectedItems = [productWithQuantity]; // Set for checkout modal
+      renderSelectedItems();
+      document.getElementById('checkoutModal').style.display = 'flex';
+    }
+
+    const reportBtn = document.getElementById('reportBtn');
+    const reportModal = document.getElementById('reportModal');
+
+    function openReportModal() {
+      reportModal.style.display = 'flex';
+    }
+
+    function closeReportModal() {
+      reportModal.style.display = 'none';
+    }
+
+    function submitReport() {
+      const reportText = document.getElementById('reportText').value;
+      if (reportText.trim() === "") {
+        alert("Please enter a report.");
+        return;
+      }
+      alert("Report submitted: " + reportText);
+      closeReportModal();
+    }
+
+    reportBtn.addEventListener('click', openReportModal);
+
+    // Checkout modal logic (integrated from checkout script)
+    let selectedItems = [];
+
+    const orderContainer = document.getElementById('orderProductContainer');
+    const itemsPriceEl = document.getElementById('itemsPrice');
+    const shippingPriceEl = document.getElementById('shippingPrice');
+    const totalPriceEl = document.getElementById('totalPrice');
+
+    const shippingCostStandard = 30.53;
+    const shippingCostExpress = 50.00;
+    let currentShippingCost = shippingCostStandard;
+
+    function renderSelectedItems() {
+      if (selectedItems.length === 0) {
+        orderContainer.innerHTML = "<p>No items selected.</p>";
+        itemsPriceEl.textContent = "₱0.00";
+        totalPriceEl.textContent = "₱0.00";
+        return;
+      }
+
+      orderContainer.innerHTML = selectedItems.map(item => {
+        const price = Number(item.price) || 0;
+        const qty = Number(item.quantity) || 1;
+        return `
+          <div class="order-product">
+            <img src="${item.img}" alt="${item.name}" />
+            <div class="order-product-details">
+              <p>${item.name}</p>
+              <p>Quantity: ${qty}</p>
+              <p>₱${(price * qty).toFixed(2)}</p>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      updatePrices();
+    }
+
+    function updatePrices() {
+      const itemsPrice = selectedItems.reduce((sum, item) => {
+        const price = Number(item.price) || 0;
+        const qty = Number(item.quantity) || 1;
+        return sum + price * qty;
+      }, 0);
+
+      const total = itemsPrice + currentShippingCost;
+
+      itemsPriceEl.textContent = `₱${itemsPrice.toFixed(2)}`;
+      shippingPriceEl.textContent = `₱${currentShippingCost.toFixed(2)}`;
+      totalPriceEl.textContent = `₱${total.toFixed(2)}`;
+    }
+
+    document.querySelectorAll('input[name="deliveryMethod"]').forEach(el => {
+      el.addEventListener('change', (e) => {
+        currentShippingCost = e.target.value === 'express' ? shippingCostExpress : shippingCostStandard;
+        updatePrices();
+      });
+    });
+
+    function finalizePurchase() {
+      const form = document.getElementById('checkoutForm');
+      const fields = ['email', 'firstName', 'lastName', 'address1', 'city', 'postalCode'];
+      
+      for (const field of fields) {
+        if (!form[field].value.trim()) {
+          alert(`Please fill out your ${field.replace(/([A-Z])/g, ' $1').toLowerCase()}.`);
+          form[field].focus();
+          return;
+        }
+      }
+
+      const paymentMethod = form.querySelector('input[name="paymentMethod"]:checked');
+      if (!paymentMethod) {
+        alert("Please select a payment method.");
+        return;
+      }
+
+      alert("✅ Thank you for your purchase! Redirecting to confirmation page...");
+      closeCheckoutModal();
+      window.location.href = "transact.html";
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModal').style.display = 'none';
     }
   </script>
+</body>
+</html>
