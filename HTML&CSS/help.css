@@ -93,6 +93,7 @@ nav ul li .dropdown:hover {
     display: flex;
 }
 h3{
+    margin-left: 9px;
     color: #b22222;
 }
 .search-container {
@@ -287,11 +288,12 @@ body {
 }
 
 .interactive-box summary:hover {
-    cursor: S;
     background: #ed3e3e;
     
 }
 summary{
+        cursor: pointer;
+
     margin-left: 10px;
     margin-bottom: 10px;
 }
