@@ -40,13 +40,27 @@
           </div>
           <div class="input-group">
             <label for="city">City</label>
-            <input id="city" type="text" required placeholder="City"/>
-            <label for="postalCode">Postal Code</label>
-            <input id="postalCode" type="text" required placeholder="Postal Code"/>
+            <input list="cities" id="city" type="text" required placeholder="City" oninput="handleCityChange()" />
+            <datalist id="cities">
+              <option value="Makati">
+              <option value="Manila">
+              <option value="Quezon City">
+              <option value="Pasig">
+              <option value="Taguig">
+              <!-- Add more Philippine cities as needed -->
+            </datalist>
+            <label for="barangay">Barangay</label>
+            <select id="barangay" name="barangay" disabled>
+              <option value="">Select Barangay</option>
+            </select>
           </div>
           <div class="input-group">
+            <label for="postalCode">Postal Code</label>
+            <input id="postalCode" type="text" required placeholder="Postal Code"/>
             <label for="region">State / Region</label>
             <input id="region" type="text" placeholder="State or Region (optional)"/>
+          </div>
+          <div class="input-group">
             <label for="phone">Phone</label>
             <input id="phone" type="tel" placeholder="Phone number"/>
           </div>
@@ -72,22 +86,42 @@
           <legend>Payment Method</legend>
           <div class="radio-group">
             <label class="radio-label">
-              <input type="radio" name="paymentMethod" value="gcash" />
+              <input type="radio" name="paymentMethod" value="cod" />
               COD (Cash on Delivery)
             </label>
-          <div class="radio-group">
             <label class="radio-label">
-              <input type="radio" name="paymentMethod" value="gcash" />
+              <input type="radio" name="paymentMethod" value="gcash" onchange="togglePaymentFields()" />
               GCash (Instant mobile payment)
             </label>
+            <!-- GCash fields directly below -->
+            <div id="gcash-fields" style="display: none; margin-left: 20px;">
+              <div class="input-group">
+                <label for="gcash-number">GCash Mobile Number:</label>
+                <input type="text" id="gcash-number" name="gcash-number" placeholder="e.g., 09123456789">
+                <label for="gcash-name">Account Name:</label>
+                <input type="text" id="gcash-name" name="gcash-name" placeholder="Full name on GCash">
+              </div>
+            </div>
             <label class="radio-label">
-              <input type="radio" name="paymentMethod" value="securitybank" />
-              Security Bank (Direct bank transfer)
+              <input type="radio" name="paymentMethod" value="securitybank" onchange="togglePaymentFields()" />
+              Security Bank (Direct bank transfer / Credit Card)
             </label>
-            <label class="radio-label">
-              <input type="radio" name="paymentMethod" value="cod" />
-              Cash on Delivery (Pay when item arrives)
-            </label>
+            <!-- Security Bank fields directly below -->
+            <div id="securitybank-fields" style="display: none; margin-left: 20px;">
+              <div class="input-group">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="XXXX-XXXX-XXXX-XXXX">
+                <label for="expiry">Expiry Date:</label>
+                <input type="text" id="expiry" name="expiry" placeholder="MM/YY">
+              </div>
+              <div class="input-group">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="XXX">
+                <label for="card-name">Cardholder Name:</label>
+                <input type="text" id="card-name" name="card-name" placeholder="Full name on card">
+              </div>
+            </div>
+            
           </div>
         </fieldset>
       </form>
@@ -240,6 +274,69 @@
     });
   });
 
+  // New function for city and barangay handling
+  function handleCityChange() {
+    const cityInput = document.getElementById('city').value;
+    const barangaySelect = document.getElementById('barangay');
+    
+    if (cityInput.toLowerCase() === 'makati') {
+      barangaySelect.disabled = false;
+      barangaySelect.innerHTML = `
+        <option value="">Select Barangay</option>
+        <option value="Poblacion">Poblacion</option>
+        <option value="Bel-Air">Bel-Air</option>
+        <option value="San Lorenzo">San Lorenzo</option>
+        <option value="Urdaneta">Urdaneta</option>
+        <option value="Valenzuela">Valenzuela</option>
+        <option value="Pinagkaisahan">Pinagkaisahan</option>
+        <option value="Guadalupe Nuevo">Guadalupe Nuevo</option>
+        <option value="Guadalupe Viejo">Guadalupe Viejo</option>
+        <option value="Singkamas">Singkamas</option>
+        <option value="Santa Cruz">Santa Cruz</option>
+        <option value="San Antonio">San Antonio</option>
+        <option value="La Paz">La Paz</option>
+        <option value="Carmona">Carmona</option>
+        <option value="Cembo">Cembo</option>
+        <option value="Pio del Pilar">Pio del Pilar</option>
+        <option value="Palanan">Palanan</option>
+        <option value="Olympia">Olympia</option>
+        <option value="Bangkal">Bangkal</option>
+        <option value="Airmen Village">Airmen Village</option>
+        <option value="Magallanes">Magallanes</option>
+        <option value="Dasmariñas">Dasmariñas</option>
+        <option value="Forbes Park">Forbes Park</option>
+        <option value="San Isidro">San Isidro</option>
+        <option value="Santa Ana">Santa Ana</option>
+        <option value="Malate">Malate</option>
+        <option value="Ermita">Ermita</option>
+        <option value="Intramuros">Intramuros</option>
+        <!-- Add more if needed; this is a partial list of Makati barangays -->
+      `;
+    } else {
+      barangaySelect.disabled = true;
+      barangaySelect.innerHTML = '<option value="">Select Barangay</option>';
+    }
+  }
+
+  // New function for payment fields
+  function togglePaymentFields() {
+    const gcashFields = document.getElementById('gcash-fields');
+    const securitybankFields = document.getElementById('securitybank-fields');
+    
+    const gcashChecked = document.querySelector('input[name="paymentMethod"][value="gcash"]').checked;
+    const securitybankChecked = document.querySelector('input[name="paymentMethod"][value="securitybank"]').checked;
+    
+    if (gcashChecked) {
+      gcashFields.style.display = 'block';
+      securitybankFields.style.display = 'none';
+    } else if (securitybankChecked) {
+      securitybankFields.style.display = 'block';
+      gcashFields.style.display = 'none';
+    } else {
+      gcashFields.style.display = 'none';
+      securitybankFields.style.display = 'none';
+    }
+  }
   
   function finalizePurchase() {
     const form = document.getElementById('checkoutForm');
@@ -253,9 +350,29 @@
       }
     }
 
+    // Check barangay if city is Makati
+    if (form.city.value.toLowerCase() === 'makati' && !form.barangay.value) {
+      alert("Please select a barangay.");
+      form.barangay.focus();
+      return;
+    }
+
     if (!form.paymentMethod.value) {
       alert("Please select a payment method.");
       return;
+    }
+
+    // Validate payment-specific fields
+    if (form.paymentMethod.value === 'gcash') {
+      if (!form['gcash-number'].value.trim() || !form['gcash-name'].value.trim()) {
+        alert("Please fill out all GCash details.");
+        return;
+      }
+    } else if (form.paymentMethod.value === 'securitybank') {
+      if (!form['card-number'].value.trim() || !form['expiry'].value.trim() || !form['cvv'].value.trim() || !form['card-name'].value.trim()) {
+        alert("Please fill out all credit card details.");
+        return;
+      }
     }
 
     alert("✅ Thank you for your purchase! Redirecting to confirmation page...");
